@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dlid75n88vbfb"]
+[gd_scene load_steps=51 format=3 uid="uid://dlid75n88vbfb"]
 
 [ext_resource type="Script" path="res://scripts/screen.gd" id="1_6q7wf"]
 [ext_resource type="PackedScene" uid="uid://2lwars5771g5" path="res://scenes/player.tscn" id="1_h0hs6"]
@@ -9,6 +9,36 @@
 [ext_resource type="Script" path="res://scripts/barrier_visual.gd" id="3_ouv33"]
 [ext_resource type="Script" path="res://scripts/restart_game.gd" id="5_im4o6"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="5_vuqny"]
+[ext_resource type="PackedScene" uid="uid://bj6vxfhkd4wju" path="res://powerups/guns_attack_speed/guns_attack_speed_power_up.tscn" id="10_c5vfd"]
+[ext_resource type="PackedScene" uid="uid://b317shs8sysg" path="res://powerups/damage/damage_power_up.tscn" id="11_yyfmk"]
+[ext_resource type="PackedScene" uid="uid://gtuf2440lm33" path="res://characters/angry_charge_pixi/angry_charge_pixi.tscn" id="12_n5u5i"]
+[ext_resource type="PackedScene" uid="uid://bv12065da18wi" path="res://characters/golem/golem.tscn" id="13_hurid"]
+[ext_resource type="PackedScene" uid="uid://coogdkh10whao" path="res://characters/small_dron/small_dron.tscn" id="14_brtsq"]
+[ext_resource type="PackedScene" uid="uid://bajmpova6gs0y" path="res://characters/dron/dron.tscn" id="15_4duwx"]
+[ext_resource type="PackedScene" uid="uid://ljx3t3i7hucu" path="res://characters/boss1/boss1.tscn" id="16_egjng"]
+[ext_resource type="PackedScene" uid="uid://c42i4hexl0in5" path="res://weapons/shotgun_fire/shotgun_fire_power_up.tscn" id="17_6dpk5"]
+[ext_resource type="PackedScene" uid="uid://c7lhk8ukl8gex" path="res://support_weapons/bombs/bombs_power_up.tscn" id="18_tm3g3"]
+[ext_resource type="PackedScene" uid="uid://b3rvvdaw2rxcv" path="res://turrets/bullet/turret_rifle_power_up.tscn" id="19_xnv27"]
+[ext_resource type="PackedScene" uid="uid://bag3rdc6v7s4i" path="res://friends/drone/drone_power_up.tscn" id="20_b6ktj"]
+[ext_resource type="PackedScene" uid="uid://bny61e7hksipq" path="res://weapons/grenade_launcher/grenade_launcher_power_up.tscn" id="21_fdul8"]
+[ext_resource type="PackedScene" uid="uid://bvlg5rrtfu2yb" path="res://weapons/lasergun/laser_gun_power_up.tscn" id="22_4i5wh"]
+[ext_resource type="PackedScene" uid="uid://co5nycqfkv1r3" path="res://weapons/laser_minigun/laser_minigun_power_up.tscn" id="23_ymfte"]
+[ext_resource type="PackedScene" uid="uid://c8vy8rd3x88hl" path="res://weapons/laser_shotgun/laser_shotgun_power_up.tscn" id="24_08d72"]
+[ext_resource type="PackedScene" uid="uid://cj8mkknjxksl3" path="res://weapons/minigun/minigun_power_up.tscn" id="25_i75cu"]
+[ext_resource type="PackedScene" uid="uid://dtlmbio0rwec7" path="res://weapons/plasmagun/plasma_gun_power_up.tscn" id="26_8u6gt"]
+[ext_resource type="PackedScene" uid="uid://cji7i3ungw8u7" path="res://weapons/plasma_minigun/plasma_minigun_power_up.tscn" id="27_ketwl"]
+[ext_resource type="PackedScene" uid="uid://5wwmssuox5ft" path="res://weapons/plasma_shotgun/plasma_shotgun_power_up.tscn" id="28_uholi"]
+[ext_resource type="PackedScene" uid="uid://crmrrdqvp61vc" path="res://weapons/railgun/railgun_power_up.tscn" id="29_brxqi"]
+[ext_resource type="PackedScene" uid="uid://bhlx07720hcym" path="res://weapons/rocket_launcher/rocket_launcher_power_up.tscn" id="30_dnkh3"]
+[ext_resource type="PackedScene" uid="uid://jrhp8ca7vqxw" path="res://weapons/flamethrower/flamethrower_power_up.tscn" id="31_g08mc"]
+[ext_resource type="PackedScene" uid="uid://xdrubyf3dvj5" path="res://weapons/gas_gun/gas_gun_power_up.tscn" id="32_3fvmu"]
+[ext_resource type="PackedScene" uid="uid://daqcq1j2utd3v" path="res://weapons/wave_rifle/wave_rifle_powerup.tscn" id="33_w2vvn"]
+[ext_resource type="PackedScene" uid="uid://dcciq1gn1q6wg" path="res://powerups/hp_regen/hp_regen_power_up.tscn" id="34_feuxv"]
+[ext_resource type="PackedScene" uid="uid://dl2b0cmljg2b2" path="res://powerups/guns_crit_chance/guns_crit_chance_power_up.tscn" id="35_4s4ql"]
+[ext_resource type="PackedScene" uid="uid://c6dqeq3r8ne5l" path="res://weapons/pistol/pistol_powerup.tscn" id="36_7ka6j"]
+[ext_resource type="PackedScene" uid="uid://d00ibhstv63jr" path="res://weapons/rifle/rifle_power_up.tscn" id="37_tiu0e"]
+[ext_resource type="PackedScene" uid="uid://c0spue033vd33" path="res://powerups/guns_reload_speed/guns_reload_speed_power_up.tscn" id="38_poet2"]
+[ext_resource type="PackedScene" uid="uid://beb1mn5sb86ao" path="res://powerups/armor/armor_power_up.tscn" id="39_crw6s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tpkxc"]
 
@@ -340,3 +370,165 @@ position = Vector2(722, -271)
 
 [node name="Tree37" parent="Trees" instance=ExtResource("2_cl62n")]
 position = Vector2(722, -271)
+
+[node name="SmallGunsAttackSpeedPowerUp" parent="." instance=ExtResource("10_c5vfd")]
+position = Vector2(632, 24)
+
+[node name="DamagePowerUp2" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(373, 405)
+
+[node name="DamagePowerUp4" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(495, 382)
+
+[node name="DamagePowerUp5" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(639, 381)
+
+[node name="DamagePowerUp6" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(669, 256)
+
+[node name="DamagePowerUp7" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(762, 378)
+
+[node name="DamagePowerUp8" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(851, 283)
+
+[node name="DamagePowerUp9" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(744, 181)
+
+[node name="DamagePowerUp10" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(961, 208)
+
+[node name="DamagePowerUp11" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(907, 373)
+
+[node name="DamagePowerUp12" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(844, 453)
+
+[node name="DamagePowerUp13" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(586, 458)
+
+[node name="DamagePowerUp14" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(563, 254)
+
+[node name="DamagePowerUp15" parent="." instance=ExtResource("11_yyfmk")]
+position = Vector2(528, 162)
+scale = Vector2(1.345, 1.345)
+
+[node name="Pixi" parent="." instance=ExtResource("12_n5u5i")]
+position = Vector2(-1406, -562)
+
+[node name="Golem" parent="." instance=ExtResource("13_hurid")]
+position = Vector2(982, -317)
+
+[node name="SmallDron" parent="." instance=ExtResource("14_brtsq")]
+position = Vector2(1263, -61)
+
+[node name="Dron2" parent="." instance=ExtResource("15_4duwx")]
+position = Vector2(1142, -172)
+
+[node name="Boss1" parent="." instance=ExtResource("16_egjng")]
+position = Vector2(1328, 165)
+
+[node name="ShotgunGun" parent="." instance=ExtResource("17_6dpk5")]
+position = Vector2(-981, 248)
+scale = Vector2(6.39, 6.39)
+
+[node name="BombsPowerUp" parent="." instance=ExtResource("18_tm3g3")]
+position = Vector2(809, 913)
+scale = Vector2(10.1257, 6.51415)
+
+[node name="TurretBulletPowerUp" parent="." instance=ExtResource("19_xnv27")]
+position = Vector2(-470, 636)
+
+[node name="DronePowerUp" parent="." instance=ExtResource("20_b6ktj")]
+position = Vector2(-654, 555)
+
+[node name="Dron" parent="." instance=ExtResource("15_4duwx")]
+position = Vector2(-957, 493)
+
+[node name="Dron9" parent="." instance=ExtResource("15_4duwx")]
+position = Vector2(-231, 780)
+
+[node name="GrenadeLauncher" parent="." instance=ExtResource("21_fdul8")]
+position = Vector2(-354, -76)
+
+[node name="LaserGun" parent="." instance=ExtResource("22_4i5wh")]
+position = Vector2(-290, -227)
+
+[node name="LaserMinigun" parent="." instance=ExtResource("23_ymfte")]
+position = Vector2(-141, -331)
+
+[node name="LaserShotgunGun" parent="." instance=ExtResource("24_08d72")]
+position = Vector2(-55, -769)
+
+[node name="ShotgunGun2" parent="." instance=ExtResource("25_i75cu")]
+position = Vector2(-252, -717)
+
+[node name="PlasmaGun" parent="." instance=ExtResource("26_8u6gt")]
+position = Vector2(-639, 192)
+
+[node name="PlasmaMinigun" parent="." instance=ExtResource("27_ketwl")]
+position = Vector2(-758, 11)
+
+[node name="PlasmaShotgunGun" parent="." instance=ExtResource("28_uholi")]
+position = Vector2(-703, -137)
+
+[node name="RailGun" parent="." instance=ExtResource("29_brxqi")]
+position = Vector2(-619, -276)
+
+[node name="RocketLauncher" parent="." instance=ExtResource("30_dnkh3")]
+position = Vector2(-546, -383)
+
+[node name="Flamethrower" parent="." instance=ExtResource("31_g08mc")]
+position = Vector2(328, -724)
+
+[node name="GasGunPowerUp" parent="." instance=ExtResource("32_3fvmu")]
+position = Vector2(568, -664)
+
+[node name="EchoRifleGun" parent="." instance=ExtResource("33_w2vvn")]
+position = Vector2(84, -660)
+
+[node name="Guns_Crit_Chance" parent="." instance=ExtResource("34_feuxv")]
+position = Vector2(66, 455)
+
+[node name="Dodge" parent="." instance=ExtResource("34_feuxv")]
+position = Vector2(127, 648)
+
+[node name="Guns_Crit_Chance3" parent="." instance=ExtResource("34_feuxv")]
+position = Vector2(223, 507)
+
+[node name="DamagePowerUp16" parent="." instance=ExtResource("35_4s4ql")]
+position = Vector2(145, -101)
+
+[node name="PistolGun" parent="." instance=ExtResource("36_7ka6j")]
+position = Vector2(299, -394)
+
+[node name="ShotgunGun3" parent="." instance=ExtResource("37_tiu0e")]
+position = Vector2(493, -257)
+
+[node name="DamagePowerUp" parent="." instance=ExtResource("38_poet2")]
+position = Vector2(186, 54)
+
+[node name="DamagePowerUp3" parent="." instance=ExtResource("38_poet2")]
+position = Vector2(294, 133)
+
+[node name="DamagePowerUp17" parent="." instance=ExtResource("38_poet2")]
+position = Vector2(169, 166)
+
+[node name="DamagePowerUp18" parent="." instance=ExtResource("38_poet2")]
+position = Vector2(229, -85)
+
+[node name="DamagePowerUp19" parent="." instance=ExtResource("38_poet2")]
+position = Vector2(309, -66)
+
+[node name="DamagePowerUp20" parent="." instance=ExtResource("38_poet2")]
+position = Vector2(286, -158)
+
+[node name="DamagePowerUp21" parent="." instance=ExtResource("38_poet2")]
+position = Vector2(210, -180)
+
+[node name="DamagePowerUp22" parent="." instance=ExtResource("39_crw6s")]
+position = Vector2(-196, 161)
+
+[node name="DamagePowerUp23" parent="." instance=ExtResource("39_crw6s")]
+position = Vector2(-157, 356)
