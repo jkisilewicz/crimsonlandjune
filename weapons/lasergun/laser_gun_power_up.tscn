@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvlg5rrtfu2yb"]
+
+[ext_resource type="Script" path="res://weapons/lasergun/laser_gun_power_up.gd" id="1_euv7c"]
+[ext_resource type="Texture2D" uid="uid://xlaltnfjb5k1" path="res://weapons/lasergun/lasergun.png" id="2_yepo0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn5cw"]
+radius = 17.0294
+
+[node name="LaserGun" type="Area2D"]
+z_index = 10
+collision_layer = 0
+script = ExtResource("1_euv7c")
+
+[node name="LaserGun" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, -23)
+scale = Vector2(0.715381, 0.715381)
+texture = ExtResource("2_yepo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_rn5cw")

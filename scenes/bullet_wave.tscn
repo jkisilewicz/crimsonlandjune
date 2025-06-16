@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://0gqfk0dje0ph"]
+
+[ext_resource type="PackedScene" uid="uid://vcqt635l56cm" path="res://scenes/bullet.tscn" id="1_8pycs"]
+[ext_resource type="Script" path="res://scripts/bullet_wave.gd" id="1_eli06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uoj8b"]
+radius = 14.1421
+
+[sub_resource type="Gradient" id="Gradient_gmprl"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.4, 0.6, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tanv1"]
+gradient = SubResource("Gradient_gmprl")
+fill_from = Vector2(0.5, 0.1)
+fill_to = Vector2(0.5, 0.9)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_h8ekb"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.54491, 0.745509, 0.829341)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.176471, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rdxtk"]
+gradient = SubResource("Gradient_h8ekb")
+fill = 1
+fill_from = Vector2(0, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[node name="WaveBullet" instance=ExtResource("1_8pycs")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_eli06")
+
+[node name="Projectile" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_uoj8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+clip_children = 1
+position = Vector2(-8, 0)
+texture = SubResource("GradientTexture2D_tanv1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" index="0"]
+texture = SubResource("GradientTexture2D_rdxtk")

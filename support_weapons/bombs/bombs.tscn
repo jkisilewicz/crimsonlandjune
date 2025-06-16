@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7uwie0td1w3o"]
+
+[ext_resource type="Script" path="res://support_weapons/bombs/bombs.gd" id="1_13o5x"]
+[ext_resource type="Texture2D" uid="uid://cd338ec43ovrb" path="res://images/enemies/enemy_bullet.png" id="2_he2p5"]
+[ext_resource type="AudioStream" uid="uid://chahr06njvtfk" path="res://support_weapons/bombs/explosion.mp3" id="3_ffy5f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2b6p"]
+radius = 122.809
+
+[node name="Bombs" type="Area2D"]
+z_index = 30
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_13o5x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.52, 3.4)
+texture = ExtResource("2_he2p5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.782886, 0.79485)
+shape = SubResource("CircleShape2D_x2b6p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.111
+autostart = true
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_ffy5f")
+volume_db = 10.306
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

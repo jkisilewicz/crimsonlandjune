@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://ds8octsnrv7r6"]
+
+[ext_resource type="PackedScene" uid="uid://3oeeqiln4dnw" path="res://weapons/pistol/pistol.tscn" id="1_tis1o"]
+[ext_resource type="PackedScene" uid="uid://ri6c6di06i0l" path="res://scenes/electric_bullet.tscn" id="2_b0avw"]
+[ext_resource type="Texture2D" uid="uid://b0xgtu7qg7x5l" path="res://weapons/electric_weapon/electric_weapon.png" id="2_n5xq3"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="2_v4085"]
+[ext_resource type="AudioStream" uid="uid://dsxbkrwx6kjyx" path="res://weapons/wave_rifle/wave_shot.mp3" id="4_sl5d0"]
+
+[node name="ElectricWeapon" instance=ExtResource("1_tis1o")]
+script = ExtResource("2_v4085")
+bullet_scene = ExtResource("2_b0avw")
+shoot_sfx_path = Array[AudioStream]([ExtResource("4_sl5d0")])
+fire_rate = 2.5
+speed = 700.0
+
+[node name="Pistol" parent="WeaponPivot" index="0"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_n5xq3")
+
+[node name="ShootingStart" parent="WeaponPivot/Pistol" index="0"]
+position = Vector2(90.4294, -10.3571)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://cuvkg857q7wcr"]
+
+[ext_resource type="PackedScene" uid="uid://3oeeqiln4dnw" path="res://weapons/pistol/pistol.tscn" id="1_jng7q"]
+[ext_resource type="Script" path="res://weapons/wave_rifle/wave_rifle.gd" id="2_nqui6"]
+[ext_resource type="PackedScene" uid="uid://0gqfk0dje0ph" path="res://scenes/bullet_wave.tscn" id="3_g8xtg"]
+[ext_resource type="AudioStream" uid="uid://dsxbkrwx6kjyx" path="res://weapons/wave_rifle/wave_shot.mp3" id="4_ot7ds"]
+[ext_resource type="Texture2D" uid="uid://drfn5wxsv2hjp" path="res://weapons/wave_rifle/wave_rifle.png" id="5_rsmrr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wu5ce"]
+radius = 481.0
+height = 1840.0
+
+[node name="WaveRifle" instance=ExtResource("1_jng7q")]
+script = ExtResource("2_nqui6")
+bullet_scene = ExtResource("3_g8xtg")
+is_wave = true
+shoot_sfx_path = Array[AudioStream]([ExtResource("4_ot7ds")])
+bullet_spread = 2.0
+clip_size = 12
+damage = 10
+speed = 400.0
+wave_knock_back_strength = 30.0
+
+[node name="Range" parent="." index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wu5ce")
+
+[node name="Pistol" parent="WeaponPivot" index="0"]
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("5_rsmrr")
+
+[node name="ShootingStart" parent="WeaponPivot/Pistol" index="0"]
+position = Vector2(78.6678, -2.38095)

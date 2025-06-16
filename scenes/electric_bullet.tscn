@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://ri6c6di06i0l"]
+
+[ext_resource type="Script" path="res://scripts/electric_bullet.gd" id="1_edxim"]
+[ext_resource type="Script" path="res://scripts/trail.gd" id="2_0d7hb"]
+
+[sub_resource type="Gradient" id="Gradient_fosyu"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.7, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hdpb5"]
+gradient = SubResource("Gradient_fosyu")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_j0cle"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.796875), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_mjjep"]
+offsets = PackedFloat32Array(0, 0.7)
+colors = PackedColorArray(0.447059, 0.729412, 1, 1, 0.447059, 0.729412, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_2f6qc"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s6cdd"]
+gradient = SubResource("Gradient_2f6qc")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_78j1a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5n60"]
+radius = 23.0217
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3w1x"]
+radius = 357.035
+
+[node name="ElectricBullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_edxim")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = SubResource("GradientTexture2D_hdpb5")
+
+[node name="Line2D" type="Line2D" parent="Sprite2D" node_paths=PackedStringArray("target")]
+top_level = true
+width = 50.0
+width_curve = SubResource("Curve_j0cle")
+gradient = SubResource("Gradient_mjjep")
+texture = SubResource("GradientTexture2D_s6cdd")
+texture_mode = 1
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("2_0d7hb")
+target = NodePath("../..")
+thickness = 75.0
+max_point = 60
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite2D"]
+amount = 100
+lifetime = 0.2
+texture = SubResource("GradientTexture2D_hdpb5")
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_78j1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource("CircleShape2D_v5n60")
+debug_color = Color(0, 0, 0, 0.42)
+
+[node name="ExtraDamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExtraDamageArea"]
+shape = SubResource("CircleShape2D_n3w1x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="ExtraDamageArea" to="." method="_add_bodies_inside"]

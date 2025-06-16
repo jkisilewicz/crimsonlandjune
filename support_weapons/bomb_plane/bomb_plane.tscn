@@ -1,0 +1,110 @@
+[gd_scene load_steps=10 format=3 uid="uid://b20cebsvctoes"]
+
+[ext_resource type="Script" path="res://support_weapons/bomb_plane/bomb_plane.gd" id="1_ywqg8"]
+[ext_resource type="Texture2D" uid="uid://hbcp052ojl6l" path="res://support_weapons/bomb_plane/Bomber_Source.png" id="2_cw281"]
+[ext_resource type="Shader" path="res://scripts/flat_color.gdshader" id="2_jyxhe"]
+[ext_resource type="AudioStream" uid="uid://diqeldivljq0x" path="res://support_weapons/bomb_plane/plane_sfx.mp3" id="4_xeoao"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mcs6i"]
+shader = ExtResource("2_jyxhe")
+shader_parameter/flat_color = Color(0.0227186, 0.0227151, 0.0501229, 0.392157)
+
+[sub_resource type="Animation" id="Animation_corgw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.46, 0.46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BomberSource:material:shader_parameter/flat_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0227186, 0.0227151, 0.0501229, 0.392157)]
+}
+
+[sub_resource type="Animation" id="Animation_ammft"]
+resource_name = "spawn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Vector2(0.46, 0.46), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BomberSource:material:shader_parameter/flat_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Color(0.0235294, 0.0235294, 0.0509804, 0), Color(0.0227186, 0.0227151, 0.0501229, 0.392157)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21jld"]
+_data = {
+"RESET": SubResource("Animation_corgw"),
+"spawn": SubResource("Animation_ammft")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_voajo"]
+random_pitch = 1.2
+random_volume_offset_db = 5.0
+streams_count = 1
+stream_0/stream = ExtResource("4_xeoao")
+
+[node name="BombPlane" type="Node2D"]
+scale = Vector2(0.46, 0.46)
+script = ExtResource("1_ywqg8")
+speed = 100.0
+drop_rate = 5.0
+
+[node name="BomberSource" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mcs6i")
+rotation = -1.5708
+scale = Vector2(3.355, 3.355)
+texture = ExtResource("2_cw281")
+
+[node name="DropTimer" type="Timer" parent="."]
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_21jld")
+}
+autoplay = "spawn"
+speed_scale = 0.7
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_voajo")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://5wwmssuox5ft"]
+
+[ext_resource type="Script" path="res://weapons/plasma_shotgun/plasma_shotgun_power_up.gd" id="1_3l16a"]
+[ext_resource type="Texture2D" uid="uid://bvhcdylbi5wwg" path="res://weapons/plasma_shotgun/plasma_shotgun.png" id="2_jdciw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn5cw"]
+radius = 17.0294
+
+[node name="PlasmaShotgunGun" type="Area2D"]
+z_index = 10
+collision_layer = 0
+script = ExtResource("1_3l16a")
+
+[node name="PlasmaShotgunGun" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, -25)
+scale = Vector2(0.635319, 0.750292)
+texture = ExtResource("2_jdciw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_rn5cw")

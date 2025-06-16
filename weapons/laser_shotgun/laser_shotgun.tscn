@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfs1hvabg2flx"]
+
+[ext_resource type="Script" path="res://weapons/laser_shotgun/laser_shotgun.gd" id="1_lqykq"]
+[ext_resource type="Texture2D" uid="uid://fx7wenbkjany" path="res://weapons/laser_shotgun/laser_shotgun.png" id="2_bmdl1"]
+[ext_resource type="PackedScene" uid="uid://dxccly3g61yfv" path="res://scenes/laserbeam.tscn" id="2_h5u20"]
+[ext_resource type="AudioStream" uid="uid://bqkih6xgbhaaq" path="res://sounds/laser_1.wav" id="3_ilgtv"]
+[ext_resource type="AudioStream" uid="uid://c0onmt34tyfn7" path="res://weapons/shotgun/shotgun_reload.mp3" id="4_a3wls"]
+[ext_resource type="AudioStream" uid="uid://cov7ka8magnrl" path="res://weapons/laser_shotgun/shotgun_reload.mp3" id="4_gtlsx"]
+[ext_resource type="AudioStream" uid="uid://g66wvv4xwmyi" path="res://weapons/laser_shotgun/shotgun_reload_2.mp3" id="5_aoaub"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2b6p"]
+radius = 522.024
+
+[node name="LaserShotgunRoot" type="Area2D" node_paths=PackedStringArray("muzzle", "weapon_pivot", "shoot_sfx", "reload_sfx")]
+z_index = 30
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_lqykq")
+muzzle = NodePath("WeaponPivot/LaserShotgun/ShootingStart")
+weapon_pivot = NodePath("WeaponPivot")
+bullet_scene = ExtResource("2_h5u20")
+shoot_sfx = NodePath("sfx_shoot")
+reload_sfx = NodePath("sfx_reload")
+shoot_sfx_path = Array[AudioStream]([ExtResource("3_ilgtv")])
+reload_sfx_path = Array[AudioStream]([ExtResource("4_gtlsx"), ExtResource("5_aoaub")])
+fire_rate = 1.4
+bullet_per_shot = 6
+bullet_spread = 15.0
+clip_size = 2
+reload_time = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2b6p")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="LaserShotgun" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(7.99998, 5)
+scale = Vector2(1.01952, 1.01952)
+texture = ExtResource("2_bmdl1")
+
+[node name="ShootingStart" type="Marker2D" parent="WeaponPivot/LaserShotgun"]
+unique_name_in_owner = true
+position = Vector2(80.4297, 3.9234)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.111
+autostart = true
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_ilgtv")
+
+[node name="sfx_reload" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_a3wls")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://djvmy81nwaiks"]
+
+[ext_resource type="PackedScene" uid="uid://c6dqeq3r8ne5l" path="res://weapons/pistol/pistol_powerup.tscn" id="1_rloxq"]
+[ext_resource type="Script" path="res://weapons/bullet_split_gun/spliting_bullet_gun_item.gd" id="2_a56yw"]
+[ext_resource type="Texture2D" uid="uid://dks56b8spsxkq" path="res://weapons/bullet_split_gun/bullet_split_gun.png" id="3_le78x"]
+
+[node name="SplitingBulletGun" instance=ExtResource("1_rloxq")]
+script = ExtResource("2_a56yw")
+
+[node name="PistolGun" parent="." index="0"]
+scale = Vector2(0.395, 0.395)
+texture = ExtResource("3_le78x")

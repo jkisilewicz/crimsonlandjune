@@ -1,0 +1,2 @@
+class_name RocketLauncher
+extends Weapon

@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://crilote2yknix"]
+
+[ext_resource type="Script" path="res://weapons/railgun/railgun.gd" id="1_73nu7"]
+[ext_resource type="Texture2D" uid="uid://pw1lgs8i2dg0" path="res://weapons/railgun/railgun.png" id="2_4sytk"]
+[ext_resource type="PackedScene" uid="uid://dxccly3g61yfv" path="res://scenes/laserbeam.tscn" id="2_cn4qv"]
+[ext_resource type="AudioStream" uid="uid://chahr06njvtfk" path="res://support_weapons/bombs/explosion.mp3" id="3_kj1qw"]
+[ext_resource type="AudioStream" uid="uid://e2107lpf084u" path="res://weapons/rifle/rifle_reload.mp3" id="4_ynmoo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2b6p"]
+radius = 522.024
+
+[node name="RailGunRoot" type="Area2D" node_paths=PackedStringArray("muzzle", "weapon_pivot", "shoot_sfx", "reload_sfx")]
+z_index = 30
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_73nu7")
+muzzle = NodePath("WeaponPivot/RailGun/ShootingStart")
+weapon_pivot = NodePath("WeaponPivot")
+bullet_scene = ExtResource("2_cn4qv")
+shoot_sfx = NodePath("sfx_shoot")
+reload_sfx = NodePath("sfx_reload")
+shoot_sfx_path = Array[AudioStream]([ExtResource("3_kj1qw")])
+reload_sfx_path = Array[AudioStream]([ExtResource("4_ynmoo")])
+bullet_spread = 3.0
+clip_size = 1
+reload_time = 0.7
+damage = 200
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2b6p")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="RailGun" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(2.00002, 1)
+scale = Vector2(0.996809, 0.996809)
+texture = ExtResource("2_4sytk")
+
+[node name="ShootingStart" type="Marker2D" parent="WeaponPivot/RailGun"]
+unique_name_in_owner = true
+position = Vector2(12.5325, -2.07317)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.111
+autostart = true
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_kj1qw")
+
+[node name="sfx_reload" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_ynmoo")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

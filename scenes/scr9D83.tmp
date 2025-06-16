@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlid75n88vbfb"]
+
+[ext_resource type="Script" path="res://scripts/screen.gd" id="1_6q7wf"]
+[ext_resource type="PackedScene" uid="uid://2lwars5771g5" path="res://scenes/main_character.tscn" id="1_h0hs6"]
+[ext_resource type="PackedScene" uid="uid://cijhpkxhkeyb" path="res://scenes/tree.tscn" id="2_cl62n"]
+[ext_resource type="PackedScene" uid="uid://dg5pcwsep5qs3" path="res://scenes/slime.tscn" id="3_4i5jx"]
+
+[sub_resource type="Curve2D" id="Curve2D_34kcn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -5136, -3183, 0, 0, 0, 0, 5112, -3215, 0, 0, 0, 0, 5104, 3097, 0, 0, 0, 0, -5176, 3097, 0, 0, 0, 0, -5136, -3167)
+}
+point_count = 5
+
+[node name="screen" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_6q7wf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -4945.0
+offset_top = -2974.0
+offset_right = 4537.0
+offset_bottom = 2774.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("1_h0hs6")]
+position = Vector2(-7, 13)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(7, -13)
+curve = SubResource("Curve2D_34kcn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-5136, -3183)
+rotation = -0.00312255
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-547, 360)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-561, 30)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-387, -400)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-261, -336)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-63, -370)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-179, -500)
+
+[node name="Slime" parent="." instance=ExtResource("3_4i5jx")]
+position = Vector2(-710, -818)
+
+[node name="Slime2" parent="." instance=ExtResource("3_4i5jx")]
+position = Vector2(-1362, 520)
+
+[node name="Slime3" parent="." instance=ExtResource("3_4i5jx")]
+position = Vector2(-1357, -442)
+
+[node name="Slime4" parent="." instance=ExtResource("3_4i5jx")]
+position = Vector2(-1387, 28)
+
+[node name="Slime5" parent="." instance=ExtResource("3_4i5jx")]
+position = Vector2(892, -892)
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9, 0, 0.0149998, 0.701961)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "Game Over"
+
+[node name="RestartGame" type="Label" parent="GameOver/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -410.0
+offset_right = 273.0
+offset_bottom = -235.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.429622, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Restart Game"

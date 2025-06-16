@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://qochi1qlmeca"]
+
+[ext_resource type="Script" path="res://weapons/minigun/minigun.gd" id="1_l7t2s"]
+[ext_resource type="PackedScene" uid="uid://vcqt635l56cm" path="res://scenes/bullet.tscn" id="2_lbwjl"]
+[ext_resource type="Texture2D" uid="uid://dwop0epgahrl8" path="res://weapons/minigun/minigun.png" id="2_qyohl"]
+[ext_resource type="AudioStream" uid="uid://eyhwclo38idy" path="res://weapons/rifle/rifle_1.mp3" id="3_iuexm"]
+[ext_resource type="AudioStream" uid="uid://cpuv3ruxoxtr8" path="res://weapons/rifle/rifle_2.mp3" id="4_4srx5"]
+[ext_resource type="AudioStream" uid="uid://bd4rhjxv3lk53" path="res://weapons/rifle/rifle_3.mp3" id="5_qrakc"]
+[ext_resource type="AudioStream" uid="uid://e2107lpf084u" path="res://weapons/rifle/rifle_reload.mp3" id="6_l0cd8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2b6p"]
+radius = 522.024
+
+[node name="RifleRoot" type="Area2D" node_paths=PackedStringArray("muzzle", "weapon_pivot", "shoot_sfx", "reload_sfx")]
+z_index = 30
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_l7t2s")
+muzzle = NodePath("WeaponPivot/Rifle/ShootingStart")
+weapon_pivot = NodePath("WeaponPivot")
+bullet_scene = ExtResource("2_lbwjl")
+shoot_sfx = NodePath("sfx_shoot")
+reload_sfx = NodePath("sfx_reload")
+shoot_sfx_path = Array[AudioStream]([ExtResource("3_iuexm"), ExtResource("4_4srx5"), ExtResource("5_qrakc")])
+reload_sfx_path = Array[AudioStream]([ExtResource("6_l0cd8")])
+fire_rate = 100.0
+bullet_spread = 30.0
+clip_size = 200
+damage = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2b6p")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Rifle" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(1, -9.53674e-07)
+scale = Vector2(0.916667, 0.916667)
+texture = ExtResource("2_qyohl")
+
+[node name="ShootingStart" type="Marker2D" parent="WeaponPivot/Rifle"]
+unique_name_in_owner = true
+position = Vector2(47.0909, -9.27273)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.111
+autostart = true
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_iuexm")
+
+[node name="sfx_reload" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_l0cd8")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

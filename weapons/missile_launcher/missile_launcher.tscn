@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0wwwjko5qxw1"]
+
+[ext_resource type="PackedScene" uid="uid://dkqn8dqqaq4vy" path="res://weapons/rocket_launcher/rocket_launcher.tscn" id="1_hepdq"]
+[ext_resource type="PackedScene" uid="uid://cnba4pgrmrjdi" path="res://scenes/lock_on_bullet.tscn" id="2_cynb7"]
+[ext_resource type="Texture2D" uid="uid://kd48fs6b0lud" path="res://weapons/missile_launcher/missile_launcher.png" id="3_bpdxt"]
+
+[node name="MissileLauncher" instance=ExtResource("1_hepdq")]
+bullet_scene = ExtResource("2_cynb7")
+is_explosive = true
+bullet_per_shot = 6
+bullet_spread = 90.0
+damage = 15
+speed = 500.0
+explosion_radius = 200.0
+
+[node name="RocketLauncher" parent="WeaponPivot" index="0"]
+texture = ExtResource("3_bpdxt")

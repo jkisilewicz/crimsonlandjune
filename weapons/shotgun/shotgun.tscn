@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwv7i1e2mxcma"]
+
+[ext_resource type="Script" path="res://weapons/shotgun/shotgun.gd" id="1_x0ouh"]
+[ext_resource type="PackedScene" uid="uid://vcqt635l56cm" path="res://scenes/bullet.tscn" id="2_ysu6d"]
+[ext_resource type="Texture2D" uid="uid://du5ol8333jh8i" path="res://weapons/shotgun/shotgun-big.png" id="2_yyluj"]
+[ext_resource type="AudioStream" uid="uid://bxlm6rlyruvcl" path="res://weapons/shotgun/shotgun.mp3" id="3_kidfu"]
+[ext_resource type="AudioStream" uid="uid://c0onmt34tyfn7" path="res://weapons/shotgun/shotgun_reload.mp3" id="4_5xebk"]
+[ext_resource type="AudioStream" uid="uid://bannqpbdkgdlw" path="res://weapons/shotgun/shotgun_reload_2.mp3" id="5_hvtem"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2b6p"]
+radius = 522.024
+
+[node name="ShotgunRoot" type="Area2D" node_paths=PackedStringArray("muzzle", "weapon_pivot", "shoot_sfx", "reload_sfx")]
+z_index = 30
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_x0ouh")
+muzzle = NodePath("WeaponPivot/Shotgun/ShootingStart")
+weapon_pivot = NodePath("WeaponPivot")
+bullet_scene = ExtResource("2_ysu6d")
+shoot_sfx = NodePath("sfx_shoot")
+reload_sfx = NodePath("sfx_reload")
+shoot_sfx_path = Array[AudioStream]([ExtResource("3_kidfu")])
+reload_sfx_path = Array[AudioStream]([ExtResource("4_5xebk"), ExtResource("5_hvtem")])
+fire_rate = 1.3
+bullet_per_shot = 6
+bullet_spread = 15.0
+clip_size = 2
+reload_time = 2.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2b6p")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Shotgun" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(62, -13)
+scale = Vector2(0.0631673, 0.0631673)
+texture = ExtResource("2_yyluj")
+
+[node name="ShootingStart" type="Marker2D" parent="WeaponPivot/Shotgun"]
+unique_name_in_owner = true
+position = Vector2(506.592, -158.31)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.111
+autostart = true
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_kidfu")
+volume_db = 10.306
+
+[node name="sfx_reload" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_5xebk")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://h3f18076o36"]
+
+[ext_resource type="Script" path="res://weapons/plasma_shotgun/plasma_shotgun.gd" id="1_sq17r"]
+[ext_resource type="Texture2D" uid="uid://bvhcdylbi5wwg" path="res://weapons/plasma_shotgun/plasma_shotgun.png" id="2_kl0vi"]
+[ext_resource type="PackedScene" uid="uid://vcqt635l56cm" path="res://scenes/bullet.tscn" id="2_weawf"]
+[ext_resource type="AudioStream" uid="uid://bqkih6xgbhaaq" path="res://sounds/laser_1.wav" id="3_pg68b"]
+[ext_resource type="AudioStream" uid="uid://cov7ka8magnrl" path="res://weapons/laser_shotgun/shotgun_reload.mp3" id="4_qfbp8"]
+[ext_resource type="AudioStream" uid="uid://c0onmt34tyfn7" path="res://weapons/shotgun/shotgun_reload.mp3" id="4_ujwjs"]
+[ext_resource type="AudioStream" uid="uid://g66wvv4xwmyi" path="res://weapons/laser_shotgun/shotgun_reload_2.mp3" id="5_g5uhh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2b6p"]
+radius = 522.024
+
+[node name="PlasmaShotgunRoot" type="Area2D" node_paths=PackedStringArray("muzzle", "weapon_pivot", "shoot_sfx", "reload_sfx")]
+z_index = 30
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_sq17r")
+muzzle = NodePath("WeaponPivot/PlasmaShotgun/ShootingStart")
+weapon_pivot = NodePath("WeaponPivot")
+bullet_scene = ExtResource("2_weawf")
+shoot_sfx = NodePath("sfx_shoot")
+reload_sfx = NodePath("sfx_reload")
+shoot_sfx_path = Array[AudioStream]([ExtResource("3_pg68b")])
+reload_sfx_path = Array[AudioStream]([ExtResource("4_qfbp8"), ExtResource("5_g5uhh")])
+fire_rate = 1.4
+bullet_per_shot = 6
+bullet_spread = 15.0
+clip_size = 2
+reload_time = 1.0
+damage = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2b6p")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="PlasmaShotgun" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(7.99998, 5)
+scale = Vector2(1.01952, 1.01952)
+texture = ExtResource("2_kl0vi")
+
+[node name="ShootingStart" type="Marker2D" parent="WeaponPivot/PlasmaShotgun"]
+unique_name_in_owner = true
+position = Vector2(80.4297, 3.9234)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.111
+autostart = true
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_pg68b")
+
+[node name="sfx_reload" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_ujwjs")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

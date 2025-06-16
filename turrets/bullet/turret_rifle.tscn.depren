@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8nunp7ntqbeg"]
+
+[ext_resource type="Script" path="res://turrets/bullet/turret_rifle.gd" id="1_bopt4"]
+[ext_resource type="Texture2D" uid="uid://pqa2lrqcf3wn" path="res://turrets/bullet/turret_rifle.png" id="2_c7gd8"]
+[ext_resource type="AudioStream" uid="uid://bxlm6rlyruvcl" path="res://weapons/shotgun/shotgun.mp3" id="3_k5ytr"]
+[ext_resource type="AudioStream" uid="uid://c0onmt34tyfn7" path="res://weapons/shotgun/shotgun_reload.mp3" id="4_adsfo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2b6p"]
+radius = 522.024
+
+[node name="TurretBullet" type="Area2D"]
+z_index = 30
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_bopt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9, -72)
+texture = ExtResource("2_c7gd8")
+
+[node name="ShootPoint" type="Marker2D" parent="Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(5, -17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2b6p")
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_k5ytr")
+volume_db = 10.306
+
+[node name="sfx_reload" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_adsfo")

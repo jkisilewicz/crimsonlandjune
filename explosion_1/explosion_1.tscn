@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://b7np1oaasbwx1"]
+
+[ext_resource type="Script" path="res://explosion_1/explosion_1.gd" id="1_wqgbd"]
+[ext_resource type="Texture2D" uid="uid://cco3fnkjav6tj" path="res://explosion_1/explosion_1_1.png" id="2_4w0gr"]
+[ext_resource type="Texture2D" uid="uid://cq7862jm7gyc6" path="res://explosion_1/explosion_1_2.png" id="3_r0vuh"]
+[ext_resource type="Texture2D" uid="uid://cwhkpisoodulu" path="res://explosion_1/explosion_1_3.png" id="4_qrblk"]
+[ext_resource type="Texture2D" uid="uid://ydg06ioyieka" path="res://explosion_1/explosion_1_4.png" id="5_2ifxk"]
+[ext_resource type="Texture2D" uid="uid://c6tw23rhuk2n5" path="res://explosion_1/explosion_1_5.png" id="6_ia4fx"]
+[ext_resource type="Texture2D" uid="uid://ddvoqx7ggqrb8" path="res://explosion_1/explosion_1_6.png" id="7_3i4rh"]
+[ext_resource type="Texture2D" uid="uid://bjkkthdrabnrf" path="res://explosion_1/explosion_1_7.png" id="8_xu0s3"]
+[ext_resource type="Texture2D" uid="uid://4hnrjaixm7y4" path="res://explosion_1/explosion_1_8.png" id="9_4ayrs"]
+[ext_resource type="Texture2D" uid="uid://cqbc5bhbf67bf" path="res://explosion_1/explosion_1_9.png" id="10_7sijh"]
+[ext_resource type="Texture2D" uid="uid://dt2j2s53kprra" path="res://explosion_1/explosion_1_10.png" id="11_kqik5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ie2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4w0gr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r0vuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qrblk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2ifxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ia4fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3i4rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xu0s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4ayrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7sijh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kqik5")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 60.0
+}]
+
+[node name="Explosion_1" type="Node2D"]
+z_index = 10
+script = ExtResource("1_wqgbd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8ie2b")
+animation = &"explode"
+autoplay = "explode"
+frame = 9
+frame_progress = 1.0

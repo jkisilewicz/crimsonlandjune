@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7dkvckoicsud"]
+
+[ext_resource type="Script" path="res://support_weapons/electric_drone/electric_drone.gd" id="1_cl1im"]
+[ext_resource type="PackedScene" uid="uid://ri6c6di06i0l" path="res://scenes/electric_bullet.tscn" id="2_5cbv1"]
+[ext_resource type="Script" path="res://scripts/cooldown.gd" id="3_uep4o"]
+
+[sub_resource type="Animation" id="Animation_77vwq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(105.8, -141.36)]
+}
+
+[sub_resource type="Animation" id="Animation_w81sx"]
+resource_name = "float"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -2, 1),
+"update": 0,
+"values": [Vector2(105.8, -141.36), Vector2(105.8, -170), Vector2(105.8, -141.36)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_quqio"]
+_data = {
+"RESET": SubResource("Animation_77vwq"),
+"float": SubResource("Animation_w81sx")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0qeqs"]
+radius = 600.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qd8lw"]
+size = Vector2(100, 100)
+
+[node name="ElectricDrone" type="Node2D" node_paths=PackedStringArray("cooldown")]
+script = ExtResource("1_cl1im")
+bullet = ExtResource("2_5cbv1")
+fire_rate = 2.0
+cooldown = NodePath("Cooldown")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_quqio")
+}
+autoplay = "float"
+
+[node name="ShootingRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShootingRange"]
+position = Vector2(0, -0.869923)
+shape = SubResource("CircleShape2D_0qeqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(105.8, -141.36)
+texture = SubResource("PlaceholderTexture2D_qd8lw")
+
+[node name="BulletSpawnPos" type="Marker2D" parent="Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(0.199997, 0)
+
+[node name="Cooldown" type="Node" parent="."]
+script = ExtResource("3_uep4o")

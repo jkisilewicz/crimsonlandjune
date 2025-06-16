@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6dqeq3r8ne5l"]
+
+[ext_resource type="Texture2D" uid="uid://c0bgn3ee8qxcj" path="res://weapons/pistol/pistol_power_up.png" id="1_tsao1"]
+
+[sub_resource type="GDScript" id="GDScript_q3gal"]
+script/source = "#pistol_gun.gd
+extends Area2D
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn5cw"]
+radius = 17.0294
+
+[node name="PistolGun" type="Area2D"]
+collision_layer = 0
+script = SubResource("GDScript_q3gal")
+
+[node name="PistolGun" type="Sprite2D" parent="."]
+position = Vector2(1, -25)
+scale = Vector2(0.0709371, 0.0709371)
+texture = ExtResource("1_tsao1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_rn5cw")

@@ -1,0 +1,3341 @@
+[gd_scene load_steps=16 format=4 uid="uid://bsig1usigbbuy"]
+
+[ext_resource type="Texture2D" uid="uid://i0vebd00hm4x" path="res://images/arena/land.png" id="4_38rj6"]
+[ext_resource type="Texture2D" uid="uid://hybueh1o7y3k" path="res://images/arena/rock_1.png" id="7_w0xnk"]
+[ext_resource type="Texture2D" uid="uid://4m25hj0mtok" path="res://images/arena/rock_4.png" id="13_mmnq2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k7wwr"]
+load_path = "res://.godot/imported/env_clouds.png-28d790def9247e51c19b24eae86c1a64.ctex"
+
+[sub_resource type="Animation" id="Animation_gwtgs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment/Clouds/Cloud11:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3784, 345)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environment/Clouds/Cloud1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(764, 358)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Environment/Clouds/Cloud13:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4005, 2983)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Environment/Clouds/Cloud5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-152, 2723)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Environment/Clouds/Cloud6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3293, 936)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Environment/Clouds/Cloud2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(85, 1505)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Environment/Clouds/Cloud16:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3434, 3542)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Environment/Clouds/Cloud7:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1380, 3802)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Environment/Clouds/Cloud3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(503, 1222)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Environment/Clouds/Cloud14:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4174, 3309)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Environment/Clouds/Cloud15:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4695, 2800)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Environment/Clouds/Cloud8:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 3383)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Environment/Clouds/Cloud4:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(164, 1669)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Environment/Clouds/Cloud9:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(328, 3474)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Environment/Clouds/Cloud10:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(933, 515)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Environment/Clouds/Cloud12:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4570, 1222)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Environment/Clouds/Cloud11:scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Environment/Clouds/Cloud1:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Environment/Clouds/Cloud13:scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Environment/Clouds/Cloud5:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Environment/Clouds/Cloud6:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Environment/Clouds/Cloud2:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Environment/Clouds/Cloud16:scale")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Environment/Clouds/Cloud7:scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Environment/Clouds/Cloud3:scale")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Environment/Clouds/Cloud14:scale")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Environment/Clouds/Cloud15:scale")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Environment/Clouds/Cloud8:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Environment/Clouds/Cloud4:scale")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Environment/Clouds/Cloud9:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Environment/Clouds/Cloud10:scale")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Environment/Clouds/Cloud12:scale")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Environment/Clouds/Cloud1:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Environment/Clouds/Cloud13:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Environment/Clouds/Cloud5:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Environment/Clouds/Cloud6:visible")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Environment/Clouds/Cloud2:visible")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Environment/Clouds/Cloud16:visible")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("Environment/Clouds/Cloud7:visible")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Environment/Clouds/Cloud3:visible")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("Environment/Clouds/Cloud14:visible")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("Environment/Clouds/Cloud15:visible")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("Environment/Clouds/Cloud8:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("Environment/Clouds/Cloud4:visible")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("Environment/Clouds/Cloud9:visible")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("Environment/Clouds/Cloud10:visible")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/46/type = "value"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("Environment/Clouds/Cloud12:visible")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/47/type = "value"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("Environment/Clouds/Cloud11:visible")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/48/type = "value"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("Environment/Clouds/Cloud17:position")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2737.13, 367.814)]
+}
+tracks/49/type = "value"
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/path = NodePath("Environment/Clouds/Cloud17:scale")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.35085, 1.15254)]
+}
+tracks/50/type = "value"
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/path = NodePath("Environment/Clouds/Cloud18:position")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1254.92, 3539.61)]
+}
+tracks/51/type = "value"
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/path = NodePath("Environment/Clouds/Cloud18:scale")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.898305, 0.898305)]
+}
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Environment/Clouds/Cloud19:position")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2912.7, 1260.29)]
+}
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("Environment/Clouds/Cloud19:scale")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.10169, 1.10169)]
+}
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("Environment/Clouds/Cloud20:position")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3251.5, 3437.56)]
+}
+tracks/55/type = "value"
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/path = NodePath("Environment/Clouds/Cloud20:scale")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/56/type = "value"
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/path = NodePath("Environment/Clouds/Cloud21:position")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3181.26, 3581.44)]
+}
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("Environment/Clouds/Cloud21:scale")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.949153, 0.949153)]
+}
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("Environment/Clouds/Cloud22:position")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-420.856, 367.017)]
+}
+tracks/59/type = "value"
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/path = NodePath("Environment/Clouds/Cloud22:scale")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/60/type = "value"
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/path = NodePath("Environment/Clouds/Cloud17:visible")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/61/type = "value"
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/path = NodePath("Environment/Clouds/Cloud18:visible")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/62/type = "value"
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/path = NodePath("Environment/Clouds/Cloud19:visible")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/63/type = "value"
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/path = NodePath("Environment/Clouds/Cloud20:visible")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/64/type = "value"
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/path = NodePath("Environment/Clouds/Cloud21:visible")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/65/type = "value"
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/path = NodePath("Environment/Clouds/Cloud22:visible")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/66/type = "value"
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/path = NodePath("Environment/Clouds/Cloud28:position")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-461, 1787)]
+}
+tracks/67/type = "value"
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/path = NodePath("Environment/Clouds/Cloud28:scale")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.10169, 1.10169)]
+}
+tracks/68/type = "value"
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/path = NodePath("Environment/Clouds/Cloud23:position")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1493, 3040)]
+}
+tracks/69/type = "value"
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/path = NodePath("Environment/Clouds/Cloud23:scale")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.898305, 0.898305)]
+}
+tracks/70/type = "value"
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/path = NodePath("Environment/Clouds/Cloud24:position")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-510, 2429)]
+}
+tracks/71/type = "value"
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/path = NodePath("Environment/Clouds/Cloud24:scale")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.15254, 1.15254)]
+}
+tracks/72/type = "value"
+tracks/72/imported = false
+tracks/72/enabled = true
+tracks/72/path = NodePath("Environment/Clouds/Cloud25:position")
+tracks/72/interp = 1
+tracks/72/loop_wrap = true
+tracks/72/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-712, 1373)]
+}
+tracks/73/type = "value"
+tracks/73/imported = false
+tracks/73/enabled = true
+tracks/73/path = NodePath("Environment/Clouds/Cloud25:scale")
+tracks/73/interp = 1
+tracks/73/loop_wrap = true
+tracks/73/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.10169, 1.10169)]
+}
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("Environment/Clouds/Cloud26:position")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-269, 2004)]
+}
+tracks/75/type = "value"
+tracks/75/imported = false
+tracks/75/enabled = true
+tracks/75/path = NodePath("Environment/Clouds/Cloud26:scale")
+tracks/75/interp = 1
+tracks/75/loop_wrap = true
+tracks/75/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.79661, 0.79661)]
+}
+tracks/76/type = "value"
+tracks/76/imported = false
+tracks/76/enabled = true
+tracks/76/path = NodePath("Environment/Clouds/Cloud27:position")
+tracks/76/interp = 1
+tracks/76/loop_wrap = true
+tracks/76/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1656, 2353)]
+}
+tracks/77/type = "value"
+tracks/77/imported = false
+tracks/77/enabled = true
+tracks/77/path = NodePath("Environment/Clouds/Cloud27:scale")
+tracks/77/interp = 1
+tracks/77/loop_wrap = true
+tracks/77/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.949153, 0.949153)]
+}
+tracks/78/type = "value"
+tracks/78/imported = false
+tracks/78/enabled = true
+tracks/78/path = NodePath("Environment/Clouds/Cloud23:visible")
+tracks/78/interp = 1
+tracks/78/loop_wrap = true
+tracks/78/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/79/type = "value"
+tracks/79/imported = false
+tracks/79/enabled = true
+tracks/79/path = NodePath("Environment/Clouds/Cloud24:visible")
+tracks/79/interp = 1
+tracks/79/loop_wrap = true
+tracks/79/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/80/type = "value"
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/path = NodePath("Environment/Clouds/Cloud25:visible")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/81/type = "value"
+tracks/81/imported = false
+tracks/81/enabled = true
+tracks/81/path = NodePath("Environment/Clouds/Cloud26:visible")
+tracks/81/interp = 1
+tracks/81/loop_wrap = true
+tracks/81/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/82/type = "value"
+tracks/82/imported = false
+tracks/82/enabled = true
+tracks/82/path = NodePath("Environment/Clouds/Cloud27:visible")
+tracks/82/interp = 1
+tracks/82/loop_wrap = true
+tracks/82/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/83/type = "value"
+tracks/83/imported = false
+tracks/83/enabled = true
+tracks/83/path = NodePath("Environment/Clouds/Cloud28:visible")
+tracks/83/interp = 1
+tracks/83/loop_wrap = true
+tracks/83/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/84/type = "value"
+tracks/84/imported = false
+tracks/84/enabled = true
+tracks/84/path = NodePath("Environment/Clouds/Cloud29:position")
+tracks/84/interp = 1
+tracks/84/loop_wrap = true
+tracks/84/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3890, 2612.5)]
+}
+tracks/85/type = "value"
+tracks/85/imported = false
+tracks/85/enabled = true
+tracks/85/path = NodePath("Environment/Clouds/Cloud29:scale")
+tracks/85/interp = 1
+tracks/85/loop_wrap = true
+tracks/85/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/86/type = "value"
+tracks/86/imported = false
+tracks/86/enabled = true
+tracks/86/path = NodePath("Environment/Clouds/Cloud30:position")
+tracks/86/interp = 1
+tracks/86/loop_wrap = true
+tracks/86/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3832, 1394.5)]
+}
+tracks/87/type = "value"
+tracks/87/imported = false
+tracks/87/enabled = true
+tracks/87/path = NodePath("Environment/Clouds/Cloud30:scale")
+tracks/87/interp = 1
+tracks/87/loop_wrap = true
+tracks/87/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/88/type = "value"
+tracks/88/imported = false
+tracks/88/enabled = true
+tracks/88/path = NodePath("Environment/Clouds/Cloud31:position")
+tracks/88/interp = 1
+tracks/88/loop_wrap = true
+tracks/88/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3472, 3106)]
+}
+tracks/89/type = "value"
+tracks/89/imported = false
+tracks/89/enabled = true
+tracks/89/path = NodePath("Environment/Clouds/Cloud31:scale")
+tracks/89/interp = 1
+tracks/89/loop_wrap = true
+tracks/89/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/90/type = "value"
+tracks/90/imported = false
+tracks/90/enabled = true
+tracks/90/path = NodePath("Environment/Clouds/Cloud32:position")
+tracks/90/interp = 1
+tracks/90/loop_wrap = true
+tracks/90/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3095, 2689.5)]
+}
+tracks/91/type = "value"
+tracks/91/imported = false
+tracks/91/enabled = true
+tracks/91/path = NodePath("Environment/Clouds/Cloud32:scale")
+tracks/91/interp = 1
+tracks/91/loop_wrap = true
+tracks/91/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/92/type = "value"
+tracks/92/imported = false
+tracks/92/enabled = true
+tracks/92/path = NodePath("Environment/Clouds/Cloud33:position")
+tracks/92/interp = 1
+tracks/92/loop_wrap = true
+tracks/92/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4016, 1558.5)]
+}
+tracks/93/type = "value"
+tracks/93/imported = false
+tracks/93/enabled = true
+tracks/93/path = NodePath("Environment/Clouds/Cloud33:scale")
+tracks/93/interp = 1
+tracks/93/loop_wrap = true
+tracks/93/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/94/type = "value"
+tracks/94/imported = false
+tracks/94/enabled = true
+tracks/94/path = NodePath("Environment/Clouds/Cloud29:visible")
+tracks/94/interp = 1
+tracks/94/loop_wrap = true
+tracks/94/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/95/type = "value"
+tracks/95/imported = false
+tracks/95/enabled = true
+tracks/95/path = NodePath("Environment/Clouds/Cloud30:visible")
+tracks/95/interp = 1
+tracks/95/loop_wrap = true
+tracks/95/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/96/type = "value"
+tracks/96/imported = false
+tracks/96/enabled = true
+tracks/96/path = NodePath("Environment/Clouds/Cloud31:visible")
+tracks/96/interp = 1
+tracks/96/loop_wrap = true
+tracks/96/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/97/type = "value"
+tracks/97/imported = false
+tracks/97/enabled = true
+tracks/97/path = NodePath("Environment/Clouds/Cloud32:visible")
+tracks/97/interp = 1
+tracks/97/loop_wrap = true
+tracks/97/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/98/type = "value"
+tracks/98/imported = false
+tracks/98/enabled = true
+tracks/98/path = NodePath("Environment/Clouds/Cloud33:visible")
+tracks/98/interp = 1
+tracks/98/loop_wrap = true
+tracks/98/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/99/type = "value"
+tracks/99/imported = false
+tracks/99/enabled = true
+tracks/99/path = NodePath("Environment/Clouds/Cloud34:position")
+tracks/99/interp = 1
+tracks/99/loop_wrap = true
+tracks/99/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3863, 1375)]
+}
+tracks/100/type = "value"
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/path = NodePath("Environment/Clouds/Cloud34:scale")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/101/type = "value"
+tracks/101/imported = false
+tracks/101/enabled = true
+tracks/101/path = NodePath("Environment/Clouds/Cloud35:position")
+tracks/101/interp = 1
+tracks/101/loop_wrap = true
+tracks/101/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3521.25, 3087)]
+}
+tracks/102/type = "value"
+tracks/102/imported = false
+tracks/102/enabled = true
+tracks/102/path = NodePath("Environment/Clouds/Cloud35:scale")
+tracks/102/interp = 1
+tracks/102/loop_wrap = true
+tracks/102/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/103/type = "value"
+tracks/103/imported = false
+tracks/103/enabled = true
+tracks/103/path = NodePath("Environment/Clouds/Cloud36:position")
+tracks/103/interp = 1
+tracks/103/loop_wrap = true
+tracks/103/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3609.25, 3161)]
+}
+tracks/104/type = "value"
+tracks/104/imported = false
+tracks/104/enabled = true
+tracks/104/path = NodePath("Environment/Clouds/Cloud36:scale")
+tracks/104/interp = 1
+tracks/104/loop_wrap = true
+tracks/104/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/105/type = "value"
+tracks/105/imported = false
+tracks/105/enabled = true
+tracks/105/path = NodePath("Environment/Clouds/Cloud37:position")
+tracks/105/interp = 1
+tracks/105/loop_wrap = true
+tracks/105/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3754.25, 1447)]
+}
+tracks/106/type = "value"
+tracks/106/imported = false
+tracks/106/enabled = true
+tracks/106/path = NodePath("Environment/Clouds/Cloud37:scale")
+tracks/106/interp = 1
+tracks/106/loop_wrap = true
+tracks/106/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/107/type = "value"
+tracks/107/imported = false
+tracks/107/enabled = true
+tracks/107/path = NodePath("Environment/Clouds/Cloud38:position")
+tracks/107/interp = 1
+tracks/107/loop_wrap = true
+tracks/107/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2915.25, 2833)]
+}
+tracks/108/type = "value"
+tracks/108/imported = false
+tracks/108/enabled = true
+tracks/108/path = NodePath("Environment/Clouds/Cloud38:scale")
+tracks/108/interp = 1
+tracks/108/loop_wrap = true
+tracks/108/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.898305, 0.898305)]
+}
+tracks/109/type = "value"
+tracks/109/imported = false
+tracks/109/enabled = true
+tracks/109/path = NodePath("Environment/Clouds/Cloud39:position")
+tracks/109/interp = 1
+tracks/109/loop_wrap = true
+tracks/109/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3270.25, 2207)]
+}
+tracks/110/type = "value"
+tracks/110/imported = false
+tracks/110/enabled = true
+tracks/110/path = NodePath("Environment/Clouds/Cloud39:scale")
+tracks/110/interp = 1
+tracks/110/loop_wrap = true
+tracks/110/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/111/type = "value"
+tracks/111/imported = false
+tracks/111/enabled = true
+tracks/111/path = NodePath("Environment/Clouds/Cloud34:visible")
+tracks/111/interp = 1
+tracks/111/loop_wrap = true
+tracks/111/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/112/type = "value"
+tracks/112/imported = false
+tracks/112/enabled = true
+tracks/112/path = NodePath("Environment/Clouds/Cloud35:visible")
+tracks/112/interp = 1
+tracks/112/loop_wrap = true
+tracks/112/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/113/type = "value"
+tracks/113/imported = false
+tracks/113/enabled = true
+tracks/113/path = NodePath("Environment/Clouds/Cloud36:visible")
+tracks/113/interp = 1
+tracks/113/loop_wrap = true
+tracks/113/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/114/type = "value"
+tracks/114/imported = false
+tracks/114/enabled = true
+tracks/114/path = NodePath("Environment/Clouds/Cloud37:visible")
+tracks/114/interp = 1
+tracks/114/loop_wrap = true
+tracks/114/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/115/type = "value"
+tracks/115/imported = false
+tracks/115/enabled = true
+tracks/115/path = NodePath("Environment/Clouds/Cloud38:visible")
+tracks/115/interp = 1
+tracks/115/loop_wrap = true
+tracks/115/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/116/type = "value"
+tracks/116/imported = false
+tracks/116/enabled = true
+tracks/116/path = NodePath("Environment/Clouds/Cloud39:visible")
+tracks/116/interp = 1
+tracks/116/loop_wrap = true
+tracks/116/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_75lmk"]
+resource_name = "float"
+length = 60.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Environment/Clouds/Cloud11:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-878, 345), Vector2(8280, 329), Vector2(-878, 345)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Environment/Clouds/Cloud1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-149, 377), Vector2(6644, 318), Vector2(-149, 377)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Environment/Clouds/Cloud13:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-856, 3012), Vector2(6701, 2975), Vector2(-856, 3012)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Environment/Clouds/Cloud5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-152, 2723), Vector2(6304, 2691), Vector2(-152, 2723)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Environment/Clouds/Cloud6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1169, 936), Vector2(6941, 936), Vector2(-1169, 936)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Environment/Clouds/Cloud2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-210, 1505), Vector2(7109, 1489), Vector2(-210, 1505)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Environment/Clouds/Cloud16:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-733, 3542), Vector2(6978, 3478), Vector2(-733, 3542)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Environment/Clouds/Cloud7:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1427, 3831), Vector2(6420, 3842), Vector2(-1427, 3831)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Environment/Clouds/Cloud3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-258, 1222), Vector2(6551, 1238), Vector2(-258, 1222)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Environment/Clouds/Cloud14:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-259, 3309), Vector2(7190, 3301), Vector2(-259, 3309)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Environment/Clouds/Cloud15:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-947, 2800), Vector2(7711, 2824), Vector2(-947, 2800)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Environment/Clouds/Cloud8:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-171, 3383), Vector2(6224, 3431), Vector2(-171, 3383)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Environment/Clouds/Cloud4:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-26, 1669), Vector2(6716, 1797), Vector2(-26, 1669)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Environment/Clouds/Cloud9:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-500, 3474), Vector2(6192, 3626), Vector2(-500, 3474)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Environment/Clouds/Cloud10:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-285, 515), Vector2(6173, 595), Vector2(-285, 515)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Environment/Clouds/Cloud12:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-444, 1222), Vector2(8090, 1286), Vector2(-444, 1222)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Environment/Clouds/Cloud11:scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Environment/Clouds/Cloud1:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.69, 1.3), Vector2(1, 1)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Environment/Clouds/Cloud13:scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Environment/Clouds/Cloud5:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Environment/Clouds/Cloud6:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Environment/Clouds/Cloud2:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Environment/Clouds/Cloud16:scale")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Environment/Clouds/Cloud7:scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Environment/Clouds/Cloud3:scale")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Environment/Clouds/Cloud14:scale")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Environment/Clouds/Cloud15:scale")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6, 0.6), Vector2(1, 1)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Environment/Clouds/Cloud8:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Environment/Clouds/Cloud4:scale")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Environment/Clouds/Cloud9:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Environment/Clouds/Cloud10:scale")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Environment/Clouds/Cloud12:scale")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 59, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Environment/Clouds/Cloud1:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Environment/Clouds/Cloud13:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Environment/Clouds/Cloud5:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Environment/Clouds/Cloud6:visible")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Environment/Clouds/Cloud2:visible")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Environment/Clouds/Cloud16:visible")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("Environment/Clouds/Cloud7:visible")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Environment/Clouds/Cloud3:visible")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("Environment/Clouds/Cloud14:visible")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("Environment/Clouds/Cloud15:visible")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("Environment/Clouds/Cloud8:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("Environment/Clouds/Cloud4:visible")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("Environment/Clouds/Cloud9:visible")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("Environment/Clouds/Cloud10:visible")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/46/type = "value"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("Environment/Clouds/Cloud12:visible")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/47/type = "value"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("Environment/Clouds/Cloud11:visible")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(0, 59, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/48/type = "value"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("Environment/Clouds/Cloud17:position")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1928, 1432), Vector2(-1928, 1432), Vector2(4049, 1536), Vector2(-1928, 1432)]
+}
+tracks/49/type = "value"
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/path = NodePath("Environment/Clouds/Cloud17:scale")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.35085, 1.15254), Vector2(1.35085, 1.15254), Vector2(1.35085, 1.15254), Vector2(1.35085, 1.15254)]
+}
+tracks/50/type = "value"
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/path = NodePath("Environment/Clouds/Cloud18:position")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-865, 3055), Vector2(-865, 3055), Vector2(3895.5, 3103.47), Vector2(-865, 3055)]
+}
+tracks/51/type = "value"
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/path = NodePath("Environment/Clouds/Cloud18:scale")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.898305, 0.898305), Vector2(0.898305, 0.898305), Vector2(0.898305, 0.898305), Vector2(0.898305, 0.898305)]
+}
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Environment/Clouds/Cloud19:position")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1050, 1157), Vector2(-1050, 1157), Vector2(3710.5, 1205.47), Vector2(-1050, 1157)]
+}
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("Environment/Clouds/Cloud19:scale")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.10169, 1.10169), Vector2(1.10169, 1.10169), Vector2(1.10169, 1.10169), Vector2(1.10169, 1.10169)]
+}
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("Environment/Clouds/Cloud20:position")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2964, 2611), Vector2(-2964, 2611), Vector2(4117, 2739), Vector2(-2964, 2611)]
+}
+tracks/55/type = "value"
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/path = NodePath("Environment/Clouds/Cloud20:scale")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/56/type = "value"
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/path = NodePath("Environment/Clouds/Cloud21:position")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-493, 2589), Vector2(-493, 2589), Vector2(4267.5, 2637.47), Vector2(-493, 2589)]
+}
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("Environment/Clouds/Cloud21:scale")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.949153, 0.949153), Vector2(0.949153, 0.949153), Vector2(0.949153, 0.949153), Vector2(0.949153, 0.949153)]
+}
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("Environment/Clouds/Cloud22:position")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1333, 2015), Vector2(-1333, 2015), Vector2(3427.5, 2063.47), Vector2(-1333, 2015)]
+}
+tracks/59/type = "value"
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/path = NodePath("Environment/Clouds/Cloud22:scale")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/keys = {
+"times": PackedFloat32Array(0, 12, 47, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/60/type = "value"
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/path = NodePath("Environment/Clouds/Cloud17:visible")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/keys = {
+"times": PackedFloat32Array(0, 47, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/61/type = "value"
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/path = NodePath("Environment/Clouds/Cloud18:visible")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/keys = {
+"times": PackedFloat32Array(0, 47, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/62/type = "value"
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/path = NodePath("Environment/Clouds/Cloud19:visible")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/keys = {
+"times": PackedFloat32Array(0, 47, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/63/type = "value"
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/path = NodePath("Environment/Clouds/Cloud20:visible")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/keys = {
+"times": PackedFloat32Array(0, 47, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/64/type = "value"
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/path = NodePath("Environment/Clouds/Cloud21:visible")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/keys = {
+"times": PackedFloat32Array(0, 47, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/65/type = "value"
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/path = NodePath("Environment/Clouds/Cloud22:visible")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/keys = {
+"times": PackedFloat32Array(0, 47, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/66/type = "value"
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/path = NodePath("Environment/Clouds/Cloud28:position")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-461, 1787), Vector2(-461, 1787), Vector2(3829.5, 1787), Vector2(-461, 1787)]
+}
+tracks/67/type = "value"
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/path = NodePath("Environment/Clouds/Cloud28:scale")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/68/type = "value"
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/path = NodePath("Environment/Clouds/Cloud23:position")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1493, 3040), Vector2(-1493, 3040), Vector2(3139.75, 3040), Vector2(-1493, 3040)]
+}
+tracks/69/type = "value"
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/path = NodePath("Environment/Clouds/Cloud23:scale")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/70/type = "value"
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/path = NodePath("Environment/Clouds/Cloud24:position")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-510, 2429), Vector2(-510, 2429), Vector2(4122.75, 2429), Vector2(-510, 2429)]
+}
+tracks/71/type = "value"
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/path = NodePath("Environment/Clouds/Cloud24:scale")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/72/type = "value"
+tracks/72/imported = false
+tracks/72/enabled = true
+tracks/72/path = NodePath("Environment/Clouds/Cloud25:position")
+tracks/72/interp = 1
+tracks/72/loop_wrap = true
+tracks/72/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-712, 1373), Vector2(-712, 1373), Vector2(3920.75, 1373), Vector2(-712, 1373)]
+}
+tracks/73/type = "value"
+tracks/73/imported = false
+tracks/73/enabled = true
+tracks/73/path = NodePath("Environment/Clouds/Cloud25:scale")
+tracks/73/interp = 1
+tracks/73/loop_wrap = true
+tracks/73/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("Environment/Clouds/Cloud26:position")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-269, 2004), Vector2(-269, 2004), Vector2(4021.5, 2004), Vector2(-269, 2004)]
+}
+tracks/75/type = "value"
+tracks/75/imported = false
+tracks/75/enabled = true
+tracks/75/path = NodePath("Environment/Clouds/Cloud26:scale")
+tracks/75/interp = 1
+tracks/75/loop_wrap = true
+tracks/75/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/76/type = "value"
+tracks/76/imported = false
+tracks/76/enabled = true
+tracks/76/path = NodePath("Environment/Clouds/Cloud27:position")
+tracks/76/interp = 1
+tracks/76/loop_wrap = true
+tracks/76/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1656, 2353), Vector2(-1656, 2353), Vector2(2634.5, 2353), Vector2(-1656, 2353)]
+}
+tracks/77/type = "value"
+tracks/77/imported = false
+tracks/77/enabled = true
+tracks/77/path = NodePath("Environment/Clouds/Cloud27:scale")
+tracks/77/interp = 1
+tracks/77/loop_wrap = true
+tracks/77/keys = {
+"times": PackedFloat32Array(0, 30, 56, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/78/type = "value"
+tracks/78/imported = false
+tracks/78/enabled = true
+tracks/78/path = NodePath("Environment/Clouds/Cloud23:visible")
+tracks/78/interp = 1
+tracks/78/loop_wrap = true
+tracks/78/keys = {
+"times": PackedFloat32Array(0, 56, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/79/type = "value"
+tracks/79/imported = false
+tracks/79/enabled = true
+tracks/79/path = NodePath("Environment/Clouds/Cloud24:visible")
+tracks/79/interp = 1
+tracks/79/loop_wrap = true
+tracks/79/keys = {
+"times": PackedFloat32Array(0, 56, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/80/type = "value"
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/path = NodePath("Environment/Clouds/Cloud25:visible")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/keys = {
+"times": PackedFloat32Array(0, 56, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/81/type = "value"
+tracks/81/imported = false
+tracks/81/enabled = true
+tracks/81/path = NodePath("Environment/Clouds/Cloud26:visible")
+tracks/81/interp = 1
+tracks/81/loop_wrap = true
+tracks/81/keys = {
+"times": PackedFloat32Array(0, 56, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/82/type = "value"
+tracks/82/imported = false
+tracks/82/enabled = true
+tracks/82/path = NodePath("Environment/Clouds/Cloud27:visible")
+tracks/82/interp = 1
+tracks/82/loop_wrap = true
+tracks/82/keys = {
+"times": PackedFloat32Array(0, 56, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/83/type = "value"
+tracks/83/imported = false
+tracks/83/enabled = true
+tracks/83/path = NodePath("Environment/Clouds/Cloud28:visible")
+tracks/83/interp = 1
+tracks/83/loop_wrap = true
+tracks/83/keys = {
+"times": PackedFloat32Array(0, 56, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/84/type = "value"
+tracks/84/imported = false
+tracks/84/enabled = true
+tracks/84/path = NodePath("Environment/Clouds/Cloud29:position")
+tracks/84/interp = 1
+tracks/84/loop_wrap = true
+tracks/84/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3890, 2612.5), Vector2(7216.5, 2622.5), Vector2(3890, 2612.5)]
+}
+tracks/85/type = "value"
+tracks/85/imported = false
+tracks/85/enabled = true
+tracks/85/path = NodePath("Environment/Clouds/Cloud29:scale")
+tracks/85/interp = 1
+tracks/85/loop_wrap = true
+tracks/85/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/86/type = "value"
+tracks/86/imported = false
+tracks/86/enabled = true
+tracks/86/path = NodePath("Environment/Clouds/Cloud30:position")
+tracks/86/interp = 1
+tracks/86/loop_wrap = true
+tracks/86/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3832, 1394.5), Vector2(7158.5, 1404.5), Vector2(3832, 1394.5)]
+}
+tracks/87/type = "value"
+tracks/87/imported = false
+tracks/87/enabled = true
+tracks/87/path = NodePath("Environment/Clouds/Cloud30:scale")
+tracks/87/interp = 1
+tracks/87/loop_wrap = true
+tracks/87/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/88/type = "value"
+tracks/88/imported = false
+tracks/88/enabled = true
+tracks/88/path = NodePath("Environment/Clouds/Cloud31:position")
+tracks/88/interp = 1
+tracks/88/loop_wrap = true
+tracks/88/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3472, 3106), Vector2(6798.5, 3116), Vector2(3472, 3106)]
+}
+tracks/89/type = "value"
+tracks/89/imported = false
+tracks/89/enabled = true
+tracks/89/path = NodePath("Environment/Clouds/Cloud31:scale")
+tracks/89/interp = 1
+tracks/89/loop_wrap = true
+tracks/89/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/90/type = "value"
+tracks/90/imported = false
+tracks/90/enabled = true
+tracks/90/path = NodePath("Environment/Clouds/Cloud32:position")
+tracks/90/interp = 1
+tracks/90/loop_wrap = true
+tracks/90/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3095, 2689.5), Vector2(6421.5, 2699.5), Vector2(3095, 2689.5)]
+}
+tracks/91/type = "value"
+tracks/91/imported = false
+tracks/91/enabled = true
+tracks/91/path = NodePath("Environment/Clouds/Cloud32:scale")
+tracks/91/interp = 1
+tracks/91/loop_wrap = true
+tracks/91/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/92/type = "value"
+tracks/92/imported = false
+tracks/92/enabled = true
+tracks/92/path = NodePath("Environment/Clouds/Cloud33:position")
+tracks/92/interp = 1
+tracks/92/loop_wrap = true
+tracks/92/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4016, 1558.5), Vector2(7342.5, 1568.5), Vector2(4016, 1558.5)]
+}
+tracks/93/type = "value"
+tracks/93/imported = false
+tracks/93/enabled = true
+tracks/93/path = NodePath("Environment/Clouds/Cloud33:scale")
+tracks/93/interp = 1
+tracks/93/loop_wrap = true
+tracks/93/keys = {
+"times": PackedFloat32Array(0, 20, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/94/type = "value"
+tracks/94/imported = false
+tracks/94/enabled = true
+tracks/94/path = NodePath("Environment/Clouds/Cloud29:visible")
+tracks/94/interp = 1
+tracks/94/loop_wrap = true
+tracks/94/keys = {
+"times": PackedFloat32Array(0, 20, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/95/type = "value"
+tracks/95/imported = false
+tracks/95/enabled = true
+tracks/95/path = NodePath("Environment/Clouds/Cloud30:visible")
+tracks/95/interp = 1
+tracks/95/loop_wrap = true
+tracks/95/keys = {
+"times": PackedFloat32Array(0, 20, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/96/type = "value"
+tracks/96/imported = false
+tracks/96/enabled = true
+tracks/96/path = NodePath("Environment/Clouds/Cloud31:visible")
+tracks/96/interp = 1
+tracks/96/loop_wrap = true
+tracks/96/keys = {
+"times": PackedFloat32Array(0, 20, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/97/type = "value"
+tracks/97/imported = false
+tracks/97/enabled = true
+tracks/97/path = NodePath("Environment/Clouds/Cloud32:visible")
+tracks/97/interp = 1
+tracks/97/loop_wrap = true
+tracks/97/keys = {
+"times": PackedFloat32Array(0, 20, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/98/type = "value"
+tracks/98/imported = false
+tracks/98/enabled = true
+tracks/98/path = NodePath("Environment/Clouds/Cloud33:visible")
+tracks/98/interp = 1
+tracks/98/loop_wrap = true
+tracks/98/keys = {
+"times": PackedFloat32Array(0, 20, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/99/type = "value"
+tracks/99/imported = false
+tracks/99/enabled = true
+tracks/99/path = NodePath("Environment/Clouds/Cloud34:position")
+tracks/99/interp = 1
+tracks/99/loop_wrap = true
+tracks/99/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3863, 1375), Vector2(3863, 1375), Vector2(7431, 1375), Vector2(3863, 1375)]
+}
+tracks/100/type = "value"
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/path = NodePath("Environment/Clouds/Cloud34:scale")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/101/type = "value"
+tracks/101/imported = false
+tracks/101/enabled = true
+tracks/101/path = NodePath("Environment/Clouds/Cloud35:position")
+tracks/101/interp = 1
+tracks/101/loop_wrap = true
+tracks/101/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3521.25, 3087), Vector2(3521.25, 3087), Vector2(7089.25, 3087), Vector2(3521.25, 3087)]
+}
+tracks/102/type = "value"
+tracks/102/imported = false
+tracks/102/enabled = true
+tracks/102/path = NodePath("Environment/Clouds/Cloud35:scale")
+tracks/102/interp = 1
+tracks/102/loop_wrap = true
+tracks/102/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/103/type = "value"
+tracks/103/imported = false
+tracks/103/enabled = true
+tracks/103/path = NodePath("Environment/Clouds/Cloud36:position")
+tracks/103/interp = 1
+tracks/103/loop_wrap = true
+tracks/103/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3609.25, 3161), Vector2(3609.25, 3161), Vector2(7177.25, 3161), Vector2(3609.25, 3161)]
+}
+tracks/104/type = "value"
+tracks/104/imported = false
+tracks/104/enabled = true
+tracks/104/path = NodePath("Environment/Clouds/Cloud36:scale")
+tracks/104/interp = 1
+tracks/104/loop_wrap = true
+tracks/104/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/105/type = "value"
+tracks/105/imported = false
+tracks/105/enabled = true
+tracks/105/path = NodePath("Environment/Clouds/Cloud37:position")
+tracks/105/interp = 1
+tracks/105/loop_wrap = true
+tracks/105/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3754.25, 1447), Vector2(3754.25, 1447), Vector2(7322.25, 1447), Vector2(3754.25, 1447)]
+}
+tracks/106/type = "value"
+tracks/106/imported = false
+tracks/106/enabled = true
+tracks/106/path = NodePath("Environment/Clouds/Cloud37:scale")
+tracks/106/interp = 1
+tracks/106/loop_wrap = true
+tracks/106/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/107/type = "value"
+tracks/107/imported = false
+tracks/107/enabled = true
+tracks/107/path = NodePath("Environment/Clouds/Cloud38:position")
+tracks/107/interp = 1
+tracks/107/loop_wrap = true
+tracks/107/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2915.25, 2833), Vector2(2915.25, 2833), Vector2(6483.25, 2833), Vector2(2915.25, 2833)]
+}
+tracks/108/type = "value"
+tracks/108/imported = false
+tracks/108/enabled = true
+tracks/108/path = NodePath("Environment/Clouds/Cloud38:scale")
+tracks/108/interp = 1
+tracks/108/loop_wrap = true
+tracks/108/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.898305, 0.898305), Vector2(0.898305, 0.898305), Vector2(1.3, 1.3), Vector2(0.898305, 0.898305)]
+}
+tracks/109/type = "value"
+tracks/109/imported = false
+tracks/109/enabled = true
+tracks/109/path = NodePath("Environment/Clouds/Cloud39:position")
+tracks/109/interp = 1
+tracks/109/loop_wrap = true
+tracks/109/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3270.25, 2207), Vector2(3270.25, 2207), Vector2(6838.25, 2207), Vector2(3270.25, 2207)]
+}
+tracks/110/type = "value"
+tracks/110/imported = false
+tracks/110/enabled = true
+tracks/110/path = NodePath("Environment/Clouds/Cloud39:scale")
+tracks/110/interp = 1
+tracks/110/loop_wrap = true
+tracks/110/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+tracks/111/type = "value"
+tracks/111/imported = false
+tracks/111/enabled = true
+tracks/111/path = NodePath("Environment/Clouds/Cloud34:visible")
+tracks/111/interp = 1
+tracks/111/loop_wrap = true
+tracks/111/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
+}
+tracks/112/type = "value"
+tracks/112/imported = false
+tracks/112/enabled = true
+tracks/112/path = NodePath("Environment/Clouds/Cloud35:visible")
+tracks/112/interp = 1
+tracks/112/loop_wrap = true
+tracks/112/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
+}
+tracks/113/type = "value"
+tracks/113/imported = false
+tracks/113/enabled = true
+tracks/113/path = NodePath("Environment/Clouds/Cloud36:visible")
+tracks/113/interp = 1
+tracks/113/loop_wrap = true
+tracks/113/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
+}
+tracks/114/type = "value"
+tracks/114/imported = false
+tracks/114/enabled = true
+tracks/114/path = NodePath("Environment/Clouds/Cloud37:visible")
+tracks/114/interp = 1
+tracks/114/loop_wrap = true
+tracks/114/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
+}
+tracks/115/type = "value"
+tracks/115/imported = false
+tracks/115/enabled = true
+tracks/115/path = NodePath("Environment/Clouds/Cloud38:visible")
+tracks/115/interp = 1
+tracks/115/loop_wrap = true
+tracks/115/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
+}
+tracks/116/type = "value"
+tracks/116/imported = false
+tracks/116/enabled = true
+tracks/116/path = NodePath("Environment/Clouds/Cloud39:visible")
+tracks/116/interp = 1
+tracks/116/loop_wrap = true
+tracks/116/keys = {
+"times": PackedFloat32Array(0, 22, 35, 60.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_an3cu"]
+_data = {
+"RESET": SubResource("Animation_gwtgs"),
+"float": SubResource("Animation_75lmk")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b1ac7"]
+load_path = "res://.godot/imported/env_rocks.png-12fea7b4727d1ddca76c06fd66910dd0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d6a6t"]
+load_path = "res://.godot/imported/env_ground.png-b29c6c47be0779294403cf6615d9dae2.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0h6rx"]
+texture = ExtResource("4_38rj6")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y15ob"]
+tile_size = Vector2i(128, 128)
+sources/4 = SubResource("TileSetAtlasSource_0h6rx")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h36ba"]
+load_path = "res://.godot/imported/road_6.png-26e3fb20728c714ee34c95cbcbbd12db.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dvh4i"]
+load_path = "res://.godot/imported/shadow.png-f4b948130f51dfdf8369bd133baa3734.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_avcu3"]
+load_path = "res://.godot/imported/road_5.png-371333d07ceed7264f8ad3103ba4d516.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mv6p5"]
+load_path = "res://.godot/imported/road_1.png-8954602cf8399996b0fff54288e2102d.ctex"
+
+[node name="Arena" type="Node2D"]
+y_sort_enabled = true
+metadata/_edit_vertical_guides_ = [962.0]
+metadata/_edit_horizontal_guides_ = [541.0]
+
+[node name="Environment" type="Node2D" parent="."]
+top_level = true
+z_index = -1
+metadata/_edit_lock_ = true
+
+[node name="Sky" type="ColorRect" parent="Environment"]
+custom_minimum_size = Vector2(7000, 6000)
+offset_left = -2048.0
+offset_top = -1498.0
+offset_right = 3952.0
+offset_bottom = 2502.0
+color = Color(0.0383508, 0.101262, 0.132698, 1)
+metadata/_edit_lock_ = true
+
+[node name="Clouds" type="Node2D" parent="Environment"]
+modulate = Color(1, 1, 1, 0.792157)
+position = Vector2(-1978.11, -1483)
+metadata/_edit_lock_ = true
+
+[node name="Cloud1" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(764, 358)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(12, 7, 455, 168)
+
+[node name="Cloud13" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(4005, 2983)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(12, 7, 455, 168)
+
+[node name="Cloud5" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-152, 2723)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(12, 7, 455, 168)
+
+[node name="Cloud6" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3293, 936)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(12, 7, 455, 168)
+
+[node name="Cloud2" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(85, 1505)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(10, 189, 644, 165)
+
+[node name="Cloud16" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3434, 3542)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(10, 189, 644, 165)
+
+[node name="Cloud7" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(1380, 3802)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(10, 189, 644, 165)
+
+[node name="Cloud3" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(503, 1222)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud14" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(4174, 3309)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud15" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(4695, 2800)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud8" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(152, 3383)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud4" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(164, 1669)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud9" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(328, 3474)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud10" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(933, 515)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud12" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(4570, 1222)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud11" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3784, 345)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud17" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-2737.13, 367.814)
+scale = Vector2(1.35085, 1.15254)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(12, 7, 455, 168)
+
+[node name="Cloud18" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-1254.92, 3539.61)
+scale = Vector2(0.898305, 0.898305)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(10, 189, 644, 165)
+
+[node name="Cloud19" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-2912.7, 1260.29)
+scale = Vector2(1.10169, 1.10169)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud20" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-3251.5, 3437.56)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud21" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-3181.26, 3581.44)
+scale = Vector2(0.949153, 0.949153)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud22" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-420.856, 367.017)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud23" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-1493, 3040)
+scale = Vector2(0.898305, 0.898305)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(12, 7, 455, 168)
+
+[node name="Cloud24" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-510, 2429)
+scale = Vector2(1.15254, 1.15254)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(10, 189, 644, 165)
+
+[node name="Cloud25" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-712, 1373)
+scale = Vector2(1.10169, 1.10169)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud26" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-269, 2004)
+scale = Vector2(0.79661, 0.79661)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud27" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-1656, 2353)
+scale = Vector2(0.949153, 0.949153)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud28" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(-461, 1787)
+scale = Vector2(1.10169, 1.10169)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud29" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3890, 2612.5)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(12, 7, 455, 168)
+
+[node name="Cloud30" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3832, 1394.5)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(10, 189, 644, 165)
+
+[node name="Cloud31" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3472, 3106)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(10, 189, 644, 165)
+
+[node name="Cloud32" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3095, 2689.5)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud33" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(4016, 1558.5)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud34" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3863, 1375)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(12, 7, 455, 168)
+
+[node name="Cloud35" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3521.25, 3087)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud36" type="Sprite2D" parent="Environment/Clouds"]
+position = Vector2(3609.25, 3161)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(507, 7, 193, 88)
+
+[node name="Cloud37" type="Sprite2D" parent="Environment/Clouds"]
+visible = false
+position = Vector2(3754.25, 1447)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(501, 99, 210, 92)
+
+[node name="Cloud38" type="Sprite2D" parent="Environment/Clouds"]
+visible = false
+position = Vector2(2915.25, 2833)
+scale = Vector2(0.898305, 0.898305)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(10, 189, 644, 165)
+
+[node name="Cloud39" type="Sprite2D" parent="Environment/Clouds"]
+visible = false
+position = Vector2(3270.25, 2207)
+texture = SubResource("CompressedTexture2D_k7wwr")
+region_enabled = true
+region_rect = Rect2(10, 189, 644, 165)
+
+[node name="CloudsAnimationPlayer" type="AnimationPlayer" parent="Environment"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_an3cu")
+}
+autoplay = "float"
+
+[node name="Ground" type="Node2D" parent="Environment"]
+metadata/_edit_lock_ = true
+
+[node name="Rocks" type="Sprite2D" parent="Environment/Ground"]
+visible = false
+position = Vector2(986, 1264)
+texture = SubResource("CompressedTexture2D_b1ac7")
+
+[node name="Floor" type="Sprite2D" parent="Environment/Ground"]
+visible = false
+position = Vector2(938, 568)
+texture = SubResource("CompressedTexture2D_d6a6t")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Environment/Ground"]
+tile_map_data = PackedByteArray("AAAEAAUABAAAAAAAAAAFAAUABAAAAAAAAAABAAAABAABAAEAAAACAAAABAABAAEAAAADAAAABAACAAIAAAAEAAAABAABAAMAAAAFAAEABAACAAIAAAAEAAEABAABAAMAAAAEAAIABAACAAMAAAADAAIABAACAAAAAAACAAIABAAAAAMAAAABAAIABAABAAMAAAACAAEABAADAAIAAAADAAEABAAAAAAAAAAFAAAABAABAAEAAAABAAEABAADAAMAAAACAAMABAADAAIAAAACAAQABAABAAEAAAACAP3/BAACAAEAAAADAP3/BAAAAAMAAAAEAP3/BAABAAIAAAAFAP3/BAABAAAAAAAFAP7/BAABAAIAAAAGAP7/BAADAAEAAAAGAP//BAABAAMAAAAGAAAABAACAAEAAAAGAAEABAABAAMAAAAFAP//BAACAAMAAAAEAP7/BAADAAEAAAADAP7/BAABAAEAAAACAP7/BAACAAEAAAACAP//BAAAAAIAAAAEAP//BAABAAIAAAADAP//BAABAAMAAAAAAAIABAADAAIAAAAAAAEABAACAAEAAAAAAAAABAACAAIAAAD//wAABAAAAAAAAAAAAP//BAAAAAAAAAABAP//BAABAAMAAAABAP7/BAAAAAAAAAAHAP7/BAACAAMAAAAGAP3/BAAAAAIAAAAIAP3/BAADAAIAAAAHAP3/BAADAAMAAAAJAP3/BAABAAMAAAAKAP3/BAABAAIAAAAKAP7/BAAAAAAAAAAJAP7/BAADAAIAAAAIAP7/BAABAAEAAAAIAP//BAACAAIAAAAHAP//BAADAAMAAAAJAP//BAACAAEAAAAKAP//BAACAAAAAAALAP//BAAAAAAAAAAMAP//BAAAAAAAAAAMAP7/BAABAAEAAAALAP7/BAACAAEAAAALAP3/BAACAAMAAAAMAP3/BAACAAAAAAANAP3/BAAAAAEAAAANAP7/BAACAAMAAAANAP//BAAAAAAAAAAOAP//BAADAAIAAAAOAP7/BAAAAAAAAAAIAAAABAAAAAAAAAAHAAAABAAAAAMAAAAJAAAABAACAAEAAAAKAAEABAACAAMAAAALAAEABAACAAMAAAAOAAEABAAAAAAAAAAPAAEABAAAAAIAAAAOAAIABAADAAMAAAANAAIABAACAAMAAAAMAAIABAABAAEAAAAJAAEABAABAAAAAAAIAAEABAABAAMAAAAHAAEABAADAAIAAAAKAAAABAACAAIAAAALAAAABAACAAEAAAAMAAAABAACAAEAAAANAAAABAACAAEAAAAPAP//BAADAAIAAAAPAP7/BAACAAIAAAAQAP7/BAAAAAMAAAD//wEABAACAAEAAAD/////BAABAAAAAAD+////BAACAAIAAAD+/wAABAACAAEAAAD9/wAABAABAAIAAAD9/wEABAADAAMAAAD9////BAAAAAEAAAADAAMABAABAAEAAAD8/wEABAADAAIAAAD8/wAABAACAAMAAAD+/wEABAABAAMAAAD8/wIABAADAAEAAAD7/wIABAADAAEAAAD9/wIABAABAAEAAAD+/wIABAABAAEAAAD//wIABAACAAIAAAAAAAMABAADAAMAAAD//wMABAACAAIAAAD+/wMABAADAAIAAAD9/wMABAABAAMAAAD8/wMABAACAAEAAAD7/wMABAABAAIAAAD6/wMABAACAAEAAAD6/wQABAADAAMAAAD7/wQABAABAAEAAAD8/wQABAACAAIAAAD9/wQABAADAAEAAAD+/wQABAACAAAAAAD//wQABAACAAEAAAAAAAQABAABAAMAAAABAAQABAABAAEAAAABAAMABAABAAEAAAD8/wUABAACAAMAAAD7/wUABAADAAEAAAD9/wUABAABAAIAAAD+/wUABAABAAEAAAD//wUABAACAAIAAAADAAQABAACAAAAAAAAAAYABAABAAEAAAD//wYABAAAAAAAAAAAAAUABAAAAAAAAAD+/wYABAADAAEAAAD9/wYABAACAAIAAAD8/wYABAADAAIAAAD7/wYABAAAAAMAAAD8/wcABAACAAAAAAD9/wcABAACAAAAAAD+/wcABAABAAMAAAD//wcABAACAAMAAAAAAAcABAABAAIAAAABAAcABAABAAIAAAACAAcABAACAAIAAAADAAcABAAAAAIAAAACAAgABAACAAIAAAABAAgABAAAAAAAAAAAAAgABAACAAEAAAD//wgABAABAAIAAAD+/wgABAACAAIAAAAEAAcABAACAAIAAAAFAAcABAACAAIAAAAFAAgABAACAAAAAAAEAAkABAACAAIAAAADAAkABAACAAAAAAADAAgABAAAAAAAAAAEAAgABAAAAAAAAAAFAAkABAACAAIAAAAFAAoABAABAAIAAAAGAAkABAACAAAAAAAHAAkABAACAAMAAAAIAAkABAABAAEAAAAIAAgABAACAAIAAAAJAAgABAABAAEAAAAJAAcABAADAAMAAAAIAAcABAACAAIAAAAHAAcABAABAAIAAAAGAAcABAABAAAAAAAGAAgABAABAAIAAAAHAAgABAACAAIAAAAEAAYABAABAAMAAAADAAYABAABAAEAAAABAAYABAABAAIAAAAFAAYABAADAAMAAAAGAAYABAACAAMAAAAHAAYABAADAAEAAAAIAAYABAACAAEAAAAJAAYABAABAAMAAAAKAAYABAABAAMAAAALAAYABAAAAAMAAAAMAAYABAACAAEAAAANAAYABAABAAIAAAAOAAYABAACAAEAAAAPAAYABAABAAIAAAAQAAYABAAAAAAAAAARAAYABAAAAAMAAAASAAYABAACAAEAAAATAAYABAABAAAAAAARAAcABAABAAMAAAAQAAcABAABAAAAAAAQAAgABAACAAEAAAAPAAgABAABAAAAAAAOAAkABAACAAIAAAAOAAgABAABAAMAAAAOAAcABAAAAAIAAAAPAAUABAABAAIAAAAOAAUABAABAAMAAAAMAAcABAAAAAMAAAALAAcABAACAAMAAAALAAgABAAAAAMAAAAKAAgABAADAAMAAAAJAAkABAABAAIAAAAKAAcABAABAAMAAAAKAAkABAACAAAAAAANAAcABAADAAMAAAAPAAcABAACAAEAAAAMAAgABAACAAAAAAAMAAUABAABAAEAAAANAAUABAAAAAIAAAAQAAUABAACAAAAAAARAAUABAABAAAAAAASAAUABAABAAMAAAATAAUABAABAAEAAAATAAQABAAAAAMAAAAUAAQABAABAAEAAAAUAAMABAACAAEAAAAUAAIABAABAAAAAAAUAAEABAADAAEAAAATAAEABAACAAIAAAATAAAABAADAAEAAAASAAAABAACAAAAAAASAP//BAAAAAMAAAASAP7/BAACAAEAAAARAP7/BAACAAEAAAARAP//BAABAAMAAAARAAAABAABAAEAAAARAAEABAACAAMAAAARAAIABAACAAMAAAARAAMABAACAAAAAAARAAQABAACAAEAAAASAAQABAADAAMAAAATAAMABAAAAAIAAAATAAIABAACAAAAAAASAAIABAABAAEAAAASAAEABAABAAMAAAASAAMABAACAAIAAAAQAAMABAABAAAAAAAQAAQABAABAAAAAAAPAAQABAACAAAAAAAQAAIABAABAAEAAAAQAAEABAABAAIAAAAQAAAABAACAAEAAAAQAP//BAACAAAAAAAPAAIABAABAAAAAAAPAAMABAABAAEAAAAOAAQABAABAAIAAAAOAAMABAACAAIAAAANAAQABAABAAAAAAALAAUABAACAAAAAAAMAAQABAABAAIAAAAMAAMABAACAAIAAAALAAMABAACAAEAAAALAAQABAADAAIAAAAKAAUABAABAAIAAAANAAMABAACAAIAAAAFAAIABAACAAEAAAAGAAIABAACAAEAAAAHAAIABAABAAEAAAAIAAIABAABAAAAAAAJAAMABAABAAEAAAAKAAMABAABAAAAAAAEAAMABAADAAIAAAAFAAMABAABAAIAAAAJAAQABAACAAAAAAAIAAQABAAAAAIAAAAHAAQABAADAAMAAAAGAAQABAABAAMAAAAKAAQABAABAAAAAAAJAAUABAABAAAAAAAIAAUABAACAAEAAAAHAAUABAACAAAAAAAGAAUABAABAAIAAAACAAUABAACAAIAAAAPAAAABAAAAAMAAAAOAAAABAADAAIAAAANAAEABAAAAAMAAAAMAAEABAACAAAAAAALAAIABAADAAIAAAAKAAIABAABAAEAAAAJAAIABAABAAMAAAAIAAMABAACAAIAAAAHAAMABAABAAEAAAAGAAMABAABAAMAAAAFAAQABAAAAAAAAAAEAAQABAACAAIAAAADAAUABAABAAMAAAACAAYABAACAAEAAAADAAoABAACAAMAAAAEAAoABAACAAAAAAAGAAoABAABAAAAAAAHAAoABAACAAMAAAAIAAoABAACAAEAAAABAAUABAABAAEAAAD6/wUABAACAAIAAAD6/wYABAACAAAAAAD6/wcABAABAAMAAAD7/wcABAACAAMAAAD7/wgABAABAAEAAAD8/wgABAACAAMAAAD9/wgABAABAAAAAAD9/wkABAACAAIAAAD+/wkABAABAAAAAAD+/woABAACAAIAAAD//woABAACAAMAAAD//wsABAACAAEAAAAAAAsABAACAAAAAAAAAAwABAABAAEAAAABAA0ABAACAAMAAAAAAA0ABAACAAEAAAD//wwABAACAAAAAAD+/wwABAACAAEAAAD+/wsABAABAAIAAAD9/wsABAACAAIAAAD9/woABAACAAEAAAD8/woABAABAAMAAAD8/wkABAABAAAAAAD7/wkABAABAAMAAAD6/wgABAACAAIAAAD7/woABAACAAEAAAD8/wsABAABAAMAAAD9/wwABAACAAAAAAD9/w0ABAACAAIAAAD+/w4ABAABAAMAAAD//w4ABAABAAEAAAD//w8ABAABAAMAAAAAAA8ABAABAAIAAAABAA8ABAACAAMAAAABABAABAABAAAAAAACABAABAABAAIAAAADABAABAACAAAAAAACAA8ABAABAAAAAAABAA4ABAABAAAAAAAAAA4ABAABAAMAAAD//w0ABAABAAMAAAD+/w0ABAACAAIAAAAAAAoABAACAAIAAAAAAAkABAABAAIAAAABAAkABAACAAAAAAABAAoABAABAAIAAAABAAsABAABAAAAAAABAAwABAABAAIAAAACAAoABAACAAEAAAACAAsABAABAAIAAAADAAsABAACAAAAAAADAAwABAACAAIAAAADAA0ABAACAAAAAAAEAA0ABAABAAMAAAAEAA4ABAACAAEAAAAFAA8ABAAAAAIAAAAFAA4ABAACAAAAAAACAAwABAACAAAAAAACABEABAABAAEAAAACABIABAACAAIAAAADABMABAACAAEAAAADABQABAACAAIAAAAEABUABAACAAEAAAAFABYABAABAAEAAAAFABcABAABAAMAAAAGABgABAACAAIAAAAHABkABAACAAMAAAAIABoABAACAAEAAAAJABsABAACAAAAAAAKABsABAACAAEAAAALABwABAABAAEAAAAMABwABAACAAEAAAANABwABAABAAMAAAAOABsABAACAAMAAAAPABoABAACAAMAAAAPABkABAACAAMAAAAQABgABAABAAEAAAAQABcABAACAAEAAAAQABYABAACAAIAAAARABUABAABAAIAAAARABQABAABAAEAAAARABMABAABAAAAAAASABIABAABAAIAAAASABEABAABAAMAAAASABAABAABAAEAAAARABAABAABAAIAAAARAA8ABAABAAMAAAAQAA4ABAABAAMAAAAPAA4ABAABAAAAAAAOAA4ABAACAAIAAAD//wkABAACAAIAAAACAAkABAABAAIAAAACAA0ABAABAAMAAAACAA4ABAACAAEAAAAEABAABAABAAAAAAAEAA8ABAABAAMAAAADAA8ABAACAAMAAAADAA4ABAACAAEAAAAFAA0ABAABAAEAAAAGAA0ABAACAAIAAAAGAAwABAABAAMAAAAGAAsABAACAAAAAAAFAAsABAACAAEAAAAEAAsABAACAAAAAAAFAAwABAACAAIAAAAHAAwABAABAAEAAAAEAAwABAACAAAAAAAIAAsABAABAAEAAAAJAAsABAABAAEAAAAKAAsABAABAAMAAAALAAsABAABAAAAAAAMAAsABAABAAMAAAANAAsABAABAAAAAAAOAAsABAACAAIAAAAPAAsABAABAAIAAAAQAAsABAABAAIAAAARAAsABAABAAIAAAAPAAoABAACAAAAAAAOAAoABAABAAEAAAANAAoABAACAAMAAAAMAAoABAABAAAAAAALAAkABAACAAIAAAAJAAwABAABAAIAAAAHAAsABAABAAAAAAAIAAwABAACAAIAAAAKAAwABAABAAIAAAALAAwABAACAAMAAAAMAAwABAACAAIAAAANAAwABAABAAAAAAAOAAwABAACAAEAAAAPAAwABAABAAAAAAAQAA0ABAABAAEAAAARAA0ABAACAAEAAAASAA0ABAACAAAAAAATAA0ABAABAAMAAAAUAA0ABAACAAMAAAAVAA0ABAABAAAAAAAWAA0ABAABAAAAAAARAAwABAACAAMAAAAQAAwABAACAAAAAAALAAoABAABAAEAAAAKAAoABAABAAEAAAAJAAoABAABAAMAAAAMAAkABAABAAEAAAANAAkABAABAAMAAAAPAAkABAABAAMAAAAQAAkABAABAAMAAAARAAkABAABAAIAAAASAAkABAACAAEAAAATAAkABAACAAMAAAAUAAkABAACAAMAAAANAAgABAABAAMAAAASAAcABAABAAMAAAAOAP3/BAACAAEAAAAPAP3/BAABAAIAAAAQAP3/BAABAAIAAAARAP3/BAACAAIAAAASAP3/BAABAAEAAAATAP3/BAABAAEAAAAUAP3/BAABAAMAAAAVAP3/BAACAAAAAAAWAP3/BAABAAEAAAAXAP3/BAACAAIAAAAYAP3/BAABAAMAAAAYAP7/BAACAAMAAAAZAP7/BAACAAAAAAAaAP7/BAACAAAAAAAaAP//BAACAAEAAAAbAP//BAACAAIAAAAbAAAABAABAAMAAAAbAAEABAACAAAAAAAaAAEABAABAAAAAAAZAAEABAABAAMAAAAYAAEABAACAAIAAAAXAAIABAACAAAAAAAWAAMABAACAAIAAAAWAAIABAABAAIAAAAWAAEABAABAAIAAAAWAAAABAACAAAAAAAWAP//BAABAAEAAAAWAP7/BAABAAMAAAAVAP7/BAACAAIAAAAUAP7/BAACAAMAAAATAP7/BAABAAEAAAAUAP//BAACAAIAAAAUAAAABAACAAEAAAAVAAAABAABAAAAAAAVAAEABAABAAIAAAAXAAEABAACAAAAAAAXAAAABAABAAIAAAAXAP//BAABAAAAAAAXAP7/BAACAAEAAAAZAP//BAABAAIAAAAZAAAABAABAAMAAAAaAAAABAACAAIAAAAYAAAABAABAAMAAAAVAP//BAACAAMAAAATAP//BAABAAEAAAAYAP//BAACAAMAAAAVAAIABAACAAIAAAAVAAUABAACAAMAAAAVAAQABAACAAMAAAAWAAQABAACAAEAAAAXAAMABAABAAEAAAAYAAMABAACAAEAAAAZAAMABAACAAAAAAAZAAIABAABAAIAAAAaAAIABAABAAAAAAAYAAIABAABAAAAAAAVAAMABAACAAIAAAAXAAQABAABAAIAAAAYAAQABAABAAIAAAAZAAQABAABAAEAAAAaAAQABAACAAMAAAAaAAMABAACAAAAAAAbAAMABAABAAAAAAAbAAIABAACAAEAAAAbAAQABAABAAIAAAAbAAUABAABAAEAAAAbAAYABAACAAIAAAAbAAcABAACAAIAAAAaAAcABAABAAAAAAAaAAgABAABAAEAAAAaAAkABAABAAEAAAAZAAkABAABAAAAAAAZAAgABAACAAIAAAAYAAgABAABAAAAAAAYAAcABAACAAAAAAAXAAcABAABAAEAAAAXAAYABAABAAMAAAAWAAYABAABAAAAAAAVAAYABAACAAAAAAAUAAYABAACAAIAAAATAAcABAACAAIAAAAZAAcABAABAAMAAAAZAAYABAACAAAAAAAYAAYABAABAAEAAAAYAAUABAABAAIAAAAXAAUABAACAAIAAAAWAAUABAACAAIAAAAUAAUABAABAAMAAAAaAAYABAACAAAAAAAcAAQABAACAAIAAAAcAAMABAACAAEAAAAcAAIABAABAAAAAAAcAAEABAACAAAAAAAdAAEABAABAAMAAAAdAAIABAABAAEAAAAdAAMABAABAAMAAAAdAAQABAACAAAAAAAdAAUABAACAAEAAAAdAAYABAABAAMAAAAdAAcABAACAAAAAAAdAAgABAABAAEAAAAdAAkABAABAAMAAAAdAAoABAABAAMAAAAdAAsABAACAAEAAAAcAAsABAABAAAAAAAcAAoABAACAAIAAAAcAAkABAACAAMAAAAcAAgABAACAAEAAAAcAAcABAABAAEAAAAcAAYABAACAAEAAAAcAAAABAACAAEAAAAaAAUABAACAAEAAAAZAAUABAACAAIAAAAcAAUABAACAAMAAAD6/wkABAACAAIAAAD6/woABAACAAEAAAD6/wsABAACAAIAAAD6/wwABAACAAIAAAD6/w0ABAABAAEAAAD6/w4ABAACAAMAAAD6/w8ABAABAAEAAAD6/xAABAACAAEAAAD6/xEABAACAAMAAAD7/wsABAACAAIAAAD7/wwABAACAAAAAAD7/w0ABAABAAIAAAD7/w4ABAABAAIAAAD7/w8ABAACAAEAAAD7/xAABAABAAMAAAD7/xEABAABAAAAAAD7/xIABAACAAAAAAD7/xMABAACAAMAAAD8/xQABAACAAAAAAD8/xUABAABAAMAAAD9/xUABAABAAMAAAD+/xYABAACAAMAAAD//xYABAABAAIAAAD//xcABAACAAEAAAD7/xQABAABAAMAAAD7/xUABAACAAIAAAD7/xYABAABAAMAAAD8/xYABAABAAIAAAD8/xcABAACAAMAAAD9/xgABAACAAEAAAD+/xgABAABAAIAAAD+/xkABAABAAMAAAD//xkABAACAAEAAAD//xoABAACAAEAAAAAABoABAACAAEAAAAAABsABAABAAMAAAABABsABAACAAMAAAACABsABAACAAIAAAACABwABAABAAEAAAADABwABAABAAIAAAAEABwABAACAAIAAAAFABwABAACAAIAAAAGABwABAABAAIAAAAHABwABAABAAEAAAAIABwABAABAAMAAAAIAB0ABAACAAIAAAAJAB0ABAACAAAAAAAKAB0ABAACAAIAAAALAB0ABAABAAMAAAAMAB0ABAABAAEAAAANAB0ABAACAAIAAAAOAB0ABAACAAIAAAAPAB0ABAACAAAAAAAQAB0ABAACAAIAAAARAB0ABAACAAIAAAASAB0ABAABAAAAAAATAB0ABAABAAAAAAAUAB0ABAABAAIAAAAVAB0ABAABAAMAAAAWABwABAACAAEAAAAXABwABAABAAEAAAAXABsABAACAAIAAAAYABsABAABAAIAAAAZABsABAACAAMAAAAZABoABAABAAMAAAAaABoABAACAAAAAAAbABkABAABAAAAAAAcABkABAACAAAAAAAcABgABAACAAEAAAAcABcABAACAAAAAAAdABcABAACAAEAAAAdABYABAACAAMAAAAdABUABAABAAAAAAAdABQABAACAAEAAAAdABMABAABAAEAAAAeABMABAABAAMAAAAeABIABAACAAEAAAAeABEABAABAAEAAAAeABAABAABAAIAAAAdABAABAABAAMAAAAdAA8ABAABAAMAAAAdAA4ABAACAAMAAAAdAA0ABAACAAMAAAAdAAwABAACAAIAAAAdABIABAACAAAAAAAdABEABAACAAIAAAAbAAgABAACAAEAAAAaAAoABAABAAIAAAAaAAsABAABAAMAAAAaAAwABAACAAIAAAAaAA0ABAACAAMAAAAaAA4ABAACAAAAAAAZAA8ABAABAAMAAAAZABAABAABAAAAAAAZABEABAABAAAAAAAZABIABAABAAAAAAAZABMABAACAAIAAAAZABQABAABAAEAAAAaABUABAACAAIAAAAaABQABAABAAMAAAAbABQABAABAAMAAAAbABMABAABAAAAAAAcABIABAABAAEAAAAcABEABAACAAMAAAAcABAABAABAAEAAAAcABMABAACAAMAAAAcABQABAABAAIAAAAbABUABAABAAAAAAAbABYABAACAAEAAAAbABcABAABAAEAAAAcABYABAABAAAAAAAcABUABAACAAIAAAAcAA8ABAACAAIAAAAcAA4ABAACAAMAAAAcAA0ABAABAAAAAAAcAAwABAABAAEAAAAbAAsABAACAAEAAAAbAAwABAACAAAAAAAbAA0ABAABAAIAAAAaAA8ABAACAAEAAAAaABAABAACAAEAAAAZABUABAACAAEAAAAZABYABAABAAMAAAAaABMABAABAAMAAAAaABIABAACAAIAAAAaABEABAABAAAAAAAbABAABAABAAIAAAAbABEABAABAAEAAAAbABIABAACAAMAAAAbAA8ABAACAAEAAAAbAA4ABAACAAMAAAAbAAoABAABAAIAAAAbAAkABAABAAMAAAAZAA0ABAACAAIAAAAZAA4ABAACAAMAAAAYAA8ABAACAAIAAAAYABAABAABAAMAAAAXABEABAABAAMAAAAXABIABAACAAIAAAAWABMABAACAAEAAAAWABQABAABAAAAAAAWABUABAACAAEAAAAWABYABAACAAAAAAAWABIABAACAAMAAAAWABEABAACAAMAAAAWABAABAABAAAAAAAWAA8ABAABAAIAAAAXAA4ABAABAAIAAAAXAA0ABAACAAEAAAAYAAwABAABAAAAAAAYAAsABAABAAIAAAAZAAoABAABAAIAAAAXAAkABAACAAMAAAAWAAoABAACAAAAAAAVAAsABAABAAAAAAAVAAwABAACAAEAAAAUAA4ABAABAAAAAAATAA8ABAACAAAAAAASAA8ABAACAAMAAAATAA4ABAACAAAAAAAUAAwABAACAAIAAAAUAAsABAABAAAAAAAUAAoABAABAAMAAAARAAoABAACAAMAAAAOAA0ABAACAAEAAAANAA4ABAABAAAAAAASAAoABAACAAEAAAAUAAgABAACAAAAAAAUAAcABAABAAAAAAAVAAcABAABAAIAAAASAAsABAABAAIAAAASAAwABAACAAMAAAATAAsABAABAAAAAAAVAAkABAACAAMAAAAWAAgABAABAAIAAAAWAAcABAACAAIAAAASAAgABAABAAAAAAARAA4ABAACAAAAAAAUAA8ABAABAAIAAAAVAA8ABAACAAIAAAAVAA4ABAACAAAAAAATAAoABAACAAMAAAAWAA4ABAACAAMAAAAYAA4ABAABAAIAAAAYAA0ABAABAAMAAAAXAAsABAACAAIAAAAWAAsABAABAAAAAAAVAAoABAACAAEAAAAQAAoABAACAAAAAAATAAgABAACAAAAAAARAAgABAABAAEAAAAWAAkABAACAAMAAAAYAAkABAABAAMAAAAYAAoABAACAAAAAAAXAAoABAACAAEAAAAVAAgABAACAAAAAAAXAAgABAABAAMAAAAZAAwABAACAAIAAAAZAAsABAABAAMAAAAXAAwABAABAAMAAAAWAAwABAACAAMAAAATAAwABAACAAIAAAAPAA0ABAABAAMAAAANAA0ABAACAAAAAAAGAA4ABAADAAIAAAAHAA4ABAABAAIAAAAIAA4ABAACAAEAAAAJAA4ABAABAAEAAAAKAA4ABAABAAEAAAALAA4ABAABAAIAAAAMAA4ABAABAAMAAAAMAA0ABAACAAIAAAALAA0ABAACAAIAAAAKAA0ABAABAAAAAAAJAA0ABAABAAIAAAAIAA0ABAABAAEAAAAHAA0ABAABAAIAAAD8/wwABAABAAMAAAD8/w0ABAACAAIAAAD8/w4ABAABAAAAAAD8/w8ABAABAAAAAAD8/xAABAACAAMAAAD8/xEABAABAAIAAAD8/xIABAABAAEAAAD8/xMABAABAAMAAAD9/xQABAACAAIAAAD9/xMABAACAAEAAAD9/xIABAABAAEAAAD9/xEABAACAAMAAAD9/xAABAABAAAAAAD9/w8ABAACAAMAAAD9/w4ABAACAAEAAAD//xAABAACAAEAAAD//xEABAABAAEAAAD+/xIABAABAAAAAAD+/xMABAACAAEAAAD+/xQABAABAAAAAAD//xQABAACAAAAAAD//xUABAACAAEAAAD+/xcABAACAAMAAAD9/xcABAACAAMAAAD9/xYABAABAAIAAAD+/xEABAABAAEAAAD+/xAABAABAAIAAAD+/w8ABAABAAMAAAD+/xUABAABAAEAAAD//xgABAABAAEAAAD//xMABAACAAMAAAD//xIABAACAAMAAAAAABAABAACAAMAAAAAABEABAACAAMAAAAAABIABAACAAAAAAAAABMABAACAAAAAAAAABQABAACAAIAAAAAABUABAACAAAAAAAAABYABAACAAEAAAAAABcABAACAAEAAAAAABgABAABAAMAAAAAABkABAACAAEAAAABABoABAABAAIAAAABABkABAABAAIAAAABABgABAABAAMAAAABABcABAACAAEAAAABABYABAACAAEAAAABABUABAACAAAAAAABABQABAABAAEAAAABABMABAABAAEAAAABABIABAACAAIAAAABABEABAABAAMAAAADABEABAABAAMAAAADABIABAABAAIAAAACABQABAABAAEAAAACABUABAACAAIAAAACABYABAACAAIAAAACABcABAABAAMAAAACABgABAACAAIAAAACABkABAADAAMAAAACABoABAABAAMAAAACABMABAACAAEAAAADABUABAAAAAMAAAADABYABAACAAAAAAADABcABAACAAEAAAADABgABAABAAMAAAADABkABAABAAMAAAADABoABAABAAEAAAADABsABAABAAIAAAAEABsABAABAAAAAAAEABoABAABAAEAAAAEABkABAABAAEAAAAFABgABAACAAAAAAAFABUABAACAAIAAAAFABQABAABAAAAAAAFABMABAABAAIAAAAFABIABAACAAEAAAAFABEABAABAAIAAAAEABEABAAAAAIAAAAEABIABAADAAIAAAAEABMABAAAAAIAAAAEABQABAACAAMAAAAEABYABAABAAMAAAAEABcABAABAAAAAAAEABgABAABAAMAAAAFABoABAABAAEAAAAGABoABAABAAMAAAAGABsABAABAAIAAAAHABsABAABAAAAAAAIABsABAABAAEAAAAJABwABAABAAMAAAAKABwABAACAAMAAAAOABwABAACAAIAAAAPABwABAABAAIAAAAQABwABAABAAMAAAARABwABAACAAIAAAASABwABAACAAIAAAATABwABAABAAIAAAAUABwABAACAAMAAAAVABwABAABAAMAAAAWABsABAABAAAAAAAVABsABAACAAEAAAAUABsABAABAAAAAAATABsABAABAAEAAAASABsABAABAAAAAAARABsABAACAAMAAAAQABsABAABAAMAAAAPABsABAABAAIAAAANABsABAABAAMAAAAMABsABAACAAEAAAALABsABAABAAEAAAAHABoABAACAAMAAAAFABsABAACAAMAAAAJABoABAABAAMAAAAKABoABAABAAAAAAALABoABAACAAEAAAAMABoABAABAAMAAAANABoABAACAAIAAAAWABoABAACAAEAAAAXABoABAABAAMAAAAYABoABAABAAAAAAAVABoABAABAAMAAAAUABoABAACAAAAAAATABoABAABAAMAAAASABoABAABAAEAAAARABoABAABAAIAAAAQABoABAACAAEAAAAQABkABAACAAEAAAAOABkABAACAAAAAAANABkABAACAAIAAAAMABkABAACAAAAAAALABkABAACAAEAAAAKABkABAACAAMAAAAJABkABAABAAIAAAAIABkABAACAAMAAAAGABkABAACAAIAAAAFABkABAABAAMAAAAIABgABAABAAEAAAAJABgABAABAAMAAAAKABgABAABAAMAAAALABgABAABAAAAAAAMABgABAABAAAAAAANABgABAABAAAAAAAOABgABAABAAAAAAAPABgABAACAAEAAAARABkABAACAAMAAAASABkABAABAAIAAAATABkABAACAAAAAAAaABkABAABAAMAAAAaABgABAABAAEAAAAZABgABAACAAEAAAAYABgABAACAAIAAAAXABgABAABAAMAAAAWABgABAACAAIAAAAVABgABAACAAAAAAAUABgABAABAAEAAAATABgABAACAAIAAAASABgABAACAAEAAAARABgABAACAAAAAAAOABoABAABAAMAAAATABcABAABAAIAAAAUABcABAACAAIAAAAVABcABAABAAMAAAAWABcABAABAAAAAAAXABcABAABAAAAAAAXABkABAABAAEAAAAYABkABAABAAIAAAAZABkABAACAAMAAAAWABkABAABAAMAAAAVABkABAABAAAAAAAUABkABAABAAIAAAAbABgABAABAAMAAAAaABYABAACAAIAAAAYABIABAABAAEAAAAYABEABAABAAIAAAAYABMABAACAAEAAAAYABQABAABAAAAAAAZABcABAABAAMAAAAaABcABAABAAMAAAAYABcABAACAAMAAAAYABYABAABAAEAAAAYABUABAACAAAAAAAXAA8ABAACAAEAAAAXABAABAABAAEAAAAXABMABAABAAMAAAAXABQABAABAAEAAAAXABUABAABAAEAAAAXABYABAABAAEAAAAVABUABAACAAEAAAAVABQABAABAAMAAAAUABQABAACAAIAAAAUABMABAABAAIAAAAUABIABAABAAEAAAAVABEABAABAAAAAAAVABAABAACAAMAAAAVABIABAACAAAAAAAUABUABAACAAAAAAATABYABAACAAEAAAASAB4ABAABAAMAAAAVABYABAABAAIAAAAUABYABAACAAMAAAAUABEABAABAAAAAAAUABAABAACAAMAAAAPABcABAABAAMAAAAQABUABAABAAEAAAARABIABAABAAAAAAARABEABAACAAMAAAARABYABAACAAEAAAARABcABAACAAMAAAASABUABAABAAEAAAASABQABAACAAAAAAASABMABAACAAAAAAATABIABAACAAIAAAATABEABAACAAIAAAATABAABAACAAEAAAATABMABAABAAAAAAATABQABAACAAEAAAATABUABAACAAMAAAASABcABAABAAAAAAASABYABAACAAAAAAAVABMABAABAAIAAAASAA4ABAABAAAAAAAQABIABAACAAMAAAAQABMABAABAAAAAAAQABQABAACAAEAAAAQABEABAABAAEAAAAQABAABAACAAEAAAAQAA8ABAABAAEAAAAPAA8ABAABAAEAAAAPABAABAABAAAAAAAPABEABAACAAAAAAAPABIABAACAAEAAAAPABMABAACAAEAAAAPABQABAACAAEAAAAPABUABAABAAAAAAAPABYABAACAAAAAAAOABcABAABAAIAAAAOABYABAACAAMAAAAOABUABAACAAAAAAAOABQABAABAAAAAAAOABMABAACAAAAAAAOABIABAACAAMAAAAOABEABAACAAEAAAAOABAABAABAAEAAAAOAA8ABAABAAAAAAANAA8ABAABAAEAAAANABAABAABAAIAAAANABEABAABAAMAAAANABIABAABAAEAAAANABMABAACAAEAAAANABQABAACAAMAAAANABUABAABAAEAAAANABYABAABAAEAAAANABcABAABAAMAAAAMABcABAABAAIAAAAMABYABAACAAMAAAAMABUABAACAAEAAAAMABQABAABAAMAAAAMABMABAABAAIAAAAMABIABAACAAEAAAAMABEABAABAAMAAAAMABAABAACAAMAAAALAA8ABAACAAEAAAALABAABAABAAEAAAALABEABAACAAMAAAALABIABAACAAAAAAALABMABAACAAAAAAALABQABAACAAAAAAALABUABAABAAIAAAAMAA8ABAABAAIAAAALABYABAABAAMAAAALABcABAACAAMAAAAKABcABAACAAAAAAAKABYABAACAAAAAAAKABUABAABAAEAAAAKABQABAACAAIAAAAKABMABAABAAAAAAAKABIABAABAAMAAAAKABEABAABAAEAAAAKABAABAACAAMAAAAKAA8ABAABAAMAAAAJAA8ABAACAAEAAAAJABAABAACAAIAAAAJABEABAACAAIAAAAJABIABAACAAMAAAAJABMABAACAAIAAAAJABcABAABAAMAAAAGABcABAACAAAAAAAGABYABAACAAIAAAAGABUABAABAAAAAAAGABQABAABAAEAAAAGABMABAABAAAAAAAGABIABAACAAAAAAAGABEABAABAAEAAAAGABAABAACAAMAAAAHABUABAABAAAAAAAHABYABAABAAAAAAAHABgABAABAAIAAAAHABcABAACAAIAAAAHABQABAACAAMAAAAHABMABAABAAMAAAAHABIABAACAAMAAAAHABEABAABAAMAAAAHABAABAABAAIAAAAHAA8ABAACAAMAAAAGAA8ABAACAAEAAAAFABAABAABAAIAAAAIAA8ABAABAAEAAAAIABAABAABAAAAAAAIABEABAACAAIAAAAIABIABAABAAAAAAAIABMABAACAAMAAAAIABQABAACAAMAAAAJABUABAACAAEAAAAJABYABAABAAIAAAAIABYABAABAAMAAAAIABcABAACAAMAAAAIABUABAABAAEAAAAJABQABAACAAMAAAAeAAYABAACAAMAAAAeAAcABAABAAAAAAAeAAgABAACAAEAAAAeAAkABAACAAAAAAAeAAoABAACAAIAAAAeAAsABAABAAMAAAAeAAwABAACAAIAAAAeAA0ABAACAAAAAAAeAA4ABAACAAEAAAAeAA8ABAABAAIAAAAeAAUABAABAAAAAAAeAAQABAACAAIAAAARAB4ABAABAAIAAAAQAB4ABAADAAIAAAAPAB4ABAADAAMAAAAOAB4ABAADAAIAAAANAB4ABAABAAMAAAAMAB4ABAADAAMAAAALAB4ABAADAAIAAAAKAB4ABAACAAMAAAAJAB4ABAAAAAIAAAAIAB4ABAAAAAIAAAAHAB4ABAABAAMAAAAGAB4ABAABAAMAAAAFAB4ABAAAAAMAAAAEAB4ABAACAAMAAAAEAB0ABAAAAAMAAAAFAB0ABAAAAAMAAAAGAB0ABAACAAIAAAAHAB0ABAABAAIAAAADAB0ABAABAAMAAAACAB0ABAADAAIAAAACAB4ABAABAAMAAAADAB4ABAABAAIAAAABAB0ABAACAAIAAAABABwABAABAAIAAAA=")
+tile_set = SubResource("TileSet_y15ob")
+
+[node name="Road6" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(1802, -223)
+texture = SubResource("CompressedTexture2D_h36ba")
+
+[node name="Road7" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(2058, -221)
+texture = SubResource("CompressedTexture2D_h36ba")
+
+[node name="Limits" type="StaticBody2D" parent="Environment"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/Limits"]
+visible = false
+polygon = PackedVector2Array(-814, 535, -380, 190, -306, -21, 87, -46, 346, -330, 870, -373, 1115, -418, 1363, -334, 1613, -324, 1854, -225, 2208, -197, 2675, 309, 2642, 741, 2244, 1140, 1618, 1271, 1296, 1283, 865, 1423, 706, 1377, -113, 1192, -452, 1035, -488, 902, -625, 803, -734, 680, -1660, 719, -1331, 2205, 3170, 2304, 3988, 404, 2999, -1433, 131, -1364, -1715, 264, -1659, 716, -737, 676)
+metadata/_edit_lock_ = true
+
+[node name="Props" type="Node2D" parent="."]
+y_sort_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="Rocks" type="Node" parent="Props"]
+
+[node name="Shadow" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1372, -362)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow2" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1420, -354)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow3" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1481, -360)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow4" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1549, -353)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow5" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1563, -349)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow6" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1645, -348)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow7" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1728, -344)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow8" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1833, -329)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow9" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1925, -320)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow10" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(2020, -324)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow11" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(2098, -323)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow12" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(2060, -324)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow13" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(2165, -323)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow14" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1480, -326)
+scale = Vector2(0.433333, 0.433333)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow15" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(1689, -324)
+scale = Vector2(0.4, 0.4)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="Shadow16" type="Sprite2D" parent="Props/Rocks"]
+visible = false
+position = Vector2(2210, -276)
+scale = Vector2(0.495934, 0.301825)
+texture = SubResource("CompressedTexture2D_dvh4i")
+
+[node name="RockTest1" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1641, -421)
+texture = ExtResource("7_w0xnk")
+flip_h = true
+
+[node name="RockTest3" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(2316, -398)
+rotation = 0.102707
+scale = Vector2(0.876, 0.876)
+texture = ExtResource("7_w0xnk")
+
+[node name="RockTest4" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1747.2, -383.25)
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("7_w0xnk")
+
+[node name="RockTest6" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1691.99, -339.938)
+scale = Vector2(0.285856, 0.287)
+texture = ExtResource("7_w0xnk")
+flip_h = true
+
+[node name="RockTest2" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1486, -393)
+scale = Vector2(0.516, 0.516)
+texture = ExtResource("7_w0xnk")
+
+[node name="Road5" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1503, 74)
+texture = SubResource("CompressedTexture2D_avcu3")
+
+[node name="Road6" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1503, 330)
+texture = SubResource("CompressedTexture2D_avcu3")
+
+[node name="Road1" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1546, -182)
+texture = SubResource("CompressedTexture2D_mv6p5")
+
+[node name="Rock4" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(2025, -561)
+rotation = -0.0336107
+texture = ExtResource("13_mmnq2")
+
+[node name="Rock5" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1415, -407)
+rotation = 0.0773158
+scale = Vector2(0.228125, 0.228125)
+texture = ExtResource("13_mmnq2")
+
+[node name="Rock6" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1354, -394)
+rotation = -0.0962683
+scale = Vector2(0.13125, 0.13125)
+texture = ExtResource("13_mmnq2")
+flip_h = true
+
+[node name="RockTest5" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(1503, -362)
+scale = Vector2(0.286, 0.286)
+texture = ExtResource("7_w0xnk")
+
+[node name="RockTest7" type="Sprite2D" parent="Props/Rocks"]
+position = Vector2(2272, -347)
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("7_w0xnk")

@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://j47dleqjfgn3"]
+
+[ext_resource type="PackedScene" uid="uid://c0op18agkkh04" path="res://weapons/laser_beamer/laser_beamer.tscn" id="1_vumd6"]
+[ext_resource type="Script" path="res://weapons/railbow_beamer/rainbow_beamer.gd" id="2_o1ubg"]
+[ext_resource type="Shader" path="res://weapons/railbow_beamer/rainbow_beamer.gdshader" id="2_x1ioi"]
+[ext_resource type="Texture2D" uid="uid://xx6avlwbkta2" path="res://weapons/railbow_beamer/rainbow_beamer.png" id="3_lnd4p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_54d5e"]
+shader = ExtResource("2_x1ioi")
+shader_parameter/strength = 0.449
+shader_parameter/speed = 1.785
+shader_parameter/angle = 154.86
+
+[sub_resource type="Curve" id="Curve_t2p5h"]
+max_value = 100.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 36.7678), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_845ct"]
+offsets = PackedFloat32Array(0, 0.148485, 0.327273, 0.490909, 0.651515, 0.80303, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.54902, 0.113725, 1, 1, 1, 0.25098, 1, 0.498039, 1, 0.376471, 1, 0.596078, 1, 0.992157, 1, 0.741176, 0.6, 0.996078, 1, 0.658255, 0.000354916, 0.666155, 1)
+
+[sub_resource type="Gradient" id="Gradient_pp6x4"]
+offsets = PackedFloat32Array(0.321212, 0.621212)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_hpxe2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.75419, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="RainbowBeamer" instance=ExtResource("1_vumd6")]
+script = ExtResource("2_o1ubg")
+
+[node name="LaserVisual" parent="." index="0"]
+z_index = 0
+material = SubResource("ShaderMaterial_54d5e")
+default_color = Color(1, 1, 1, 1)
+texture_mode = 2
+
+[node name="Pistol" parent="WeaponPivot" index="0"]
+z_index = 1
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_lnd4p")
+
+[node name="LaserRay" parent="WeaponPivot/Pistol" index="0"]
+position = Vector2(88.8571, -0.571426)
+
+[node name="CPUParticles2D" parent="WeaponPivot/Pistol/LaserRay" index="0"]
+position = Vector2(0.735065, 0.901623)
+spread = 85.64
+initial_velocity_min = 140.56
+initial_velocity_max = 209.52
+damping_min = 77.452
+damping_max = 97.444
+damping_curve = SubResource("Curve_t2p5h")
+scale_amount_max = 7.0
+color = Color(1, 1, 1, 1)
+color_ramp = SubResource("Gradient_845ct")
+color_initial_ramp = SubResource("Gradient_pp6x4")
+hue_variation_min = -0.15
+hue_variation_max = 0.15
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="WeaponPivot/Pistol/LaserRay" index="1"]
+position = Vector2(128.286, 0.571444)
+scale = Vector2(0.970874, 0.970874)
+amount = 200
+lifetime = 0.3
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 28.57
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 68.77
+initial_velocity_max = 142.85
+damping_min = 67.196
+damping_max = 83.598
+angle_min = -426.7
+angle_max = 236.2
+scale_amount_min = 3.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_hpxe2")
+color_ramp = SubResource("Gradient_845ct")
+color_initial_ramp = SubResource("Gradient_pp6x4")
+
+[node name="ShootingStart" parent="WeaponPivot/Pistol" index="1"]
+position = Vector2(88.5714, 7.62939e-06)

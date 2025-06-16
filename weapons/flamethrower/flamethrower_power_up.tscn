@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://jrhp8ca7vqxw"]
+
+[ext_resource type="PackedScene" uid="uid://bny61e7hksipq" path="res://weapons/grenade_launcher/grenade_launcher_power_up.tscn" id="1_gcmj8"]
+[ext_resource type="Script" path="res://weapons/flamethrower/flamethrower_power_up.gd" id="2_iij8n"]
+[ext_resource type="Texture2D" uid="uid://haho47axtihg" path="res://weapons/flamethrower/flamethrower.png" id="3_8piy8"]
+
+[node name="Flamethrower" instance=ExtResource("1_gcmj8")]
+script = ExtResource("2_iij8n")
+
+[node name="GrenadeLauncher" parent="." index="0"]
+texture = ExtResource("3_8piy8")
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 1.5708

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv5g5crwq0lel"]
+
+[ext_resource type="PackedScene" uid="uid://cf0hnhsi5yeaf" path="res://weapons/laser_beamer/laser_beamer_item.tscn" id="1_5hlso"]
+[ext_resource type="Script" path="res://weapons/railbow_beamer/rainbow_beamer_item.gd" id="2_itebo"]
+[ext_resource type="Texture2D" uid="uid://xx6avlwbkta2" path="res://weapons/railbow_beamer/rainbow_beamer.png" id="2_unjsn"]
+
+[node name="RainbowBeamer" instance=ExtResource("1_5hlso")]
+script = ExtResource("2_itebo")
+
+[node name="PistolGun" parent="." index="0"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_unjsn")

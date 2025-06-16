@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc57oo801kgy8"]
+
+[ext_resource type="PackedScene" uid="uid://3oeeqiln4dnw" path="res://weapons/pistol/pistol.tscn" id="1_qqcjj"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="2_gmtr3"]
+[ext_resource type="PackedScene" uid="uid://cpqlnriai1uy8" path="res://scenes/spliting_bullet.tscn" id="3_54ld0"]
+[ext_resource type="Texture2D" uid="uid://dks56b8spsxkq" path="res://weapons/bullet_split_gun/bullet_split_gun.png" id="4_5st1y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_um4vh"]
+radius = 355.69
+
+[node name="SplitingBulletGun" instance=ExtResource("1_qqcjj")]
+script = ExtResource("2_gmtr3")
+bullet_scene = ExtResource("3_54ld0")
+clip_size = 20
+damage = 10
+
+[node name="Range" parent="." index="0"]
+shape = SubResource("CircleShape2D_um4vh")
+
+[node name="Pistol" parent="WeaponPivot" index="0"]
+scale = Vector2(0.415, 0.415)
+texture = ExtResource("4_5st1y")
+
+[node name="ShootingStart" parent="WeaponPivot/Pistol" index="0"]
+position = Vector2(39.0836, 23.3945)

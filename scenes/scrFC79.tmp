@@ -1,0 +1,407 @@
+[gd_scene load_steps=52 format=3 uid="uid://dlid75n88vbfb"]
+
+[ext_resource type="Script" path="res://scripts/screen.gd" id="1_6q7wf"]
+[ext_resource type="PackedScene" uid="uid://2lwars5771g5" path="res://scenes/player.tscn" id="1_h0hs6"]
+[ext_resource type="Script" path="res://scripts/click_position_logger.gd" id="2_0a7tm"]
+[ext_resource type="PackedScene" uid="uid://d3b3gpss6pgn0" path="res://scenes/fps.tscn" id="2_c2xao"]
+[ext_resource type="PackedScene" uid="uid://cijhpkxhkeyb" path="res://scenes/tree.tscn" id="2_cl62n"]
+[ext_resource type="Script" path="res://scripts/barrier_visual.gd" id="3_ouv33"]
+[ext_resource type="Script" path="res://scripts/restart_game.gd" id="5_im4o6"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="5_vuqny"]
+[ext_resource type="PackedScene" uid="uid://bj6vxfhkd4wju" path="res://powerups/guns_attack_speed/guns_attack_speed_power_up.tscn" id="9_vuc66"]
+[ext_resource type="PackedScene" uid="uid://b317shs8sysg" path="res://powerups/damage/damage_power_up.tscn" id="11_5t7bo"]
+[ext_resource type="PackedScene" uid="uid://gtuf2440lm33" path="res://characters/angry_charge_pixi/angry_charge_pixi.tscn" id="13_5yv6m"]
+[ext_resource type="PackedScene" uid="uid://bv12065da18wi" path="res://characters/golem/golem.tscn" id="13_ds323"]
+[ext_resource type="PackedScene" uid="uid://coogdkh10whao" path="res://characters/small_dron/small_dron.tscn" id="14_chcgs"]
+[ext_resource type="PackedScene" uid="uid://ljx3t3i7hucu" path="res://characters/boss1/boss1.tscn" id="15_mrq0q"]
+[ext_resource type="PackedScene" uid="uid://bajmpova6gs0y" path="res://characters/dron/dron.tscn" id="15_o2hco"]
+[ext_resource type="PackedScene" uid="uid://dcciq1gn1q6wg" path="res://powerups/hp_regen/hp_regen_power_up.tscn" id="16_2lh3r"]
+[ext_resource type="PackedScene" uid="uid://c42i4hexl0in5" path="res://weapons/shotgun_fire/shotgun_fire_power_up.tscn" id="16_er5ci"]
+[ext_resource type="PackedScene" uid="uid://c7lhk8ukl8gex" path="res://support_weapons/bombs/bombs_power_up.tscn" id="17_04c1i"]
+[ext_resource type="PackedScene" uid="uid://b3rvvdaw2rxcv" path="res://turrets/bullet/turret_rifle_power_up.tscn" id="18_vyb0g"]
+[ext_resource type="PackedScene" uid="uid://bag3rdc6v7s4i" path="res://friends/drone/drone_power_up.tscn" id="19_rd5wi"]
+[ext_resource type="PackedScene" uid="uid://bny61e7hksipq" path="res://weapons/grenade_launcher/grenade_launcher_power_up.tscn" id="19_t7nyv"]
+[ext_resource type="PackedScene" uid="uid://bvlg5rrtfu2yb" path="res://weapons/lasergun/laser_gun_power_up.tscn" id="20_hgfys"]
+[ext_resource type="PackedScene" uid="uid://co5nycqfkv1r3" path="res://weapons/laser_minigun/laser_minigun_power_up.tscn" id="21_osa2r"]
+[ext_resource type="PackedScene" uid="uid://c8vy8rd3x88hl" path="res://weapons/laser_shotgun/laser_shotgun_power_up.tscn" id="22_v3itm"]
+[ext_resource type="PackedScene" uid="uid://cj8mkknjxksl3" path="res://weapons/minigun/minigun_power_up.tscn" id="23_ns1bm"]
+[ext_resource type="PackedScene" uid="uid://c6dqeq3r8ne5l" path="res://weapons/pistol/pistol_powerup.tscn" id="24_b1k68"]
+[ext_resource type="PackedScene" uid="uid://dtlmbio0rwec7" path="res://weapons/plasmagun/plasma_gun_power_up.tscn" id="25_cmwke"]
+[ext_resource type="PackedScene" uid="uid://cji7i3ungw8u7" path="res://weapons/plasma_minigun/plasma_minigun_power_up.tscn" id="26_lksqq"]
+[ext_resource type="PackedScene" uid="uid://5wwmssuox5ft" path="res://weapons/plasma_shotgun/plasma_shotgun_power_up.tscn" id="27_5htl4"]
+[ext_resource type="PackedScene" uid="uid://crmrrdqvp61vc" path="res://weapons/railgun/railgun_power_up.tscn" id="28_fhjh8"]
+[ext_resource type="PackedScene" uid="uid://bhlx07720hcym" path="res://weapons/rocket_launcher/rocket_launcher_power_up.tscn" id="29_qj0tk"]
+[ext_resource type="PackedScene" uid="uid://u4vdong76n5m" path="res://weapons/missile_launcher/missile_launcher_item.tscn" id="30_2lyuo"]
+[ext_resource type="PackedScene" uid="uid://jrhp8ca7vqxw" path="res://weapons/flamethrower/flamethrower_power_up.tscn" id="30_uut03"]
+[ext_resource type="PackedScene" uid="uid://dv5g5crwq0lel" path="res://weapons/railbow_beamer/rainbow_beamer_item.tscn" id="31_beuik"]
+[ext_resource type="PackedScene" uid="uid://b7dbtycyg6ugn" path="res://weapons/the_maul/the_maul_gun_powerup.tscn" id="31_n64ba"]
+[ext_resource type="PackedScene" uid="uid://xdrubyf3dvj5" path="res://weapons/gas_gun/gas_gun_power_up.tscn" id="31_vntxd"]
+[ext_resource type="PackedScene" uid="uid://daqcq1j2utd3v" path="res://weapons/wave_rifle/wave_rifle_powerup.tscn" id="32_igx8s"]
+[ext_resource type="PackedScene" uid="uid://cf0hnhsi5yeaf" path="res://weapons/laser_beamer/laser_beamer_item.tscn" id="33_k7fxc"]
+[ext_resource type="PackedScene" uid="uid://djvmy81nwaiks" path="res://weapons/bullet_split_gun/spliting_bullet_gun_item.tscn" id="33_y142c"]
+[ext_resource type="PackedScene" uid="uid://xb5di5lx2ygm" path="res://weapons/electric_weapon/electric_weapon_powerup.tscn" id="37_anyxb"]
+[ext_resource type="PackedScene" uid="uid://c0y1ru6eeapj" path="res://weapons/money_gun/money_gun_item.tscn" id="39_gupe2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tpkxc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h58or"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qssvp"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_psr4l"]
+
+[sub_resource type="Curve2D" id="Curve2D_34kcn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3840, -2160, 0, 0, 0, 0, 3840, -2159, 0, 0, 0, 0, 3840, 2160, 0, 0, 0, 0, -3840, 2160, 0, 0, 0, 0, -3840, -2160)
+}
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_52glb"]
+offsets = PackedFloat32Array(0.0745342, 0.36646)
+colors = PackedColorArray(0.674815, 0.674815, 0.674815, 1, 0.141176, 0.141176, 0.141176, 0.380392)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_huqu3"]
+noise_type = 3
+frequency = 0.0212
+fractal_lacunarity = 2.195
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gyekr"]
+width = 2000
+height = 2000
+seamless = true
+color_ramp = SubResource("Gradient_52glb")
+noise = SubResource("FastNoiseLite_huqu3")
+
+[sub_resource type="Gradient" id="Gradient_ogggn"]
+offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Environment" id="Environment_fdp1f"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.03
+
+[node name="screen" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_6q7wf")
+
+[node name="ClickPositionLogger" type="Node2D" parent="."]
+script = ExtResource("2_0a7tm")
+
+[node name="ScreenBarrier" type="StaticBody2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="BottomBarrier" type="CollisionShape2D" parent="ScreenBarrier"]
+unique_name_in_owner = true
+position = Vector2(0, 2160)
+shape = SubResource("WorldBoundaryShape2D_tpkxc")
+one_way_collision = true
+
+[node name="TopBarrier" type="CollisionShape2D" parent="ScreenBarrier"]
+unique_name_in_owner = true
+position = Vector2(0, -2160)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_h58or")
+one_way_collision = true
+
+[node name="RightBarrier" type="CollisionShape2D" parent="ScreenBarrier"]
+unique_name_in_owner = true
+position = Vector2(3840, 0)
+rotation = -1.57079
+shape = SubResource("WorldBoundaryShape2D_qssvp")
+one_way_collision = true
+
+[node name="LeftBarrier" type="CollisionShape2D" parent="ScreenBarrier"]
+unique_name_in_owner = true
+position = Vector2(-3840, 0)
+rotation = 1.57081
+shape = SubResource("WorldBoundaryShape2D_psr4l")
+one_way_collision = true
+
+[node name="EnemySpawnPath" type="Path2D" parent="ScreenBarrier"]
+top_level = true
+curve = SubResource("Curve2D_34kcn")
+
+[node name="SpawnPoint" type="PathFollow2D" parent="ScreenBarrier/EnemySpawnPath"]
+unique_name_in_owner = true
+position = Vector2(-3840, -2160)
+rotation = 0.000130208
+
+[node name="BarrierVisual" type="Line2D" parent="ScreenBarrier"]
+z_index = -5
+points = PackedVector2Array(-3840, -2160, 3840, -2160, 3840, 2160, -3840, 2160)
+closed = true
+width = 70.0
+script = ExtResource("3_ouv33")
+base_width = 35
+metadata/_edit_lock_ = true
+
+[node name="ParallaxParticle" type="CanvasLayer" parent="."]
+layer = 128
+follow_viewport_enabled = true
+follow_viewport_scale = 3.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxParticle"]
+amount = 5
+lifetime = 20.0
+preprocess = 10.0
+draw_order = 1
+texture = SubResource("NoiseTexture2D_gyekr")
+emission_shape = 3
+emission_rect_extents = Vector2(4000, 2000)
+gravity = Vector2(0, 0)
+angular_velocity_min = -0.5
+angular_velocity_max = 0.5
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+color = Color(1, 1, 1, 0.196078)
+color_ramp = SubResource("Gradient_ogggn")
+
+[node name="Player" parent="." instance=ExtResource("1_h0hs6")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../ScreenBarrier/EnemySpawnPath")
+update_rotation = false
+update_scale = false
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+zoom = Vector2(0.7, 0.7)
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.05
+drag_top_margin = 0.05
+drag_right_margin = 0.05
+drag_bottom_margin = 0.05
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("5_vuqny")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-547, 360)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-561, 30)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-387, -400)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_cl62n")]
+position = Vector2(-179, -500)
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9, 0, 0.0149998, 0.701961)
+
+[node name="GameOverLabel" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "Game Over"
+
+[node name="RestartGame" type="Label" parent="GameOver/ColorRect"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -410.0
+offset_right = 273.0
+offset_bottom = -235.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.429622, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Restart Game"
+script = ExtResource("5_im4o6")
+
+[node name="Fps" parent="." instance=ExtResource("2_c2xao")]
+
+[node name="SmallGunsAttackSpeedPowerUp" parent="." instance=ExtResource("9_vuc66")]
+position = Vector2(632, 24)
+
+[node name="DamagePowerUp2" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(373, 405)
+
+[node name="DamagePowerUp" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(290, 371)
+
+[node name="DamagePowerUp4" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(495, 382)
+
+[node name="DamagePowerUp5" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(639, 381)
+
+[node name="DamagePowerUp6" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(669, 256)
+
+[node name="DamagePowerUp7" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(762, 378)
+
+[node name="DamagePowerUp8" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(851, 283)
+
+[node name="DamagePowerUp9" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(744, 181)
+
+[node name="DamagePowerUp10" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(961, 208)
+
+[node name="DamagePowerUp11" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(907, 373)
+
+[node name="DamagePowerUp12" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(844, 453)
+
+[node name="DamagePowerUp13" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(586, 458)
+
+[node name="DamagePowerUp14" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(563, 254)
+
+[node name="DamagePowerUp15" parent="." instance=ExtResource("11_5t7bo")]
+position = Vector2(528, 162)
+
+[node name="Pixi" parent="." instance=ExtResource("13_5yv6m")]
+position = Vector2(-1406, -562)
+
+[node name="Golem" parent="." instance=ExtResource("13_ds323")]
+position = Vector2(982, -317)
+
+[node name="SmallDron" parent="." instance=ExtResource("14_chcgs")]
+position = Vector2(1263, -61)
+
+[node name="Dron2" parent="." instance=ExtResource("15_o2hco")]
+position = Vector2(1142, -172)
+
+[node name="Boss1" parent="." instance=ExtResource("15_mrq0q")]
+position = Vector2(1328, 165)
+
+[node name="HpRegen2" parent="." instance=ExtResource("16_2lh3r")]
+position = Vector2(307, 108)
+
+[node name="HpRegen4" parent="." instance=ExtResource("16_2lh3r")]
+position = Vector2(174, 259)
+
+[node name="HpRegen5" parent="." instance=ExtResource("16_2lh3r")]
+position = Vector2(63, 372)
+
+[node name="HpRegen6" parent="." instance=ExtResource("16_2lh3r")]
+position = Vector2(176, 469)
+
+[node name="HpRegen7" parent="." instance=ExtResource("16_2lh3r")]
+position = Vector2(26, 511)
+
+[node name="HpRegen8" parent="." instance=ExtResource("16_2lh3r")]
+position = Vector2(182, 651)
+
+[node name="ShotgunGun" parent="." instance=ExtResource("16_er5ci")]
+position = Vector2(-981, 248)
+scale = Vector2(6.39, 6.39)
+
+[node name="BombsPowerUp" parent="." instance=ExtResource("17_04c1i")]
+position = Vector2(466, 911)
+scale = Vector2(10.1257, 6.51415)
+
+[node name="TurretBulletPowerUp" parent="." instance=ExtResource("18_vyb0g")]
+position = Vector2(-181, 476)
+
+[node name="DronePowerUp" parent="." instance=ExtResource("19_rd5wi")]
+position = Vector2(-356, 248)
+
+[node name="Dron" parent="." instance=ExtResource("15_o2hco")]
+position = Vector2(-957, 493)
+
+[node name="Dron9" parent="." instance=ExtResource("15_o2hco")]
+position = Vector2(-231, 780)
+
+[node name="GrenadeLauncher" parent="." instance=ExtResource("19_t7nyv")]
+position = Vector2(-354, -76)
+
+[node name="LaserGun" parent="." instance=ExtResource("20_hgfys")]
+position = Vector2(-290, -227)
+
+[node name="LaserMinigun" parent="." instance=ExtResource("21_osa2r")]
+position = Vector2(-141, -331)
+
+[node name="LaserShotgunGun" parent="." instance=ExtResource("22_v3itm")]
+position = Vector2(51, -349)
+
+[node name="ShotgunGun2" parent="." instance=ExtResource("23_ns1bm")]
+position = Vector2(296, -303)
+
+[node name="PistolGun" parent="." instance=ExtResource("24_b1k68")]
+position = Vector2(338, -160)
+
+[node name="PlasmaGun" parent="." instance=ExtResource("25_cmwke")]
+position = Vector2(-639, 192)
+
+[node name="PlasmaMinigun" parent="." instance=ExtResource("26_lksqq")]
+position = Vector2(-758, 11)
+
+[node name="PlasmaShotgunGun" parent="." instance=ExtResource("27_5htl4")]
+position = Vector2(-703, -137)
+
+[node name="RailGun" parent="." instance=ExtResource("28_fhjh8")]
+position = Vector2(-619, -276)
+
+[node name="MissileLauncherItem" parent="." instance=ExtResource("30_2lyuo")]
+position = Vector2(542, -628)
+
+[node name="RocketLauncher" parent="." instance=ExtResource("29_qj0tk")]
+position = Vector2(200, -40)
+
+[node name="Flamethrower" parent="." instance=ExtResource("30_uut03")]
+position = Vector2(559, -963)
+
+[node name="RainbowBeamer" parent="." instance=ExtResource("31_beuik")]
+position = Vector2(102, -788)
+
+[node name="TheMaulGunPowerup" parent="." instance=ExtResource("31_n64ba")]
+position = Vector2(316, -632)
+
+[node name="GasGunPowerUp" parent="." instance=ExtResource("31_vntxd")]
+position = Vector2(554, -799)
+
+[node name="EchoRifleGun" parent="." instance=ExtResource("32_igx8s")]
+position = Vector2(300, -962)
+
+[node name="LaserBeamer" parent="." instance=ExtResource("33_k7fxc")]
+position = Vector2(310, -793)
+
+[node name="SplitingBulletGun" parent="." instance=ExtResource("33_y142c")]
+position = Vector2(88, -970)
+
+[node name="ElectricWeaponPowerup" parent="." instance=ExtResource("37_anyxb")]
+position = Vector2(106, -632)
+
+[node name="MoneyGunItem" parent="." instance=ExtResource("39_gupe2")]
+position = Vector2(801, -799)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fdp1f")

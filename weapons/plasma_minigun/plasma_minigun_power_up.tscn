@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cji7i3ungw8u7"]
+
+[ext_resource type="Script" path="res://weapons/plasma_minigun/plasma_minigun_power_up.gd" id="1_d1dke"]
+[ext_resource type="Texture2D" uid="uid://dnqqe4lajou7m" path="res://weapons/plasma_minigun/plasma_minigun.png" id="2_76gu3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn5cw"]
+radius = 17.0294
+
+[node name="PlasmaMinigun" type="Area2D"]
+z_index = 10
+collision_layer = 0
+script = ExtResource("1_d1dke")
+
+[node name="PlasmaMinigun" type="Sprite2D" parent="."]
+position = Vector2(0, -23)
+scale = Vector2(0.538462, 0.538462)
+texture = ExtResource("2_76gu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_rn5cw")

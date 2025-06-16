@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://d3nnxbgvtfyqe"]
+
+[ext_resource type="FontFile" uid="uid://sfhilss6xo13" path="res://addons/ADLaMDisplay-Regular.ttf" id="1_qsavn"]
+[ext_resource type="Texture2D" uid="uid://blvqgkhxlem4e" path="res://ui/panel_2.png" id="2_b37eo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ywyg"]
+texture = ExtResource("2_b37eo")
+texture_margin_left = 80.0
+texture_margin_top = 60.0
+texture_margin_right = 120.0
+
+[resource]
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_qsavn")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_6ywyg")

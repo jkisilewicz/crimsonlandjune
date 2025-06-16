@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://clyhgbpfpmtw7"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_qw71e"]
+[ext_resource type="PackedScene" uid="uid://2lwars5771g5" path="res://scenes/player.tscn" id="3_j7oug"]
+[ext_resource type="PackedScene" uid="uid://bsig1usigbbuy" path="res://scenes/arena/arena.tscn" id="9_k3uu1"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_qw71e")
+
+[node name="Arena" parent="." instance=ExtResource("9_k3uu1")]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("3_j7oug")]
+position = Vector2(1775, 524)

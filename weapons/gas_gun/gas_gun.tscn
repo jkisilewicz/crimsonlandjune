@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://cf3ngl47bd2b0"]
+
+[ext_resource type="PackedScene" uid="uid://3oeeqiln4dnw" path="res://weapons/pistol/pistol.tscn" id="1_14wo3"]
+[ext_resource type="Script" path="res://weapons/gas_gun/gas_gun.gd" id="2_7umpt"]
+[ext_resource type="Texture2D" uid="uid://cu5jawopdslfo" path="res://weapons/gas_gun/gas_gun.png" id="3_2kvis"]
+[ext_resource type="PackedScene" uid="uid://br7uexxcaqp57" path="res://scenes/bullet_gas.tscn" id="3_ykn7v"]
+[ext_resource type="AudioStream" uid="uid://bxaieusfk4ms1" path="res://weapons/flamethrower/fire_shoot.mp3" id="4_h3nv5"]
+[ext_resource type="AudioStream" uid="uid://bu01dtyv8qsw4" path="res://weapons/flamethrower/fire_shoot1.mp3" id="5_msbtg"]
+
+[node name="GasGun" instance=ExtResource("1_14wo3")]
+script = ExtResource("2_7umpt")
+bullet_scene = ExtResource("3_ykn7v")
+is_fire_gas_or_money = true
+shoot_sfx_path = Array[AudioStream]([ExtResource("4_h3nv5"), ExtResource("5_msbtg")])
+fire_rate = 100.0
+bullet_per_shot = 2
+bullet_spread = 50.0
+clip_size = 500
+damage = 5
+speed = 1000.0
+plasma_slow_down_rate = Array[float]([1.0, 4.0])
+
+[node name="Pistol" parent="WeaponPivot" index="0"]
+scale = Vector2(0.51, 0.51)
+texture = ExtResource("3_2kvis")
+
+[node name="ShootingStart" parent="WeaponPivot/Pistol" index="0"]
+position = Vector2(98.6286, -4.41177)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://co5nycqfkv1r3"]
+
+[ext_resource type="Script" path="res://weapons/laser_minigun/laser_minigun_power_up.gd" id="1_0ubt5"]
+[ext_resource type="Texture2D" uid="uid://cjcovpx7djdon" path="res://weapons/laser_minigun/laser_minigun.png" id="2_ghv1h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn5cw"]
+radius = 17.0294
+
+[node name="LaserMinigun" type="Area2D"]
+z_index = 10
+collision_layer = 0
+script = ExtResource("1_0ubt5")
+
+[node name="LaserMinigun" type="Sprite2D" parent="."]
+position = Vector2(1, -25)
+texture = ExtResource("2_ghv1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_rn5cw")

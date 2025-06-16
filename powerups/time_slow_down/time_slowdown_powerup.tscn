@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg3enp0t25yyr"]
+
+[ext_resource type="Script" path="res://powerups/time_slow_down/time_slowdown_powerup.gd" id="1_eu8aq"]
+[ext_resource type="Texture2D" uid="uid://bkns06a1kbsu7" path="res://powerups/time_slow_down/stopwatch.png" id="1_ovva8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_136pw"]
+size = Vector2(94, 94)
+
+[sub_resource type="Gradient" id="Gradient_o0xax"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.472414, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.617)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oc7j4"]
+gradient = SubResource("Gradient_o0xax")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.2)
+metadata/_snap_enabled = true
+
+[node name="TimeSlowdownPowerup" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_eu8aq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("1_ovva8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_136pw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_oc7j4")

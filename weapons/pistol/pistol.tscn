@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://3oeeqiln4dnw"]
+
+[ext_resource type="Script" path="res://weapons/pistol/pistol.gd" id="1_u5slp"]
+[ext_resource type="Texture2D" uid="uid://c0op04tay5q3j" path="res://weapons/pistol/pistol.png" id="2_bcisu"]
+[ext_resource type="PackedScene" uid="uid://vcqt635l56cm" path="res://scenes/bullet.tscn" id="2_kdwg8"]
+[ext_resource type="AudioStream" uid="uid://bhv7px77ry75e" path="res://weapons/pistol/small_pistol_shoot_2.mp3" id="3_afgut"]
+[ext_resource type="AudioStream" uid="uid://bju2rhip5oi1m" path="res://weapons/pistol/pistol_reload.mp3" id="4_ov74u"]
+[ext_resource type="AudioStream" uid="uid://cckixsed3xl53" path="res://weapons/pistol/pistol_reload_2.mp3" id="5_1lfe1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2b6p"]
+radius = 500.0
+
+[node name="Pistol" type="Area2D" node_paths=PackedStringArray("muzzle", "weapon_pivot", "shoot_sfx", "reload_sfx")]
+z_index = 30
+y_sort_enabled = true
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_u5slp")
+muzzle = NodePath("WeaponPivot/Pistol/ShootingStart")
+weapon_pivot = NodePath("WeaponPivot")
+bullet_scene = ExtResource("2_kdwg8")
+shoot_sfx = NodePath("sfx_shoot")
+reload_sfx = NodePath("sfx_reload")
+shoot_sfx_path = Array[AudioStream]([ExtResource("3_afgut")])
+reload_sfx_path = Array[AudioStream]([ExtResource("4_ov74u"), ExtResource("5_1lfe1")])
+fire_rate = 3.0
+
+[node name="Range" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2b6p")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(72.6994, -36.75)
+scale = Vector2(0.0676752, 0.0676751)
+texture = ExtResource("2_bcisu")
+
+[node name="ShootingStart" type="Marker2D" parent="WeaponPivot/Pistol"]
+unique_name_in_owner = true
+position = Vector2(477.288, -151.459)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.111
+autostart = true
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_afgut")
+
+[node name="sfx_reload" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_ov74u")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

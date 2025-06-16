@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://helekvmuar22"]
+
+[ext_resource type="PackedScene" uid="uid://c7lhk8ukl8gex" path="res://support_weapons/bombs/bombs_power_up.tscn" id="1_84ajk"]
+[ext_resource type="Script" path="res://support_weapons/bomb_plane/bomb_plane_powerup.gd" id="2_h840q"]
+[ext_resource type="Texture2D" uid="uid://hbcp052ojl6l" path="res://support_weapons/bomb_plane/Bomber_Source.png" id="3_gbs00"]
+
+[node name="BombPlanePowerup" instance=ExtResource("1_84ajk")]
+script = ExtResource("2_h840q")
+spawn_interval = 45.0
+plane_life_time = 10.0
+plane_speed = 1000.0
+plane_drop_rate = 3
+
+[node name="Sprite" parent="." index="0"]
+visible = false
+texture = ExtResource("3_gbs00")
+
+[node name="Sprite2" type="Sprite2D" parent="." index="1"]
+z_index = 10
+scale = Vector2(0.346, 0.346)
+texture = ExtResource("3_gbs00")
+
+[node name="Timer" type="Timer" parent="." index="4"]
+one_shot = true

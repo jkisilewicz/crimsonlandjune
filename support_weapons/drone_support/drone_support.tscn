@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://0e0po0l87g7n"]
+
+[ext_resource type="Script" path="res://support_weapons/drone_support/drone_support.gd" id="1_j3p6i"]
+[ext_resource type="PackedScene" uid="uid://4k3f0cfannml" path="res://support_weapons/drone_support/drone_cluster/drone_cluster.tscn" id="2_xkt54"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v56gg"]
+size = Vector2(100, 100)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oar6s"]
+radius = 46.0435
+
+[node name="DroneSupport" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_j3p6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_v56gg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oar6s")
+
+[node name="DroneCluster" parent="." instance=ExtResource("2_xkt54")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

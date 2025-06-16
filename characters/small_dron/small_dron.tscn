@@ -1,0 +1,357 @@
+[gd_scene load_steps=14 format=3 uid="uid://coogdkh10whao"]
+
+[ext_resource type="Texture2D" uid="uid://ovux2xcni2hj" path="res://images/ground_shadow5.png" id="1_qqbdh"]
+[ext_resource type="AudioStream" uid="uid://27xxw4lyqpux" path="res://sounds/enemy_hit.mp3" id="5_xawnd"]
+
+[sub_resource type="GDScript" id="GDScript_qb6np"]
+script/source = "#monster.gd
+
+extends CharacterBody2D
+@onready var player: CharacterBody2D = $\"../Player\"
+@onready var damage_timer: Timer = $DamageTimer
+@onready var hit_area: Area2D = $HitArea
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var hurt_timer: Timer = $HurtTimer 
+@onready var round_enemy_body: Sprite2D = %RoundEnemyBody
+
+var health: int = 100
+const DAMAGE_RATE = 4.0
+const EXPERIENCE_REWARD = 600
+var is_hurt = false
+
+
+
+
+
+func _ready():
+	# Utworzenie Timer'a programowo jeśli nie został dodany w edytorze
+	if not has_node(\"HurtTimer\"):
+		hurt_timer = Timer.new()
+		hurt_timer.name = \"HurtTimer\"
+		hurt_timer.one_shot = true
+		hurt_timer.wait_time = 0.5  # Dostosuj do długości animacji hurt
+		add_child(hurt_timer)
+	
+	hurt_timer.timeout.connect(_on_hurt_timer_timeout)
+	play_walk()
+	hit_area.body_entered.connect(_on_hit_area_body_entered)
+	hit_area.body_exited.connect(_on_hit_area_body_exited)
+	damage_timer.timeout.connect(_on_damage_timer_timeout)
+
+func _physics_process(_delta):
+	var direction = global_position.direction_to(player.global_position)
+	velocity = direction * 200.0
+	
+	if direction.x < 0:
+		%RoundEnemyBody.flip_h = true  # Facing left
+	else:
+		%RoundEnemyBody.flip_h = false  # Facing right
+	
+	move_and_slide()
+	
+
+func take_damage(amount):
+	health -= amount
+	
+	# Wyświetlenie liczby obrażeń nad przeciwnikiem
+	_show_damage(amount)
+	
+	if not is_hurt:
+		is_hurt = true
+		$HitSound.play()
+		animation_player.stop()  # Zatrzymaj wszystkie aktywne animacje
+		animation_player.play(\"hurt\")
+		hurt_timer.start()  # Uruchom timer do zakończenia animacji hurt
+	
+	if health <= 0:
+		if player.has_method(\"gain_experience\"):
+			player.gain_experience(EXPERIENCE_REWARD)
+		if get_tree().current_scene.has_method(\"spawn_power_up\"):
+			get_tree().current_scene.spawn_power_up(global_position)
+		const SMOKE_SCENE = preload(\"res://smoke_explosion/smoke_explosion.tscn\")
+		var smoke = SMOKE_SCENE.instantiate()
+		get_parent().add_child(smoke)
+		smoke.global_position = global_position
+		queue_free()
+
+
+
+func _show_damage(amount):
+	# Załaduj scenę z damage_number (upewnij się, że ścieżka jest poprawna)
+	var damage_number_scene = preload(\"res://scenes/damage_number.tscn\")
+	var damage_label = damage_number_scene.instantiate()
+	
+	# Ustaw tekst etykiety jako wartość otrzymanych obrażeń
+	damage_label.text = str(amount)
+	
+	# Pozycjonujemy etykietę (np. 50 pikseli nad przeciwnikiem)
+	damage_label.position = global_position + Vector2(0, -50)
+	
+	# Dodajemy etykietę do aktualnej sceny (lub do wybranego węzła)
+	get_tree().get_current_scene().add_child(damage_label)
+
+
+func _on_hurt_timer_timeout():
+	is_hurt = false
+	if animation_player.current_animation == \"hurt\":
+		play_walk()
+
+func _on_hit_area_body_entered(body):
+	if body == player:
+		damage_timer.start()
+		print(\"Slime: Kolizja z graczem - start zadawania obrażeń\")
+
+func _on_hit_area_body_exited(body):
+	if body == player:
+		damage_timer.stop()
+		print(\"Slime: Wyjście z obszaru - stop zadawania obrażeń\")
+
+func _on_damage_timer_timeout():
+	if player:
+		player.apply_damage(DAMAGE_RATE)
+		
+func play_walk():
+	animation_player.play(\"walk\")
+
+func play_hurt():
+	is_hurt = true
+	animation_player.play(\"hurt\")
+	hurt_timer.start()
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wmwcp"]
+load_path = "res://.godot/imported/small_dron.png-39d44815fd9deb3e69594735d9e4b025.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_knaak"]
+load_path = "res://.godot/imported/small_dron_hurt.png-8c61e9bf0e5549f297c03d05e6dafdcb.ctex"
+
+[sub_resource type="Animation" id="Animation_y4lve"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/RoundEnemyBody:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Anchor/RoundEnemyBody/RoundEnemyHurt:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lu163"]
+resource_name = "hurt"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/RoundEnemyBody/RoundEnemyHurt:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_71vdi"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/RoundEnemyBody:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 0.95), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6c5un"]
+resource_name = "run"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/RoundEnemyBody/RoundEnemyHurt:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l6fy2"]
+resource_name = "walk"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -5.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/RoundEnemyBody:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 1.1), Vector2(1, 1), Vector2(0.9, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j6cum"]
+_data = {
+"RESET": SubResource("Animation_y4lve"),
+"hurt": SubResource("Animation_lu163"),
+"idle": SubResource("Animation_71vdi"),
+"run": SubResource("Animation_6c5un"),
+"walk": SubResource("Animation_l6fy2")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v63gs"]
+radius = 49.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3fc2w"]
+radius = 56.0
+
+[node name="SmallDron" type="CharacterBody2D"]
+z_index = 20
+position = Vector2(1, -4)
+collision_layer = 2
+collision_mask = 3
+platform_floor_layers = 4294901760
+script = SubResource("GDScript_qb6np")
+
+[node name="GroundShadow" type="Sprite2D" parent="."]
+modulate = Color(0.898039, 0.878431, 0.831373, 1)
+z_index = 1
+z_as_relative = false
+position = Vector2(0, -5)
+scale = Vector2(0.690622, 0.207407)
+texture = ExtResource("1_qqbdh")
+
+[node name="Anchor" type="Marker2D" parent="."]
+
+[node name="RoundEnemyBody" type="Sprite2D" parent="Anchor"]
+unique_name_in_owner = true
+texture = SubResource("CompressedTexture2D_wmwcp")
+offset = Vector2(0, -36)
+
+[node name="RoundEnemyHurt" type="Sprite2D" parent="Anchor/RoundEnemyBody"]
+modulate = Color(1, 1, 1, 0)
+texture = SubResource("CompressedTexture2D_knaak")
+offset = Vector2(0, -36)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_j6cum")
+}
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -30)
+shape = SubResource("CircleShape2D_v63gs")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="DamageTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.383
+
+[node name="HurtTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="HitArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_3fc2w")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xawnd")
+volume_db = 14.586
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

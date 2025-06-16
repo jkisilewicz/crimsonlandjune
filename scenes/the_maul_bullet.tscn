@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://2v33vxuy4wvv"]
+
+[ext_resource type="PackedScene" uid="uid://vcqt635l56cm" path="res://scenes/bullet.tscn" id="1_jvgbh"]
+[ext_resource type="Script" path="res://scripts/the_maul_bullet.gd" id="2_24hqq"]
+
+[sub_resource type="Curve" id="Curve_5tltv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.991892, 0.449268), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="TheMaulBullet" instance=ExtResource("1_jvgbh")]
+script = ExtResource("2_24hqq")
+
+[node name="Projectile" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+disabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="2"]
+target_position = Vector2(400, 0)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="Line2D" type="Line2D" parent="." index="3"]
+points = PackedVector2Array(0, 0, 2000, 0)
+width = 5.0
+width_curve = SubResource("Curve_5tltv")
+default_color = Color(0, 1, 0, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true

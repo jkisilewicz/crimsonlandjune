@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl88xywg5bajc"]
+
+[ext_resource type="PackedScene" uid="uid://ct644brm555dx" path="res://scenes/bullet_fire.tscn" id="1_pc6o6"]
+[ext_resource type="Script" path="res://scripts/money.gd" id="2_4rnva"]
+
+[sub_resource type="Gradient" id="Gradient_mq4f0"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.2, 0.8)
+colors = PackedColorArray(1, 1, 1, 0, 0.333667, 0.55, 0.33, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_38jn4"]
+gradient = SubResource("Gradient_mq4f0")
+fill_from = Vector2(1, 1)
+
+[node name="Money" instance=ExtResource("1_pc6o6")]
+script = ExtResource("2_4rnva")
+delete_after = 10.0
+min_speed = 0
+
+[node name="Projectile" parent="." index="0"]
+position = Vector2(0, 0)
+texture = SubResource("GradientTexture2D_38jn4")

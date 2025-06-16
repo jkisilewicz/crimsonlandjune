@@ -1,0 +1,105 @@
+[gd_scene load_steps=16 format=3 uid="uid://7hb58dt6dtfj"]
+
+[ext_resource type="Script" path="res://powerups/offensive_force_field/offensive_force_field.gd" id="1_m26v7"]
+[ext_resource type="Texture2D" uid="uid://b5vxjb1numsnp" path="res://powerups/offensive_force_field/35.png" id="2_0lgqx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h6sxt"]
+radius = 350.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vopvm"]
+radius = 48.0
+
+[sub_resource type="Gradient" id="Gradient_sqfn2"]
+offsets = PackedFloat32Array(0.8, 0.951724, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3txkr"]
+gradient = SubResource("Gradient_sqfn2")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_x8pu0"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 11.6477), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0nl7i"]
+curve = SubResource("Curve_x8pu0")
+
+[sub_resource type="Curve" id="Curve_rf2sc"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.503497, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_obdwm"]
+curve = SubResource("Curve_rf2sc")
+
+[sub_resource type="Curve" id="Curve_3lyvg"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 22.7273), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_javus"]
+curve = SubResource("Curve_3lyvg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7c0qf"]
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 250.0
+emission_ring_inner_radius = 240.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+radial_accel_curve = SubResource("CurveTexture_0nl7i")
+tangential_accel_min = -100.0
+tangential_accel_max = -14.29
+tangential_accel_curve = SubResource("CurveTexture_javus")
+scale_curve = SubResource("CurveTexture_obdwm")
+turbulence_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_0hjj0"]
+offsets = PackedFloat32Array(0.8, 0.944828, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0, 1, 1, 0.117647, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bfnht"]
+gradient = SubResource("Gradient_0hjj0")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0.5)
+metadata/_snap_enabled = true
+
+[node name="OffensiveForceField" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_m26v7")
+
+[node name="DamagingCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h6sxt")
+disabled = true
+
+[node name="PickupCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vopvm")
+
+[node name="DamagingVisual" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.329412)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("GradientTexture2D_3txkr")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="DamagingVisual"]
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_7c0qf")
+texture = SubResource("GradientTexture2D_bfnht")
+lifetime = 1.45
+speed_scale = 2.0
+
+[node name="PickupVisual" type="Sprite2D" parent="."]
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("2_0lgqx")
+
+[connection signal="body_entered" from="." to="." method="_activate_powerup"]

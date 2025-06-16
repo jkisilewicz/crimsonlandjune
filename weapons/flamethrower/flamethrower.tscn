@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://6eev4vomhm2g"]
+
+[ext_resource type="PackedScene" uid="uid://3oeeqiln4dnw" path="res://weapons/pistol/pistol.tscn" id="1_q20yf"]
+[ext_resource type="Script" path="res://weapons/flamethrower/flamethrower.gd" id="2_nsytq"]
+[ext_resource type="PackedScene" uid="uid://ct644brm555dx" path="res://scenes/bullet_fire.tscn" id="3_psi2y"]
+[ext_resource type="AudioStream" uid="uid://bxaieusfk4ms1" path="res://weapons/flamethrower/fire_shoot.mp3" id="4_lp6mq"]
+[ext_resource type="Texture2D" uid="uid://haho47axtihg" path="res://weapons/flamethrower/flamethrower.png" id="5_qtvxr"]
+[ext_resource type="AudioStream" uid="uid://bu01dtyv8qsw4" path="res://weapons/flamethrower/fire_shoot1.mp3" id="5_vgrp7"]
+
+[node name="Flamethrower" instance=ExtResource("1_q20yf")]
+script = ExtResource("2_nsytq")
+bullet_scene = ExtResource("3_psi2y")
+shoot_sfx_path = Array[AudioStream]([ExtResource("4_lp6mq"), ExtResource("5_vgrp7")])
+fire_rate = 50.0
+bullet_per_shot = 3
+bullet_spread = 50.0
+clip_size = 500
+damage = 2
+speed = 1400.0
+
+[node name="Pistol" parent="WeaponPivot" index="0"]
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("5_qtvxr")
+
+[node name="ShootingStart" parent="WeaponPivot/Pistol" index="0"]
+position = Vector2(65.6953, -5.90278)

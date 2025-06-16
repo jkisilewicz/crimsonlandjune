@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0op18agkkh04"]
+
+[ext_resource type="PackedScene" uid="uid://3oeeqiln4dnw" path="res://weapons/pistol/pistol.tscn" id="1_h81dc"]
+[ext_resource type="Texture2D" uid="uid://lagb7uqshdld" path="res://weapons/laser_beamer/laser_beamer.png" id="2_2uops"]
+[ext_resource type="Script" path="res://weapons/laser_beamer/laser_beamer.gd" id="2_txd88"]
+[ext_resource type="AudioStream" uid="uid://bxmoqbpn7yx1r" path="res://weapons/laser_beamer/laser_on.mp3" id="4_mmelu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4keje"]
+radius = 574.0
+
+[sub_resource type="Curve" id="Curve_hpxe2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.75419, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="LaserBeamer" instance=ExtResource("1_h81dc")]
+script = ExtResource("2_txd88")
+damage_per_second = 100
+
+[node name="LaserVisual" type="Line2D" parent="." index="0"]
+unique_name_in_owner = true
+z_index = 1
+width = 25.0
+default_color = Color(1, 0, 0, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Range" parent="." index="1"]
+shape = SubResource("CircleShape2D_4keje")
+
+[node name="WeaponPivot" parent="." index="2"]
+position = Vector2(0, -64)
+
+[node name="Pistol" parent="WeaponPivot" index="0"]
+position = Vector2(98, -3.8147e-06)
+scale = Vector2(0.81, 0.81)
+texture = ExtResource("2_2uops")
+
+[node name="LaserRay" type="RayCast2D" parent="WeaponPivot/Pistol" index="0"]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(86.4078, -22.3301)
+target_position = Vector2(600, 0)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="WeaponPivot/Pistol/LaserRay" index="0"]
+position = Vector2(3.8835, 0)
+scale = Vector2(0.970874, 0.970874)
+amount = 200
+lifetime = 0.3
+local_coords = true
+spread = 75.48
+gravity = Vector2(0, 0)
+initial_velocity_min = 68.77
+initial_velocity_max = 142.85
+damping_min = 67.196
+damping_max = 83.598
+angle_min = -426.7
+angle_max = 236.2
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_hpxe2")
+color = Color(1, 0, 0, 1)
+
+[node name="ShootingStart" parent="WeaponPivot/Pistol" index="1"]
+position = Vector2(102.913, -21.3592)
+
+[node name="sfx_shoot" parent="." index="4"]
+stream = ExtResource("4_mmelu")
+
+[node name="DamageTimer" type="Timer" parent="." index="6"]
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://u4vdong76n5m"]
+
+[ext_resource type="PackedScene" uid="uid://bhlx07720hcym" path="res://weapons/rocket_launcher/rocket_launcher_power_up.tscn" id="1_7ougg"]
+[ext_resource type="Script" path="res://weapons/missile_launcher/missile_launcher_item.gd" id="2_7p5rm"]
+[ext_resource type="Texture2D" uid="uid://kd48fs6b0lud" path="res://weapons/missile_launcher/missile_launcher.png" id="2_8wdps"]
+
+[node name="MissileLauncherItem" instance=ExtResource("1_7ougg")]
+script = ExtResource("2_7p5rm")
+
+[node name="RocketLauncher" parent="." index="0"]
+texture = ExtResource("2_8wdps")

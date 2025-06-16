@@ -1,0 +1,213 @@
+[gd_scene load_steps=14 format=3 uid="uid://dqmjy33jy0vn8"]
+
+[ext_resource type="Texture2D" uid="uid://6itf2ytrrboa" path="res://images/ground_shadow.png" id="2_ma6n3"]
+[ext_resource type="AudioStream" uid="uid://cvu0t411hfhi2" path="res://sounds/enemy_hit_4.mp3" id="4_xqccw"]
+
+[sub_resource type="GDScript" id="GDScript_dd4sg"]
+script/source = "#myslime.gd
+extends CharacterBody2D
+
+@onready var player: CharacterBody2D = $\"../Player\"
+@onready var damage_timer: Timer = %DamageTimer  # Nowy timer dodany do sceny Slime (lub istniejący)
+@onready var hit_area: Area2D = %HitArea        # Area2D na slime, wykrywające kolizje z graczem
+
+signal myslime_died
+
+const DAMAGE_RATE = 5.0
+const EXPERIENCE_REWARD = 350  # Punkty doświadczenia przy zabiciu slime'a
+
+var health: int = 50
+var is_dead: bool = false
+
+func _ready():
+	%AnimatedSprite2D.play(\"idle\")
+	%AnimatedSprite2D.animation_finished.connect(_on_animation_finished)
+	
+	# Podpinamy sygnały do obsługi zadawania obrażeń
+	hit_area.body_entered.connect(_on_hit_area_body_entered)
+	hit_area.body_exited.connect(_on_hit_area_body_exited)
+	damage_timer.timeout.connect(_on_damage_timer_timeout)
+
+func _physics_process(_delta):
+	if is_dead:
+		velocity = Vector2.ZERO
+		return
+
+	var direction = global_position.direction_to(player.global_position)
+	velocity = direction * 200.0
+	move_and_slide()
+
+# --------------------------------------------
+# Obsługa zadawania obrażeń graczowi
+# --------------------------------------------
+
+func _on_hit_area_body_entered(body):
+	if body == player:
+		damage_timer.start()
+		print(\"Slime: Kolizja z graczem - start zadawania obrażeń\")
+
+func _on_hit_area_body_exited(body):
+	if body == player:
+		damage_timer.stop()
+		print(\"Slime: Wyjście z obszaru - stop zadawania obrażeń\")
+
+func _on_damage_timer_timeout():
+	# Wywołujemy funkcję zadawania obrażeń u gracza
+	if player and not is_dead:
+		player.apply_damage(DAMAGE_RATE)
+
+# --------------------------------------------
+# Obsługa otrzymywania obrażeń przez slime'a
+# --------------------------------------------
+
+func take_damage(amount):
+	if is_dead:
+		return
+
+	health -= amount
+	%AnimatedSprite2D.play(\"hurt\")
+	$HitSound.play()
+
+	if health <= 0:
+		die()
+
+func die():
+	is_dead = true
+	velocity = Vector2.ZERO
+
+	set_collision_layer_value(2, false)
+	set_collision_layer_value(5, true)
+
+	var SMOKE_SCENE = preload(\"res://smoke_explosion/smoke_explosion.tscn\")
+	var smoke = SMOKE_SCENE.instantiate()
+	get_parent().add_child(smoke)
+	smoke.global_position = global_position
+
+	%AnimatedSprite2D.play(\"death\")
+	emit_signal(\"myslime_died\")
+	if get_tree().current_scene.has_method(\"spawn_power_up\"):
+		get_tree().current_scene.spawn_power_up(global_position)
+	# Dodaj zdobywanie punktów doświadczenia przez gracza
+	if player.has_method(\"gain_experience\"):
+		player.gain_experience(EXPERIENCE_REWARD)
+
+func _on_animation_finished():
+	if %AnimatedSprite2D.animation == \"hurt\":
+		%AnimatedSprite2D.play(\"idle\")
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jtcab"]
+load_path = "res://.godot/imported/slimesheet.png-726897eaa2c87ec62c373c521ddb5c74.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm2ta"]
+atlas = SubResource("CompressedTexture2D_jtcab")
+region = Rect2(1082, 542, 541, 542)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aeg1"]
+atlas = SubResource("CompressedTexture2D_jtcab")
+region = Rect2(0, 542, 541, 542)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoh0c"]
+atlas = SubResource("CompressedTexture2D_jtcab")
+region = Rect2(541, 542, 541, 542)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51767"]
+atlas = SubResource("CompressedTexture2D_jtcab")
+region = Rect2(0, 0, 541, 542)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3t6b"]
+atlas = SubResource("CompressedTexture2D_jtcab")
+region = Rect2(541, 0, 541, 542)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aht5"]
+atlas = SubResource("CompressedTexture2D_jtcab")
+region = Rect2(1082, 0, 541, 542)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e5a7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm2ta")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aeg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoh0c")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51767")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3t6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aht5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v63gs"]
+radius = 43.0116
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ljxo7"]
+radius = 56.0
+
+[node name="MySlime" type="CharacterBody2D" groups=["slime"]]
+collision_layer = 2
+collision_mask = 3
+platform_floor_layers = 4294901760
+script = SubResource("GDScript_dd4sg")
+
+[node name="GroundShadow" type="Sprite2D" parent="."]
+modulate = Color(0.898039, 0.878431, 0.831373, 1)
+z_index = -1
+z_as_relative = false
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_ma6n3")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(5, -33)
+scale = Vector2(0.235444, 0.235444)
+sprite_frames = SubResource("SpriteFrames_e5a7j")
+animation = &"hurt"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -32)
+shape = SubResource("CircleShape2D_v63gs")
+
+[node name="DamageTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.383
+
+[node name="HitArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+position = Vector2(4, -29)
+shape = SubResource("CircleShape2D_ljxo7")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xqccw")
+volume_db = 14.586
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
+[connection signal="body_exited" from="HitArea" to="." method="_on_hit_area_body_exited"]

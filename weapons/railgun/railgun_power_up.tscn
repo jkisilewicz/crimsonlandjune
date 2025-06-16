@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://crmrrdqvp61vc"]
+
+[ext_resource type="Script" path="res://weapons/railgun/railgun_power_up.gd" id="1_tqhp3"]
+[ext_resource type="Texture2D" uid="uid://pw1lgs8i2dg0" path="res://weapons/railgun/railgun.png" id="2_3qtj1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rn5cw"]
+radius = 17.0294
+
+[node name="RailGun" type="Area2D"]
+z_index = 10
+collision_layer = 0
+script = ExtResource("1_tqhp3")
+
+[node name="RailGun" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, -23)
+scale = Vector2(0.715381, 0.715381)
+texture = ExtResource("2_3qtj1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_rn5cw")

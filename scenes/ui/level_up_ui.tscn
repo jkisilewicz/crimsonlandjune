@@ -1,0 +1,224 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnpnnthpwi62r"]
+
+[ext_resource type="Shader" path="res://scenes/ui/blur.gdshader" id="1_6k2un"]
+[ext_resource type="Texture2D" uid="uid://bd3hh5h4xhloo" path="res://powerups/armor/armor_power_up.png" id="3_48irj"]
+[ext_resource type="FontFile" uid="uid://d4imt37tjbuss" path="res://scenes/shared/fonts/lato/Lato-Bold.ttf" id="4_jxahd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cx2v7"]
+shader = ExtResource("1_6k2un")
+shader_parameter/strength = 1.256
+shader_parameter/mix_percentage = 0.095
+
+[node name="LevelUp" type="Control"]
+process_mode = 3
+z_index = 500
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_cx2v7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+z_index = 500
+layout_mode = 0
+offset_right = 769.0
+offset_bottom = 50.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+z_index = 500
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Level Up! Choose a stat to improve:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelUpAdvanced1" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 668.0
+offset_bottom = 335.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelUpAdvanced1"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelUpAdvanced1/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TextureRect1" type="TextureRect" parent="LevelUpAdvanced1/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("3_48irj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelUpAdvanced1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VSeparator" type="VSeparator" parent="LevelUpAdvanced1/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="LabelTitle1" type="Label" parent="LevelUpAdvanced1/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("4_jxahd")
+theme_override_font_sizes/font_size = 37
+
+[node name="VSeparator3" type="VSeparator" parent="LevelUpAdvanced1/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="LabelDesc1" type="Label" parent="LevelUpAdvanced1/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 21
+
+[node name="VSeparator2" type="VSeparator" parent="LevelUpAdvanced1/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="LabelLevel1" type="Label" parent="LevelUpAdvanced1/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 21
+
+[node name="LevelUpAdvanced2" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 362.0
+offset_right = 668.0
+offset_bottom = 697.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelUpAdvanced2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelUpAdvanced2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TextureRect2" type="TextureRect" parent="LevelUpAdvanced2/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("3_48irj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelUpAdvanced2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VSeparator" type="VSeparator" parent="LevelUpAdvanced2/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="LabelTitle2" type="Label" parent="LevelUpAdvanced2/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("4_jxahd")
+theme_override_font_sizes/font_size = 37
+
+[node name="VSeparator3" type="VSeparator" parent="LevelUpAdvanced2/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="LabelDesc2" type="Label" parent="LevelUpAdvanced2/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 21
+
+[node name="VSeparator2" type="VSeparator" parent="LevelUpAdvanced2/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="LabelLevel2" type="Label" parent="LevelUpAdvanced2/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 21
+
+[node name="LevelUpAdvanced3" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 740.0
+offset_right = 668.0
+offset_bottom = 1075.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelUpAdvanced3"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelUpAdvanced3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="TextureRect3" type="TextureRect" parent="LevelUpAdvanced3/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture = ExtResource("3_48irj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelUpAdvanced3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="VSeparator" type="VSeparator" parent="LevelUpAdvanced3/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="LabelTitle3" type="Label" parent="LevelUpAdvanced3/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.960784, 1)
+theme_override_fonts/font = ExtResource("4_jxahd")
+theme_override_font_sizes/font_size = 37
+
+[node name="VSeparator3" type="VSeparator" parent="LevelUpAdvanced3/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="LabelDesc3" type="Label" parent="LevelUpAdvanced3/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 21
+
+[node name="VSeparator2" type="VSeparator" parent="LevelUpAdvanced3/VBoxContainer/HBoxContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="LabelLevel3" type="Label" parent="LevelUpAdvanced3/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.439216, 0.556863, 1)
+theme_override_font_sizes/font_size = 21

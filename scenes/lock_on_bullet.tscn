@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnba4pgrmrjdi"]
+
+[ext_resource type="PackedScene" uid="uid://ca686saihnc6x" path="res://scenes/explosive_bullet.tscn" id="1_bc3o8"]
+[ext_resource type="Script" path="res://scripts/lock_on_bullet.gd" id="2_x1agk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l71au"]
+radius = 771.429
+height = 2728.57
+
+[sub_resource type="Gradient" id="Gradient_fosyu"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.7, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jnroj"]
+gradient = SubResource("Gradient_fosyu")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+metadata/_snap_count = 6
+
+[sub_resource type="Curve" id="Curve_gdqxv"]
+_data = [Vector2(0, 0.130978), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_f8bi0"]
+colors = PackedColorArray(1, 1, 1, 0.5, 1, 1, 1, 0)
+
+[node name="LockOnBullet" instance=ExtResource("1_bc3o8")]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("2_x1agk")
+speed = 500
+rotation_speed = 4
+explosion_radius = 100.0
+
+[node name="Projectile" parent="." index="0"]
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, 0)
+
+[node name="SearchArea" type="Area2D" parent="." index="2"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchArea" index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_l71au")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="3"]
+position = Vector2(-43.3333, 0)
+amount = 200
+lifetime = 0.5
+texture = SubResource("GradientTexture2D_jnroj")
+emission_shape = 1
+emission_sphere_radius = 10.2
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_gdqxv")
+color_ramp = SubResource("Gradient_f8bi0")
+
+[connection signal="body_entered" from="SearchArea" to="." method="_on_search_area_body_entered"]
+[connection signal="body_exited" from="SearchArea" to="." method="_on_search_area_body_exited"]

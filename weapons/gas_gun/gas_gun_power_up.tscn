@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://xdrubyf3dvj5"]
+
+[ext_resource type="PackedScene" uid="uid://jrhp8ca7vqxw" path="res://weapons/flamethrower/flamethrower_power_up.tscn" id="1_2i8lj"]
+[ext_resource type="Script" path="res://weapons/gas_gun/gas_gun_power_up.gd" id="2_dymia"]
+[ext_resource type="Texture2D" uid="uid://cu5jawopdslfo" path="res://weapons/gas_gun/gas_gun.png" id="3_1yn81"]
+
+[node name="GasGunPowerUp" instance=ExtResource("1_2i8lj")]
+script = ExtResource("2_dymia")
+
+[node name="GrenadeLauncher" parent="." index="0"]
+texture = ExtResource("3_1yn81")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://om525cin8val"]
+
+[ext_resource type="Script" path="res://support_weapons/electric_drone/electric_drone_spawner.gd" id="1_53bxy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_drvqq"]
+radius = 67.42
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_by4ml"]
+size = Vector2(100, 100)
+
+[node name="ElectricDroneSpawner" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_53bxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_drvqq")
+
+[node name="NextSpawn" type="Timer" parent="."]
+one_shot = true
+
+[node name="OnScreen" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_by4ml")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="NextSpawn" to="." method="_spawn_drone"]
+[connection signal="timeout" from="OnScreen" to="." method="_on_screen_timeout"]

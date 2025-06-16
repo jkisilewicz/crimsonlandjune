@@ -1,0 +1,320 @@
+[gd_scene load_steps=25 format=3 uid="uid://2lwars5771g5"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_bb10n"]
+[ext_resource type="PackedScene" uid="uid://boyhjgqx8fp1l" path="res://characters/mini_lili/mini_lili.tscn" id="2_8dfwy"]
+[ext_resource type="PackedScene" uid="uid://3oeeqiln4dnw" path="res://weapons/pistol/pistol.tscn" id="3_w4ndi"]
+[ext_resource type="Texture2D" uid="uid://d1jsomtujqyti" path="res://images/upgrade.svg" id="4_sofh4"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="4_ugerd"]
+[ext_resource type="FontFile" uid="uid://sfhilss6xo13" path="res://addons/ADLaMDisplay-Regular.ttf" id="5_3d1vb"]
+[ext_resource type="Script" path="res://scripts/player_xp.gd" id="7_ry02i"]
+[ext_resource type="Script" path="res://scripts/player_level.gd" id="8_i05nt"]
+[ext_resource type="Script" path="res://scripts/player_health.gd" id="8_pmqeo"]
+[ext_resource type="Script" path="res://scripts/time_in_game.gd" id="10_3tnkl"]
+[ext_resource type="PackedScene" uid="uid://bnpnnthpwi62r" path="res://scenes/ui/level_up_ui.tscn" id="12_l5igg"]
+[ext_resource type="Script" path="res://scenes/ui/level_up_ui.gd" id="13_b067u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_upddu"]
+height = 54.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mbrke"]
+bg_color = Color(0.839216, 0.117647, 0.219608, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 13
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enhcv"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5s07"]
+bg_color = Color(0.0235294, 0.113725, 0.329412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2iqd"]
+bg_color = Color(1, 0.953, 0.06, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 13
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilnkf"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h4qp"]
+bg_color = Color(0.0235294, 0.113725, 0.329412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk3s0"]
+bg_color = Color(0.8, 0.224, 0.16, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Gradient" id="Gradient_7fvms"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.820144, 0.956835)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.0431373, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5hp46"]
+gradient = SubResource("Gradient_7fvms")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_g02t6"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.820144, 0.956835)
+colors = PackedColorArray(1, 1, 1, 0, 0.55, 1, 0.9925, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_04kwe"]
+gradient = SubResource("Gradient_g02t6")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
+y_sort_enabled = true
+collision_mask = 5
+motion_mode = 1
+platform_floor_layers = 4294901760
+script = ExtResource("1_bb10n")
+
+[node name="MiniLili" parent="." instance=ExtResource("2_8dfwy")]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_upddu")
+
+[node name="Weapon" type="Node2D" parent="."]
+
+[node name="Pistol" parent="Weapon" instance=ExtResource("3_w4ndi")]
+visible = false
+position = Vector2(0, -31)
+script = ExtResource("4_ugerd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Hud" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="PlayerInfoBox" type="Panel" parent="CanvasLayer/Hud"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -518.0
+offset_bottom = 106.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mbrke")
+
+[node name="XPImage" type="TextureRect" parent="CanvasLayer/Hud/PlayerInfoBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -39.0
+offset_right = -167.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_sofh4")
+expand_mode = 1
+
+[node name="XP" type="Label" parent="CanvasLayer/Hud/PlayerInfoBox"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 11.0
+offset_right = 165.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_3d1vb")
+theme_override_font_sizes/font_size = 25
+script = ExtResource("7_ry02i")
+
+[node name="XPProgressBar" type="ProgressBar" parent="CanvasLayer/Hud/PlayerInfoBox/XP"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 138.0
+offset_top = 4.0
+offset_right = 382.0
+offset_bottom = 42.0
+theme_override_styles/background = SubResource("StyleBoxFlat_enhcv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r5s07")
+show_percentage = false
+
+[node name="Level" type="Label" parent="CanvasLayer/Hud/PlayerInfoBox"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 54.0
+offset_right = 165.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_3d1vb")
+theme_override_font_sizes/font_size = 25
+script = ExtResource("8_i05nt")
+
+[node name="WeaponHealth" type="Panel" parent="CanvasLayer/Hud"]
+layout_mode = 1
+offset_right = 518.0
+offset_bottom = 106.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2iqd")
+
+[node name="Frame" type="Panel" parent="CanvasLayer/Hud/WeaponHealth"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -39.0
+offset_right = 87.0
+offset_bottom = 38.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ilnkf")
+
+[node name="ActualWeapon" type="TextureRect" parent="CanvasLayer/Hud/WeaponHealth/Frame"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -31.5
+offset_right = 31.0
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer/Hud/WeaponHealth"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 57.0
+offset_right = 160.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_3d1vb")
+theme_override_font_sizes/font_size = 25
+script = ExtResource("8_pmqeo")
+
+[node name="TimeInGame" type="Label" parent="CanvasLayer/Hud/WeaponHealth"]
+layout_mode = 0
+offset_left = 928.0
+offset_top = -4.0
+offset_right = 976.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_3d1vb")
+theme_override_font_sizes/font_size = 25
+script = ExtResource("10_3tnkl")
+
+[node name="HealthProgressBar" type="ProgressBar" parent="CanvasLayer/Hud/WeaponHealth"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 111.0
+offset_top = 15.0
+offset_right = 507.0
+offset_bottom = 53.0
+theme_override_styles/background = SubResource("StyleBoxFlat_6h4qp")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mk3s0")
+value = 100.0
+show_percentage = false
+
+[node name="HealthText" type="Label" parent="CanvasLayer/Hud/WeaponHealth/HealthProgressBar"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="LevelUp" parent="CanvasLayer" instance=ExtResource("12_l5igg")]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("13_b067u")
+
+[node name="ForceField" type="Node2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.5)
+
+[node name="ForceField1" type="TextureProgressBar" parent="ForceField"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -186.0
+offset_right = 128.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 30.0
+step = 0.001
+fill_mode = 8
+radial_fill_degrees = 180.0
+texture_under = SubResource("GradientTexture2D_5hp46")
+texture_progress = SubResource("GradientTexture2D_04kwe")
+
+[node name="ForceField2" type="TextureProgressBar" parent="ForceField"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -186.0
+offset_right = 128.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 30.0
+step = 0.001
+fill_mode = 8
+radial_initial_angle = 180.0
+radial_fill_degrees = 180.0
+texture_progress = SubResource("GradientTexture2D_04kwe")

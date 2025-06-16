@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://pltpvtlpgtns"]
+
+[ext_resource type="Script" path="res://weapons/plasmagun/plasmagun.gd" id="1_lbab8"]
+[ext_resource type="Texture2D" uid="uid://ch4w3uxbf5yhd" path="res://weapons/plasmagun/plasmagun.png" id="2_f03sm"]
+[ext_resource type="PackedScene" uid="uid://vcqt635l56cm" path="res://scenes/bullet.tscn" id="2_rwmhm"]
+[ext_resource type="AudioStream" uid="uid://bqkih6xgbhaaq" path="res://sounds/laser_1.wav" id="3_x12fy"]
+[ext_resource type="AudioStream" uid="uid://e2107lpf084u" path="res://weapons/rifle/rifle_reload.mp3" id="4_rk8j1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x2b6p"]
+radius = 522.024
+
+[node name="PlasmaGunRoot" type="Area2D" node_paths=PackedStringArray("muzzle", "weapon_pivot", "shoot_sfx", "reload_sfx")]
+z_index = 30
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_lbab8")
+muzzle = NodePath("WeaponPivot/PlasmaGun/ShootingStart")
+weapon_pivot = NodePath("WeaponPivot")
+bullet_scene = ExtResource("2_rwmhm")
+shoot_sfx = NodePath("sfx_shoot")
+reload_sfx = NodePath("sfx_reload")
+shoot_sfx_path = Array[AudioStream]([ExtResource("3_x12fy")])
+reload_sfx_path = Array[AudioStream]([ExtResource("4_rk8j1")])
+fire_rate = 10.0
+bullet_spread = 3.0
+clip_size = 5
+reload_time = 0.5
+damage = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x2b6p")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="PlasmaGun" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(2.00002, 1)
+scale = Vector2(0.996809, 0.996809)
+texture = ExtResource("2_f03sm")
+
+[node name="ShootingStart" type="Marker2D" parent="WeaponPivot/PlasmaGun"]
+unique_name_in_owner = true
+position = Vector2(12.5325, -2.07317)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.111
+autostart = true
+
+[node name="sfx_shoot" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_x12fy")
+
+[node name="sfx_reload" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_rk8j1")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

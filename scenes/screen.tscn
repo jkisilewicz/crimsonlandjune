@@ -1,0 +1,342 @@
+[gd_scene load_steps=21 format=3 uid="uid://dlid75n88vbfb"]
+
+[ext_resource type="Script" path="res://scripts/screen.gd" id="1_6q7wf"]
+[ext_resource type="PackedScene" uid="uid://2lwars5771g5" path="res://scenes/player.tscn" id="1_h0hs6"]
+[ext_resource type="Script" path="res://scripts/click_position_logger.gd" id="2_0a7tm"]
+[ext_resource type="PackedScene" uid="uid://d3b3gpss6pgn0" path="res://scenes/fps.tscn" id="2_c2xao"]
+[ext_resource type="PackedScene" uid="uid://cijhpkxhkeyb" path="res://scenes/tree.tscn" id="2_cl62n"]
+[ext_resource type="Script" path="res://scripts/screen_barrier.gd" id="3_neyyy"]
+[ext_resource type="Script" path="res://scripts/barrier_visual.gd" id="3_ouv33"]
+[ext_resource type="Script" path="res://scripts/restart_game.gd" id="5_im4o6"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="5_vuqny"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tpkxc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h58or"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qssvp"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_psr4l"]
+
+[sub_resource type="Gradient" id="Gradient_52glb"]
+offsets = PackedFloat32Array(0.0745342, 0.36646)
+colors = PackedColorArray(0.674815, 0.674815, 0.674815, 1, 0.141176, 0.141176, 0.141176, 0.380392)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_huqu3"]
+noise_type = 3
+frequency = 0.0212
+fractal_lacunarity = 2.195
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gyekr"]
+width = 2000
+height = 2000
+seamless = true
+color_ramp = SubResource("Gradient_52glb")
+noise = SubResource("FastNoiseLite_huqu3")
+
+[sub_resource type="Gradient" id="Gradient_ogggn"]
+offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve2D" id="Curve2D_34kcn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -3840, -2160, 0, 0, 0, 0, 3840, -2159, 0, 0, 0, 0, 3840, 2160, 0, 0, 0, 0, -3840, 2160, 0, 0, 0, 0, -3840, -2160)
+}
+point_count = 5
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u87b0"]
+polygon = PackedVector2Array(-72, -28, -92, -66, -85, -106, -96, -152, -61, -178, -25, -164, -17, -128, -31.3148, -101.973, -22, -60, -40, -33)
+
+[sub_resource type="Environment" id="Environment_fdp1f"]
+background_mode = 3
+glow_enabled = true
+glow_bloom = 0.03
+
+[node name="screen" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_6q7wf")
+
+[node name="ClickPositionLogger" type="Node2D" parent="."]
+script = ExtResource("2_0a7tm")
+
+[node name="ScreenBarrier" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_neyyy")
+metadata/_edit_lock_ = true
+
+[node name="BottomBarrier" type="CollisionShape2D" parent="ScreenBarrier"]
+unique_name_in_owner = true
+position = Vector2(0, 2160)
+shape = SubResource("WorldBoundaryShape2D_tpkxc")
+one_way_collision = true
+metadata/_edit_lock_ = true
+
+[node name="TopBarrier" type="CollisionShape2D" parent="ScreenBarrier"]
+unique_name_in_owner = true
+position = Vector2(0, -2160)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_h58or")
+one_way_collision = true
+metadata/_edit_lock_ = true
+
+[node name="RightBarrier" type="CollisionShape2D" parent="ScreenBarrier"]
+unique_name_in_owner = true
+position = Vector2(3840, 0)
+rotation = -1.57079
+shape = SubResource("WorldBoundaryShape2D_qssvp")
+one_way_collision = true
+metadata/_edit_lock_ = true
+
+[node name="LeftBarrier" type="CollisionShape2D" parent="ScreenBarrier"]
+unique_name_in_owner = true
+position = Vector2(-3840, 0)
+rotation = 1.57081
+shape = SubResource("WorldBoundaryShape2D_psr4l")
+one_way_collision = true
+metadata/_edit_lock_ = true
+
+[node name="BarrierVisual" type="Line2D" parent="ScreenBarrier"]
+z_index = -5
+points = PackedVector2Array(-3840, -2160, 3840, -2160, 3840, 2160, -3840, 2160)
+closed = true
+width = 35.0
+script = ExtResource("3_ouv33")
+base_width = 35
+metadata/_edit_lock_ = true
+
+[node name="ParallaxParticle" type="CanvasLayer" parent="."]
+layer = 128
+follow_viewport_enabled = true
+follow_viewport_scale = 3.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxParticle"]
+amount = 5
+lifetime = 20.0
+preprocess = 10.0
+draw_order = 1
+texture = SubResource("NoiseTexture2D_gyekr")
+emission_shape = 3
+emission_rect_extents = Vector2(4000, 2000)
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 20.0
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+color = Color(1, 1, 1, 0.196078)
+color_ramp = SubResource("Gradient_ogggn")
+
+[node name="Player" parent="." instance=ExtResource("1_h0hs6")]
+position = Vector2(0, -3)
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+process_callback = 0
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.05
+drag_top_margin = 0.05
+drag_right_margin = 0.05
+drag_bottom_margin = 0.05
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource("5_vuqny")
+extra_limit = 200
+
+[node name="EnemySpawnPath" type="Path2D" parent="Player/Camera2D2"]
+scale = Vector2(0.5, 0.5)
+curve = SubResource("Curve2D_34kcn")
+metadata/_edit_lock_ = true
+
+[node name="EnemySpawnPoint" type="PathFollow2D" parent="Player/Camera2D2/EnemySpawnPath"]
+unique_name_in_owner = true
+position = Vector2(-3840, -2160)
+rotation = 0.000130208
+
+[node name="PlaneSpawnPath" type="Path2D" parent="Player/Camera2D2"]
+scale = Vector2(0.6, 0.6)
+curve = SubResource("Curve2D_34kcn")
+metadata/_edit_lock_ = true
+
+[node name="PlaneSpawnPoint" type="PathFollow2D" parent="Player/Camera2D2/PlaneSpawnPath"]
+unique_name_in_owner = true
+position = Vector2(-3840, -2160)
+rotation = 0.000130208
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Player"]
+modulate = Color(1, 1, 1, 0.595)
+position = Vector2(58, 35)
+occluder = SubResource("OccluderPolygon2D_u87b0")
+occluder_light_mask = 0
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9, 0, 0.0149998, 0.701961)
+
+[node name="GameOverLabel" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 141
+text = "Game Over"
+
+[node name="RestartGame" type="Label" parent="GameOver/ColorRect"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -410.0
+offset_right = 273.0
+offset_bottom = -235.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.429622, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Restart Game"
+script = ExtResource("5_im4o6")
+
+[node name="Fps" parent="." instance=ExtResource("2_c2xao")]
+layer = 128
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fdp1f")
+
+[node name="Trees" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Tree" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-2931, -1640)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-2478, -1317)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-3129, -684)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-2096, -74)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-3089, 57)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-1738, 606)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-2620, 687)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-1652, 1216)
+
+[node name="Tree9" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-3204, 1493)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-2371, 1749)
+
+[node name="Tree11" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-1058, 1957)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-786, 1482)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-6, 1877)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(432, 932)
+
+[node name="Tree15" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(1030, 1653)
+
+[node name="Tree16" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(1803, 1809)
+
+[node name="Tree17" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(2181, 904)
+
+[node name="Tree18" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(3062, 1653)
+
+[node name="Tree19" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(1318, 502)
+
+[node name="Tree20" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(2834, -205)
+
+[node name="Tree21" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(1714, -601)
+
+[node name="Tree22" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(1714, -601)
+
+[node name="Tree23" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(2444, -986)
+
+[node name="Tree24" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(3061, -1687)
+
+[node name="Tree25" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(2071, -1896)
+
+[node name="Tree26" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(1420, -1528)
+
+[node name="Tree27" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(741, -1816)
+
+[node name="Tree28" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(274, -1163)
+
+[node name="Tree29" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-427, -1565)
+
+[node name="Tree30" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-1248, -1092)
+
+[node name="Tree31" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-1757, -1703)
+
+[node name="Tree32" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-1919, -828)
+
+[node name="Tree33" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-1138, -155)
+
+[node name="Tree34" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-440, -631)
+
+[node name="Tree35" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(-698, 586)
+
+[node name="Tree36" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(722, -271)
+
+[node name="Tree37" parent="Trees" instance=ExtResource("2_cl62n")]
+position = Vector2(722, -271)

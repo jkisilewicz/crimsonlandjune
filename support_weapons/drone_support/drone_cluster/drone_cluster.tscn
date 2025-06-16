@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://4k3f0cfannml"]
+
+[ext_resource type="Script" path="res://support_weapons/drone_support/drone_cluster/drone_cluster.gd" id="1_e1aaw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_he114"]
+radius = 25.02
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2c6ej"]
+size = Vector2(50, 50)
+
+[node name="DroneCluster" type="Node2D"]
+script = ExtResource("1_e1aaw")
+rotation_speed = 180.0
+
+[node name="Drone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drone"]
+position = Vector2(300, 0)
+shape = SubResource("CircleShape2D_he114")
+
+[node name="Sprite2D" type="Sprite2D" parent="Drone"]
+position = Vector2(300, 0)
+texture = SubResource("PlaceholderTexture2D_2c6ej")
+
+[node name="Drone2" type="Area2D" parent="."]
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drone2"]
+position = Vector2(300, 0)
+shape = SubResource("CircleShape2D_he114")
+
+[node name="Sprite2D" type="Sprite2D" parent="Drone2"]
+position = Vector2(300, 0)
+texture = SubResource("PlaceholderTexture2D_2c6ej")
+
+[node name="Drone3" type="Area2D" parent="."]
+rotation = 3.14159
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drone3"]
+position = Vector2(300, 0)
+shape = SubResource("CircleShape2D_he114")
+
+[node name="Sprite2D" type="Sprite2D" parent="Drone3"]
+position = Vector2(300, 0)
+texture = SubResource("PlaceholderTexture2D_2c6ej")
+
+[node name="Drone4" type="Area2D" parent="."]
+rotation = 4.71239
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drone4"]
+position = Vector2(300, 0)
+shape = SubResource("CircleShape2D_he114")
+
+[node name="Sprite2D" type="Sprite2D" parent="Drone4"]
+position = Vector2(300, 0)
+texture = SubResource("PlaceholderTexture2D_2c6ej")
+
+[connection signal="body_entered" from="Drone" to="." method="_on_drone_body_entered"]
+[connection signal="body_entered" from="Drone2" to="." method="_on_drone_body_entered"]
+[connection signal="body_entered" from="Drone3" to="." method="_on_drone_body_entered"]
+[connection signal="body_entered" from="Drone4" to="." method="_on_drone_body_entered"]

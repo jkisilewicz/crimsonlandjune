@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca686saihnc6x"]
+
+[ext_resource type="Script" path="res://scripts/explosive_bullet.gd" id="1_mo4vq"]
+[ext_resource type="Texture2D" uid="uid://bpfmbbieeanog" path="res://weapons/rocket_launcher/rocket.png" id="1_y025r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flno6"]
+size = Vector2(111, 20)
+
+[node name="ExplosiveBullet" type="Area2D"]
+top_level = true
+light_mask = 2
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mo4vq")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+position = Vector2(54, 0)
+scale = Vector2(0.619048, 0.619048)
+texture = ExtResource("1_y025r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(55, 0)
+shape = SubResource("RectangleShape2D_flno6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

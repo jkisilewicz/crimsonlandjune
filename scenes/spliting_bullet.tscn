@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnb03w5jg0lbn"]
+
+[ext_resource type="PackedScene" uid="uid://vcqt635l56cm" path="res://scenes/bullet.tscn" id="1_leeg7"]
+[ext_resource type="Script" path="res://scripts/spliting_bullet.gd" id="2_wm7ma"]
+
+[node name="SplitingBullet" instance=ExtResource("1_leeg7")]
+script = ExtResource("2_wm7ma")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
