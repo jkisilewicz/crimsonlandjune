@@ -38,7 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://c6dqeq3r8ne5l" path="res://weapons/pistol/pistol_powerup.tscn" id="36_7ka6j"]
 [ext_resource type="PackedScene" uid="uid://d00ibhstv63jr" path="res://weapons/rifle/rifle_power_up.tscn" id="37_tiu0e"]
 [ext_resource type="PackedScene" uid="uid://c0spue033vd33" path="res://powerups/guns_reload_speed/guns_reload_speed_power_up.tscn" id="38_poet2"]
-[ext_resource type="PackedScene" uid="uid://beb1mn5sb86ao" path="res://powerups/armor/armor_power_up.tscn" id="39_crw6s"]
+[ext_resource type="PackedScene" uid="uid://helekvmuar22" path="res://support_weapons/bomb_plane/bomb_plane_powerup.tscn" id="39_t1c02"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tpkxc"]
 
@@ -372,47 +372,13 @@ position = Vector2(722, -271)
 position = Vector2(722, -271)
 
 [node name="SmallGunsAttackSpeedPowerUp" parent="." instance=ExtResource("10_c5vfd")]
-position = Vector2(632, 24)
+position = Vector2(642, 159)
 
 [node name="DamagePowerUp2" parent="." instance=ExtResource("11_yyfmk")]
 position = Vector2(373, 405)
 
 [node name="DamagePowerUp4" parent="." instance=ExtResource("11_yyfmk")]
 position = Vector2(495, 382)
-
-[node name="DamagePowerUp5" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(639, 381)
-
-[node name="DamagePowerUp6" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(669, 256)
-
-[node name="DamagePowerUp7" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(762, 378)
-
-[node name="DamagePowerUp8" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(851, 283)
-
-[node name="DamagePowerUp9" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(744, 181)
-
-[node name="DamagePowerUp10" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(961, 208)
-
-[node name="DamagePowerUp11" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(907, 373)
-
-[node name="DamagePowerUp12" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(844, 453)
-
-[node name="DamagePowerUp13" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(586, 458)
-
-[node name="DamagePowerUp14" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(563, 254)
-
-[node name="DamagePowerUp15" parent="." instance=ExtResource("11_yyfmk")]
-position = Vector2(528, 162)
-scale = Vector2(1.345, 1.345)
 
 [node name="Pixi" parent="." instance=ExtResource("12_n5u5i")]
 position = Vector2(-1406, -562)
@@ -430,18 +396,14 @@ position = Vector2(1142, -172)
 position = Vector2(1328, 165)
 
 [node name="ShotgunGun" parent="." instance=ExtResource("17_6dpk5")]
-position = Vector2(-981, 248)
+position = Vector2(-845, 408)
 scale = Vector2(6.39, 6.39)
 
-[node name="BombsPowerUp" parent="." instance=ExtResource("18_tm3g3")]
-position = Vector2(809, 913)
-scale = Vector2(10.1257, 6.51415)
-
 [node name="TurretBulletPowerUp" parent="." instance=ExtResource("19_xnv27")]
-position = Vector2(-470, 636)
+position = Vector2(-468, 532)
 
 [node name="DronePowerUp" parent="." instance=ExtResource("20_b6ktj")]
-position = Vector2(-654, 555)
+position = Vector2(-692, 502)
 
 [node name="Dron" parent="." instance=ExtResource("15_4duwx")]
 position = Vector2(-957, 493)
@@ -459,10 +421,10 @@ position = Vector2(-290, -227)
 position = Vector2(-141, -331)
 
 [node name="LaserShotgunGun" parent="." instance=ExtResource("24_08d72")]
-position = Vector2(-55, -769)
+position = Vector2(-593, 373)
 
 [node name="ShotgunGun2" parent="." instance=ExtResource("25_i75cu")]
-position = Vector2(-252, -717)
+position = Vector2(-767, -443)
 
 [node name="PlasmaGun" parent="." instance=ExtResource("26_8u6gt")]
 position = Vector2(-639, 192)
@@ -480,22 +442,22 @@ position = Vector2(-619, -276)
 position = Vector2(-546, -383)
 
 [node name="Flamethrower" parent="." instance=ExtResource("31_g08mc")]
-position = Vector2(328, -724)
+position = Vector2(-336, -437)
 
 [node name="GasGunPowerUp" parent="." instance=ExtResource("32_3fvmu")]
-position = Vector2(568, -664)
+position = Vector2(-329, 446)
 
 [node name="EchoRifleGun" parent="." instance=ExtResource("33_w2vvn")]
-position = Vector2(84, -660)
+position = Vector2(-794, -269)
 
 [node name="Guns_Crit_Chance" parent="." instance=ExtResource("34_feuxv")]
 position = Vector2(66, 455)
 
 [node name="Dodge" parent="." instance=ExtResource("34_feuxv")]
-position = Vector2(127, 648)
+position = Vector2(559, 485)
 
 [node name="Guns_Crit_Chance3" parent="." instance=ExtResource("34_feuxv")]
-position = Vector2(223, 507)
+position = Vector2(734, 377)
 
 [node name="DamagePowerUp16" parent="." instance=ExtResource("35_4s4ql")]
 position = Vector2(145, -101)
@@ -512,23 +474,8 @@ position = Vector2(186, 54)
 [node name="DamagePowerUp3" parent="." instance=ExtResource("38_poet2")]
 position = Vector2(294, 133)
 
-[node name="DamagePowerUp17" parent="." instance=ExtResource("38_poet2")]
-position = Vector2(169, 166)
+[node name="BombPlanePowerup" parent="." instance=ExtResource("39_t1c02")]
+position = Vector2(-171, 191)
 
-[node name="DamagePowerUp18" parent="." instance=ExtResource("38_poet2")]
-position = Vector2(229, -85)
-
-[node name="DamagePowerUp19" parent="." instance=ExtResource("38_poet2")]
-position = Vector2(309, -66)
-
-[node name="DamagePowerUp20" parent="." instance=ExtResource("38_poet2")]
-position = Vector2(286, -158)
-
-[node name="DamagePowerUp21" parent="." instance=ExtResource("38_poet2")]
-position = Vector2(210, -180)
-
-[node name="DamagePowerUp22" parent="." instance=ExtResource("39_crw6s")]
-position = Vector2(-196, 161)
-
-[node name="DamagePowerUp23" parent="." instance=ExtResource("39_crw6s")]
-position = Vector2(-157, 356)
+[node name="BombsPowerUp2" parent="." instance=ExtResource("18_tm3g3")]
+position = Vector2(119, 210)
